@@ -1,0 +1,123 @@
+<!DOCTYPE html PUBliC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <link href="../../style.css" rel="stylesheet" type="text/css"/>
+        <title></title>
+    </head>
+    <body>
+        <div id="container">
+            <div id="header">
+                <div id="slogan">Java&#0153; Binding for the OpenAL&#0174; API</div>
+                <div id="logo"><a href="http://jogamp.org/"><div id="logo"><a href="http://jogamp.org/"><img src="../../images/jogamp_symbols/website_final_blue_joal_346x70pel.png" alt="JOAL Symbol"/>JOAL-Demos</a></div>
+            </div>
+            <div id="menu">
+                <ul>
+                    <li><a href="http://jogamp.org/">Home</a></li>
+                    <li><a href="../../joal/www">JOAL</a></li>
+                    <li><a href="../../wiki/index.php/Joal_FAQ">Wiki</a></li>
+                    <li><a href="../../deployment/jogamp-next/javadoc/joal/javadoc/">JavaDoc</a></li>
+                </ul>
+            </div>
+            <div id="main" class="fill">
+                <table width="100%" border="0" cellspacing="1" cellpadding="0">
+                    <tr>
+                        <td width="66%" valign="top">
+                            <table width="100%" border="0" cellpadding="5" cellspacing="1">
+                                <tr>
+                                    <td valign="top">
+                                        <table width="100%" border="0" cellpadding="5" cellspacing="1">
+                                            <tr>
+                                                <td width="589" valign="top">
+                                                    <div align="left">
+                                                        <h3>Overview</h3>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td valign="top">
+                                                    <div align="justify">
+                                                        <p>
+                                                            The JOAL-Demos Project hosts a collection of turials and
+                                                            demonstrations illustred the features and usage of the Java
+                                                            bindings for OpenAL API and the Sound3D Toolkit.
+                                                        </p>
+                                                        <H3> JOAL from command-line </H3>
+                                                        <pre>
+wget https://jogamp.org/deployment/jogamp-current/archive/jogamp-all-platforms.7z
+7z x jogamp-all-platforms.7z
+cd jogamp-all-platforms
+
+# joal-test 
+java -cp jar/joal-test.jar:jar/joal.jar:jar/gluegen-rt.jar com.jogamp.openal.test.manual.Sound3DTest
+java -cp jar/joal-test.jar:jar/joal.jar:jar/gluegen-rt.jar com.jogamp.openal.test.manual.OpenALTest
+
+# joal-demos www.devmaster.net Tutorial lession 1,2,3 &amp; 5
+wget https://jogamp.org/deployment/jogamp-current/joal-demos/jar/joal-demos.jar
+java -cp joal-demos.jar:jar/joal.jar:jar/gluegen-rt.jar demos.devmaster.lesson1.SingleStaticSource
+java -cp joal-demos.jar:jar/joal.jar:jar/gluegen-rt.jar demos.devmaster.lesson2.LoopingAndFadeaway
+java -cp joal-demos.jar:jar/joal.jar:jar/gluegen-rt.jar demos.devmaster.lesson3.MultipleSources
+java -cp joal-demos.jar:jar/joal.jar:jar/gluegen-rt.jar demos.devmaster.lesson5.SourcesSharingBuffers
+
+# joal-demos www.devmaster.net Tutorial lession 8 
+# This demo uses the external J-Ogg library for ogg decoding
+# http://www.j-ogg.de/
+wget http://www.j-ogg.de/j-ogg.zip
+unzip j-ogg.zip
+# ogg Vorbis test stream from http://www.vorbis.com/music/
+wget http://www.vorbis.com/music/Mists_of_Time-4T.ogg
+java -cp joal-demos.jar:j-ogg/build/lib/j-ogg-all.jar:jar/joal.jar:jar/gluegen-rt.jar demos.devmaster.lesson8.OggDecoder Mists_of_Time-4T.ogg
+java -cp joal-demos.jar:j-ogg/build/lib/j-ogg-all.jar:jar/joal.jar:jar/gluegen-rt.jar demos.devmaster.lesson8.OggStreamer Mists_of_Time-4T.ogg
+                                                        </pre>
+                                                        <H3> JOAL/JOGL test applets </H3>
+                                                        <ul>
+                                                            <li><a href="../../deployment/jogamp-current/jogl-demos/applet-gearsjoal-napplet.html">JOGL NApplet GearsJOAL</a></li>
+                                                        </ul>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td valign="top">
+                            <table width="100%"border="0" cellpadding="5" cellspacing="1">
+                                <tr>
+                                    <td>
+                                        <table width="100%" border="0" cellpadding="5" cellspacing="1">
+                                            <tr>
+                                                <td valign="top">
+                                                    <div align="left">
+                                                        <h3>Tutorials</h3>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td valign="top">
+                                                    JOAL OpenAL Tutorials (<a href="http://www.devmaster.net">www.devmaster.net</a>)
+                                                    <ul>
+                                                        <li><a href="devmaster/lesson1.html">lesson 1:</a>Single Static Source</li>
+                                                        <li><a href="devmaster/lesson2.html">lesson 2:</a>Looping and Fadeaway</li>
+                                                        <li><a href="devmaster/lesson3.html">lesson 3:</a>Multiple Sources </li>
+                                                        <li><a href="devmaster/lesson4.html">lesson 4:</a>A Closer Look at the ALC</li>
+                                                        <li><a href="devmaster/lesson5.html">lesson 5:</a>Sources Sharing Buffers</li>
+                                                        <li><a href="devmaster/lesson6.html">lesson 6:</a>Advanced Loading and Error Handles.</li>
+                                                        <li><a href="devmaster/lesson7.html">lesson 7:</a>The Doppler Effect</li>
+                                                        <li><a href="devmaster/lesson8.html">lesson 8:</a> Ogg/Vorbis Streaming</li>
+                                                        <li><a href="../../git/?p=joal-demos.git;a=tree;f=src/java/demos/devmaster;hb=HEAD">source for lessons 1,2,3,5 &amp; 8</a></li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </body>
+</html>
+

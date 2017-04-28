@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+
+    <Author>Gerhard Klauser</Author>
+	
+    <WWW>http://www.msfc-dornbirn.com</WWW>
+    <Name>MFSC Dornbirn</Name>
+    <Comment>Diese Szenerie zeigt den Platz des MFSC Dornbirn.
+        Das Panorambild wurde bereitgestellt von Christoph Albiez vom MSFC Dornbirn.
+    </Comment> 
+
+    <LightDir>
+        0,-0.8,0.8
+    </LightDir>
+
+    <StartPosition>
+        5,0,0
+    </StartPosition>
+
+    <HeightOfGround>
+        0.0
+    </HeightOfGround>
+
+</project>

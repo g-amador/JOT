@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp codebase="DEMO_CODEBASE_TAG"
+      href="JRefract.jnlp">
+  <information>
+    <title>JOGL JRefract Demo - JOGL/Java2D Integration</title>
+    <vendor>JogAmp Community</vendor>
+    <homepage href="http://jogamp.org/jogl-demos/"/>
+    <description>JRefract Demo</description>
+    <description kind="short">Variant of NVidia's vtxprog_refract demo illustrating JOGL's hardware-accelerated Swing component and integration with Java2D's OpenGL pipeline.</description>
+    <offline-allowed/>
+  </information>
+  <update check="background" policy="always"/>
+
+    <resources>
+      <j2se href="http://java.sun.com/products/autodl/j2se" version="1.4+"/>
+      <property name="sun.java2d.noddraw" value="true"/>
+      <property name="sun.java2d.opengl" value="True"/>
+      <!-- Temporary workaround for slowness in Windows NVidia drivers -->
+      <!-- property name="swing.bufferPerWindow" value="false"/ -->
+      <property name="jnlp.jogl.debug.GLJPanel" value="true"/>
+      <jar href="jar/jogl-demos.jar" main="true"/>
+      <jar href="jar/jogl-demos-util.jar" />
+      <jar href="jar/jogl-demos-data.jar" />
+      <extension name="jogl-all-awt" href="JOGL_CODEBASE_TAG/jogl-all-awt.jnlp" />
+    </resources>
+
+  <application-desc main-class="demos.jrefract.JRefract">
+  </application-desc>
+</jnlp>

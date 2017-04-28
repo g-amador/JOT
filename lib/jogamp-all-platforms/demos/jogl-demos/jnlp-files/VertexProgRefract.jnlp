@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp codebase="DEMO_CODEBASE_TAG"
+      href="VertexProgRefract.jnlp">
+  <information>
+    <title>JOGL VertexProgRefract Demo</title>
+    <vendor>JogAmp Community</vendor>
+    <homepage href="http://jogamp.org/jogl-demos/"/>
+    <description>VertexProgRefract Demo</description>
+    <description kind="short">NVidia's vtxprog_refract demo ported to Java and JOGL.</description>
+    <offline-allowed/>
+  </information>
+  <update check="background" policy="always"/>
+
+    <resources>
+      <j2se href="http://java.sun.com/products/autodl/j2se" version="1.4+"/>
+      <jar href="jar/jogl-demos.jar" main="true"/>
+      <jar href="jar/jogl-demos-util.jar" />
+      <jar href="jar/jogl-demos-data.jar" />
+      <extension name="jogl-all-awt" href="JOGL_CODEBASE_TAG/jogl-all-awt.jnlp" />
+    </resources>
+
+  <application-desc main-class="demos.vertexProgRefract.VertexProgRefract">
+  </application-desc>
+</jnlp>

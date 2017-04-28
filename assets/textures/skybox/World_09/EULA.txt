@@ -1,0 +1,20 @@
+Endbenutzer-Lizenzvereinbarung  für diese HELI-X-Szenerie (EULA) 
+
+Allgemeine Nutzungsbedingungen:
+
+Diese Flugsimulator-Erweiterung darf ausschliesslich nur für private Zwecke verwendet werden. 
+Diese Flugsimulator-Erweiterung ist nicht 'public domain'. Es ist ohne meine ausdrückliche und schriftliche Genehmigung verboten, sie auf CD oder anderen Datenträgern oder in jeglicher Form über das Internet anzubieten oder zu verteilen.
+Es ist nicht erlaubt Dateien aus diesem Paket, einzeln oder in Gruppen anzubieten oder zu verteilen. Es ist ebenfalls nicht erlaubt, ohne meine ausdrückliche und schriftliche Genehmigung, Modifikationen dieser Dateien anzubieten oder zu verteilen. 
+Die einzige legale Quelle dieser Flugsimulator-Erweiterung ist meine eigene Webseite http://www.treichler.at
+und Webseiten, die von mir ausdrücklich autorisiert wurden. 
+
+Kommerzielle Nutzung:
+
+Kommerzielle Nutzung - in jeglicher Form - dieser Flugsimulator-Erweiterung ist verboten. Wenn eine oder mehrere dieser Flugsimulator-Erweiterungen oder ein Teil davon kostenfrei in Verbindung mit anderen kommerziell verkauften Dingen oder als kostenfreier Download in Verbindung mit kommerziellen Webseiten oder irgendeiner kommerziellen Aktivität angeboten werden, ist das ebenfalls kommerzielle Nutzung im oben genannten Sinn und damit ebenfalls verboten.
+Ausnahmen davon sind nur mit meiner ausdrücklichen und schriftlichen Genehmigung erlaubt. 
+
+Haftungsausschluss:
+
+Die Nutzung dieser Flugsimulator-Erweiterung geschieht auf eigene Verantwortung. Die Flugsimulator-Erweiterung selbst enthält keinen ausführbaren Programmcode, sondern nur Bildmaterial und Parameter. Dennoch übernehme ich für etwaige Schäden an Hard- oder Software des Nutzers, die sich im Zusammenhang mit dieser Flugsimulator-Erweiterung oder deren Installationsprozedur ergeben könnten, keinerlei Verantwortung. Die Haftung in jeglicher Form ist ausgeschlossen. 
+
+Klaus Treichler (klaus@treichler.at)

@@ -1,0 +1,1736 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Core-Toolkit-Components">
+  <ClassDiagramComponents>
+    <Class name="AbstractMaterial" package="jot.physics" visibility="public" isAbstract="true" xPosition="5103.0" yPosition="2751.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="getD" returnType="float" visibility="public" isAbstract="true"/>
+        <Method name="setD" returnType="void" visibility="public" isAbstract="true">
+          <Argument type="float" name="d"/>
+        </Method>
+        <Method name="getNs" returnType="float" visibility="public" isAbstract="true"/>
+        <Method name="setNs" returnType="void" visibility="public" isAbstract="true">
+          <Argument type="float" name="ns"/>
+        </Method>
+        <Method name="getKa" returnType="float[]" visibility="public" isAbstract="true"/>
+        <Method name="setKa" returnType="void" visibility="public" isAbstract="true">
+          <Argument type="float[]" name="ka"/>
+        </Method>
+        <Method name="getKs" returnType="float[]" visibility="public" isAbstract="true"/>
+        <Method name="setKs" returnType="void" visibility="public" isAbstract="true">
+          <Argument type="float[]" name="ks"/>
+        </Method>
+        <Method name="getKd" returnType="float[]" visibility="public" isAbstract="true"/>
+        <Method name="setKd" returnType="void" visibility="public" isAbstract="true">
+          <Argument type="float[]" name="kd"/>
+        </Method>
+        <Method name="getE" returnType="float[]" visibility="public" isAbstract="true"/>
+        <Method name="setE" returnType="void" visibility="public" isAbstract="true">
+          <Argument type="float[]" name="e"/>
+        </Method>
+        <Method name="getColor" returnType="float[]" visibility="public" isAbstract="true"/>
+        <Method name="setColor" returnType="void" visibility="public" isAbstract="true">
+          <Argument type="float[]" name="color"/>
+        </Method>
+        <Method name="getTexture" returnType="Texture" visibility="public" isAbstract="true"/>
+        <Method name="setTexture" returnType="void" visibility="public" isAbstract="true">
+          <Argument type="Texture" name="texture"/>
+        </Method>
+        <Method name="applyMaterialProperties" returnType="void" visibility="public" isAbstract="true">
+          <Argument type="GL2" name="gl"/>
+        </Method>
+        <Method name="showMaterial" returnType="void" visibility="public" isAbstract="true"/>
+        <Method name="isOpaque" returnType="boolean" visibility="public" isAbstract="true"/>
+      </Methods>
+    </Class>
+    <Class name="Material" package="jot.physics" visibility="public" xPosition="4388.0" yPosition="3816.0">
+      <Fields>
+        <Field name="log" type="Logger" visibility="package" isStatic="true" isFinal="true"/>
+        <Field name="Id" type="String" visibility="protected"/>
+        <Field name="d" type="float" visibility="protected"/>
+        <Field name="ns" type="float" visibility="protected"/>
+        <Field name="ka" type="float[]" visibility="protected"/>
+        <Field name="ks" type="float[]" visibility="protected"/>
+        <Field name="kd" type="float[]" visibility="protected"/>
+        <Field name="e" type="float[]" visibility="protected"/>
+        <Field name="color" type="float[]" visibility="protected"/>
+        <Field name="texture" type="Texture" visibility="protected"/>
+        <Field name="renderable" type="boolean" visibility="protected"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="Id"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getD" returnType="float" visibility="public"/>
+        <Method name="setD" returnType="void" visibility="public">
+          <Argument type="float" name="d"/>
+        </Method>
+        <Method name="getNs" returnType="float" visibility="public"/>
+        <Method name="setNs" returnType="void" visibility="public">
+          <Argument type="float" name="ns"/>
+        </Method>
+        <Method name="getKa" returnType="float[]" visibility="public"/>
+        <Method name="setKa" returnType="void" visibility="public">
+          <Argument type="float[]" name="ka"/>
+        </Method>
+        <Method name="getKs" returnType="float[]" visibility="public"/>
+        <Method name="setKs" returnType="void" visibility="public">
+          <Argument type="float[]" name="ks"/>
+        </Method>
+        <Method name="getKd" returnType="float[]" visibility="public"/>
+        <Method name="setKd" returnType="void" visibility="public">
+          <Argument type="float[]" name="kd"/>
+        </Method>
+        <Method name="getE" returnType="float[]" visibility="public"/>
+        <Method name="setE" returnType="void" visibility="public">
+          <Argument type="float[]" name="e"/>
+        </Method>
+        <Method name="getColor" returnType="float[]" visibility="public"/>
+        <Method name="setColor" returnType="void" visibility="public">
+          <Argument type="float[]" name="color"/>
+        </Method>
+        <Method name="getTexture" returnType="Texture" visibility="public"/>
+        <Method name="setTexture" returnType="void" visibility="public">
+          <Argument type="Texture" name="texture"/>
+        </Method>
+        <Method name="setRenderable" returnType="void" visibility="public">
+          <Argument type="boolean" name="renderable"/>
+        </Method>
+        <Method name="applyMaterialProperties" returnType="void" visibility="public">
+          <Argument type="GL2" name="gl"/>
+        </Method>
+        <Method name="showMaterial" returnType="void" visibility="public"/>
+        <Method name="isOpaque" returnType="boolean" visibility="public"/>
+        <Method name="isRenderable" returnType="boolean" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="IntersectionResult" package="jot.physics" visibility="public" xPosition="1219.0" yPosition="2919.0">
+      <Fields>
+        <Field name="log" type="Logger" visibility="package" isStatic="true" isFinal="true"/>
+        <Field name="MISS" type="IntersectionResult" visibility="public" isStatic="true"/>
+        <Field name="ray" type="AbstractRay" visibility="protected" isFinal="true"/>
+        <Field name="t" type="double" visibility="protected"/>
+        <Field name="object" type="AbstractShape" visibility="protected"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="AbstractRay" name="ray"/>
+          <Argument type="double" name="t"/>
+          <Argument type="AbstractShape" name="object"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getObject" returnType="AbstractShape" visibility="public"/>
+        <Method name="getIntersectionPoint" returnType="Vector3D" visibility="public"/>
+        <Method name="getNormal" returnType="Vector3D" visibility="public"/>
+        <Method name="getTarget" returnType="double" visibility="public"/>
+        <Method name="isHit" returnType="boolean" visibility="public"/>
+        <Method name="closerThan" returnType="boolean" visibility="public">
+          <Argument type="AbstractIntersectionResult" name="other"/>
+        </Method>
+        <Method name="isMiss" returnType="boolean" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="AbstractRay" package="jot.physics" visibility="public" isAbstract="true" xPosition="1971.0" yPosition="3283.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="getDirection" returnType="Vector3D" visibility="public" isAbstract="true"/>
+        <Method name="getOrientation" returnType="Vector3D" visibility="public" isAbstract="true">
+          <Argument type="double" name="t"/>
+        </Method>
+        <Method name="getOrigin" returnType="Vector3D" visibility="public" isAbstract="true"/>
+        <Method name="getTmin" returnType="float" visibility="public" isAbstract="true"/>
+        <Method name="setTmin" returnType="void" visibility="public" isAbstract="true">
+          <Argument type="float" name="tmin"/>
+        </Method>
+        <Method name="getTmax" returnType="float" visibility="public" isAbstract="true"/>
+        <Method name="setTmax" returnType="void" visibility="public" isAbstract="true">
+          <Argument type="float" name="tmax"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="AbstractIntersectionResult" package="jot.physics" visibility="public" isAbstract="true" xPosition="973.0" yPosition="2439.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="getObject" returnType="AbstractShape" visibility="public" isAbstract="true"/>
+        <Method name="getIntersectionPoint" returnType="Vector3D" visibility="public" isAbstract="true"/>
+        <Method name="getNormal" returnType="Vector3D" visibility="public" isAbstract="true"/>
+        <Method name="getTarget" returnType="double" visibility="public" isAbstract="true"/>
+        <Method name="isHit" returnType="boolean" visibility="public" isAbstract="true"/>
+        <Method name="closerThan" returnType="boolean" visibility="public" isAbstract="true">
+          <Argument type="AbstractIntersectionResult" name="other"/>
+        </Method>
+        <Method name="isMiss" returnType="boolean" visibility="public" isAbstract="true"/>
+      </Methods>
+    </Class>
+    <Class name="Ray" package="jot.physics" visibility="public" xPosition="2542.0" yPosition="3642.0">
+      <Fields>
+        <Field name="log" type="Logger" visibility="package" isStatic="true" isFinal="true"/>
+        <Field name="origin" type="Vector3D" visibility="protected"/>
+        <Field name="direction" type="Vector3D" visibility="protected"/>
+        <Field name="tmin" type="float" visibility="protected"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Vector3D" name="origin"/>
+          <Argument type="Vector3D" name="direction"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getDirection" returnType="Vector3D" visibility="public"/>
+        <Method name="getOrientation" returnType="Vector3D" visibility="public">
+          <Argument type="double" name="t"/>
+        </Method>
+        <Method name="getOrigin" returnType="Vector3D" visibility="public"/>
+        <Method name="toString" returnType="String" visibility="public"/>
+        <Method name="getTmin" returnType="float" visibility="public"/>
+        <Method name="setTmin" returnType="void" visibility="public">
+          <Argument type="float" name="tmin"/>
+        </Method>
+        <Method name="getTmax" returnType="float" visibility="public"/>
+        <Method name="setTmax" returnType="void" visibility="public">
+          <Argument type="float" name="tmax"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="GameObject" package="jot.util" visibility="public" xPosition="5690.0" yPosition="936.0">
+      <Fields>
+        <Field name="log" type="Logger" visibility="package" isStatic="true" isFinal="true"/>
+        <Field name="t0" type="long" visibility="private" isFinal="true"/>
+        <Field name="boundingRadius" type="float" visibility="private"/>
+        <Field name="maxSpeed" type="float" visibility="private"/>
+        <Field name="velocity" type="Vector3D" visibility="private"/>
+        <Field name="position" type="Vector3D" visibility="private"/>
+        <Field name="pastPosition" type="Vector3D" visibility="private"/>
+        <Field name="attributes" type="HashMap&lt;String, Long&gt;" visibility="private"/>
+        <Field name="equipmentItems" type="HashMap&lt;String, String&gt;" visibility="private"/>
+        <Field name="behaviors" type="HashMap&lt;String, Boolean&gt;" visibility="private" isFinal="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="Id"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="String" name="Id"/>
+          <Argument type="TransformGroup" name="tg"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getT0" returnType="long" visibility="public"/>
+        <Method name="getActiveBehaviours" returnType="List&lt;String&gt;" visibility="public"/>
+        <Method name="setBehaviour" returnType="void" visibility="public">
+          <Argument type="String" name="behaviorId"/>
+          <Argument type="boolean" name="value"/>
+        </Method>
+        <Method name="getAttribute" returnType="long" visibility="public">
+          <Argument type="String" name="attributeId"/>
+        </Method>
+        <Method name="setAttribute" returnType="void" visibility="public">
+          <Argument type="String" name="attributeId"/>
+          <Argument type="long" name="attributeValue"/>
+        </Method>
+        <Method name="getAttributes" returnType="HashMap&lt;String, Long&gt;" visibility="public"/>
+        <Method name="setAttributes" returnType="void" visibility="public">
+          <Argument type="HashMap&lt;String, Long&gt;" name="attributes"/>
+        </Method>
+        <Method name="getBoundingRadius" returnType="float" visibility="public"/>
+        <Method name="setBoundingRadius" returnType="void" visibility="public">
+          <Argument type="float" name="radius"/>
+        </Method>
+        <Method name="getEquipmentItem" returnType="String" visibility="public">
+          <Argument type="String" name="equipmentId"/>
+        </Method>
+        <Method name="setEquipmentItem" returnType="void" visibility="public">
+          <Argument type="String" name="equipmentId"/>
+          <Argument type="String" name="equipmentItem"/>
+        </Method>
+        <Method name="getEquipmentItems" returnType="HashMap&lt;String, String&gt;" visibility="public"/>
+        <Method name="setEquipmentItems" returnType="void" visibility="public">
+          <Argument type="HashMap&lt;String, String&gt;" name="equipmentItems"/>
+        </Method>
+        <Method name="getMaxSpeed" returnType="float" visibility="public"/>
+        <Method name="setMaxSpeed" returnType="void" visibility="public">
+          <Argument type="float" name="maxSpeed"/>
+        </Method>
+        <Method name="getPastPosition" returnType="Vector3D" visibility="public"/>
+        <Method name="setPastPosition" returnType="void" visibility="public">
+          <Argument type="Vector3D" name="pastPosition"/>
+        </Method>
+        <Method name="getPosition" returnType="Vector3D" visibility="public"/>
+        <Method name="setPosition" returnType="void" visibility="public">
+          <Argument type="Vector3D" name="position"/>
+        </Method>
+        <Method name="getVelocity" returnType="Vector3D" visibility="public"/>
+        <Method name="setVelocity" returnType="void" visibility="public">
+          <Argument type="Vector3D" name="velocity"/>
+        </Method>
+        <Method name="updatePosition" returnType="void" visibility="public">
+          <Argument type="Vector3D" name="update"/>
+        </Method>
+        <Method name="updateVelocity" returnType="void" visibility="public">
+          <Argument type="Vector3D" name="update"/>
+        </Method>
+        <Method name="clone" returnType="GameObject" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="CoreGameObject" package="jot.util" visibility="public" isAbstract="true" xPosition="4937.0" yPosition="635.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="Id"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="String" name="Id"/>
+          <Argument type="TransformGroup" name="tg"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getT0" returnType="long" visibility="public" isAbstract="true"/>
+        <Method name="getActiveBehaviours" returnType="List&lt;String&gt;" visibility="public" isAbstract="true"/>
+        <Method name="setBehaviour" returnType="void" visibility="public" isAbstract="true">
+          <Argument type="String" name="behaviorId"/>
+          <Argument type="boolean" name="value"/>
+        </Method>
+        <Method name="getAttribute" returnType="long" visibility="public" isAbstract="true">
+          <Argument type="String" name="attributeId"/>
+        </Method>
+        <Method name="setAttribute" returnType="void" visibility="public" isAbstract="true">
+          <Argument type="String" name="attributeId"/>
+          <Argument type="long" name="attributeValue"/>
+        </Method>
+        <Method name="getAttributes" returnType="HashMap&lt;String, Long&gt;" visibility="public" isAbstract="true"/>
+        <Method name="setAttributes" returnType="void" visibility="public" isAbstract="true">
+          <Argument type="HashMap&lt;String, Long&gt;" name="attributes"/>
+        </Method>
+        <Method name="getBoundingRadius" returnType="float" visibility="public" isAbstract="true"/>
+        <Method name="setBoundingRadius" returnType="void" visibility="public" isAbstract="true">
+          <Argument type="float" name="radius"/>
+        </Method>
+        <Method name="getMaxSpeed" returnType="float" visibility="public" isAbstract="true"/>
+        <Method name="setMaxSpeed" returnType="void" visibility="public" isAbstract="true">
+          <Argument type="float" name="maxSpeed"/>
+        </Method>
+        <Method name="getEquipmentItem" returnType="String" visibility="public" isAbstract="true">
+          <Argument type="String" name="equipmentId"/>
+        </Method>
+        <Method name="setEquipmentItem" returnType="void" visibility="public" isAbstract="true">
+          <Argument type="String" name="equipmentId"/>
+          <Argument type="String" name="equipmentItem"/>
+        </Method>
+        <Method name="getEquipmentItems" returnType="HashMap&lt;String, String&gt;" visibility="public" isAbstract="true"/>
+        <Method name="setEquipmentItems" returnType="void" visibility="public" isAbstract="true">
+          <Argument type="HashMap&lt;String, String&gt;" name="equipmentItems"/>
+        </Method>
+        <Method name="getPastPosition" returnType="Vector3D" visibility="public" isAbstract="true"/>
+        <Method name="setPastPosition" returnType="void" visibility="public" isAbstract="true">
+          <Argument type="Vector3D" name="position"/>
+        </Method>
+        <Method name="getPosition" returnType="Vector3D" visibility="public" isAbstract="true"/>
+        <Method name="setPosition" returnType="void" visibility="public" isAbstract="true">
+          <Argument type="Vector3D" name="position"/>
+        </Method>
+        <Method name="getVelocity" returnType="Vector3D" visibility="public" isAbstract="true"/>
+        <Method name="setVelocity" returnType="void" visibility="public" isAbstract="true">
+          <Argument type="Vector3D" name="velocity"/>
+        </Method>
+        <Method name="updatePosition" returnType="void" visibility="public" isAbstract="true">
+          <Argument type="Vector3D" name="update"/>
+        </Method>
+        <Method name="updateVelocity" returnType="void" visibility="public" isAbstract="true">
+          <Argument type="Vector3D" name="update"/>
+        </Method>
+        <Method name="clone" returnType="CoreGameObject" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="CoreOptions" package="jot.util" visibility="public" xPosition="8264.0" yPosition="2901.0">
+      <Fields>
+        <Field name="log" type="Logger" visibility="package" isStatic="true" isFinal="true"/>
+        <Field name="coreOptions" type="HashMap&lt;String, Boolean&gt;" visibility="public" isStatic="true" isFinal="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="private"/>
+      </Constructors>
+      <Methods>
+        <Method name="showCoreOptions" returnType="void" visibility="public" isStatic="true"/>
+      </Methods>
+    </Class>
+    <Class name="OptionsParser" package="jot.io.script" visibility="public" xPosition="8911.0" yPosition="2901.0">
+      <Fields>
+        <Field name="log" type="Logger" visibility="package" isStatic="true" isFinal="true"/>
+        <Field name="loadedOptions" type="HashMap&lt;String, Boolean&gt;" visibility="public" isStatic="true" isFinal="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="private"/>
+      </Constructors>
+      <Methods>
+        <Method name="parseFile" returnType="HashMap&lt;String, Boolean&gt;" visibility="public" isStatic="true">
+          <Argument type="String" name="file"/>
+          <Argument type="String" name="optionsId"/>
+          <Argument type="HashMap&lt;String, Boolean&gt;" name="options"/>
+        </Method>
+        <Method name="showLoadedOptions" returnType="void" visibility="public" isStatic="true"/>
+        <Method name="showLoadedOptions" returnType="void" visibility="public" isStatic="true">
+          <Argument type="boolean" name="value"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="WavefrontOBJ" package="jot.io.data.format" visibility="public" xPosition="5837.0" yPosition="323.0">
+      <Fields>
+        <Field name="log" type="Logger" visibility="package" isStatic="true" isFinal="true"/>
+        <Field name="DUMMY_Z_TC" type="float" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="modelDir" type="String" visibility="private" isStatic="true"/>
+        <Field name="vertices" type="ArrayList&lt;Vector3D&gt;" visibility="private" isFinal="true"/>
+        <Field name="normals" type="ArrayList&lt;Vector3D&gt;" visibility="private" isFinal="true"/>
+        <Field name="textureCoords" type="ArrayList&lt;Vector3D&gt;" visibility="private" isFinal="true"/>
+        <Field name="hasTCs3D" type="boolean" visibility="private"/>
+        <Field name="faces" type="Faces" visibility="private" isFinal="true"/>
+        <Field name="faceMats" type="FaceMaterials" visibility="private" isFinal="true"/>
+        <Field name="materials" type="Materials" visibility="private"/>
+        <Field name="modelDims" type="ModelDimensions" visibility="private" isFinal="true"/>
+        <Field name="maxSize" type="float" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="load" returnType="WavefrontOBJ" visibility="public" isStatic="true">
+          <Argument type="String" name="fileName"/>
+        </Method>
+        <Method name="loadFormat" returnType="TransformGroup" visibility="public" isStatic="true">
+          <Argument type="String" name="filePath"/>
+          <Argument type="String" name="fileName"/>
+          <Argument type="float" name="scale"/>
+          <Argument type="AbstractBoundingVolume.BoundingVolumeType" name="boundingVolumeType"/>
+        </Method>
+        <Method name="parseFile" returnType="void" visibility="public">
+          <Argument type="String" name="fileName"/>
+        </Method>
+        <Method name="addVert" returnType="boolean" visibility="private">
+          <Argument type="String" name="line"/>
+          <Argument type="boolean" name="isFirstCoord"/>
+        </Method>
+        <Method name="readVector3D" returnType="Vector3D" visibility="private">
+          <Argument type="String" name="line"/>
+        </Method>
+        <Method name="addTexCoord" returnType="boolean" visibility="private">
+          <Argument type="String" name="line"/>
+          <Argument type="boolean" name="isFirstTC"/>
+        </Method>
+        <Method name="checkTC3D" returnType="boolean" visibility="private">
+          <Argument type="String" name="line"/>
+        </Method>
+        <Method name="readTCTuple" returnType="Vector3D" visibility="private">
+          <Argument type="String" name="line"/>
+        </Method>
+        <Method name="addNormal" returnType="boolean" visibility="private">
+          <Argument type="String" name="line"/>
+        </Method>
+        <Method name="centerScale" returnType="void" visibility="private"/>
+        <Method name="reportOnModel" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="LoaderException" package="jot.io.data.format" visibility="public" xPosition="8264.0" yPosition="3159.0">
+      <Fields>
+        <Field name="log" type="Logger" visibility="package" isStatic="true" isFinal="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="message"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="String" name="message"/>
+          <Argument type="Throwable" name="cause"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="Throwable" name="cause"/>
+        </Constructor>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="ColladaScene" package="jot.io.data.format" visibility="public" xPosition="5649.0" yPosition="2015.0">
+      <Fields>
+        <Field name="log" type="Logger" visibility="package" isStatic="true" isFinal="true"/>
+        <Field name="geometries" type="ConcurrentHashMap&lt;String, GeometryDocument.Geometry&gt;" visibility="private" isFinal="true"/>
+        <Field name="effects" type="ConcurrentHashMap&lt;String, EffectDocument.Effect&gt;" visibility="private" isFinal="true"/>
+        <Field name="materials" type="ConcurrentHashMap&lt;String, MaterialDocument.Material&gt;" visibility="private" isFinal="true"/>
+        <Field name="visualSceneNodes" type="ConcurrentHashMap&lt;String, NodeDocument.Node&gt;" visibility="private" isFinal="true"/>
+        <Field name="images" type="ConcurrentHashMap&lt;String, ImageDocument.Image&gt;" visibility="private" isFinal="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="load" returnType="ColladaScene" visibility="public" isStatic="true">
+          <Argument type="String" name="fileName"/>
+        </Method>
+        <Method name="loadFormat" returnType="TransformGroup" visibility="public" isStatic="true">
+          <Argument type="String" name="filePath"/>
+          <Argument type="String" name="fileName"/>
+          <Argument type="float" name="scale"/>
+          <Argument type="AbstractBoundingVolume.BoundingVolumeType" name="boundingVolumeType"/>
+        </Method>
+        <Method name="copyArray" returnType="float[]" visibility="private" isStatic="true">
+          <Argument type="float[]" name="src_array"/>
+        </Method>
+        <Method name="indexVBO" returnType="float[]" visibility="package" isStatic="true">
+          <Argument type="int[]" name="indices"/>
+          <Argument type="float[]" name="values"/>
+          <Argument type="int" name="stride"/>
+        </Method>
+        <Method name="parseFile" returnType="void" visibility="public">
+          <Argument type="String" name="fileName"/>
+        </Method>
+        <Method name="getGeometryNames" returnType="Set&lt;String&gt;" visibility="public"/>
+        <Method name="getGeometry" returnType="GeometryDocument.Geometry" visibility="public">
+          <Argument type="String" name="key"/>
+        </Method>
+        <Method name="getEffectNames" returnType="Set&lt;String&gt;" visibility="public"/>
+        <Method name="getEffect" returnType="EffectDocument.Effect" visibility="public">
+          <Argument type="String" name="key"/>
+        </Method>
+        <Method name="getMaterialNames" returnType="Set&lt;String&gt;" visibility="public"/>
+        <Method name="getMaterial" returnType="MaterialDocument.Material" visibility="public">
+          <Argument type="String" name="key"/>
+        </Method>
+        <Method name="getNodeNames" returnType="Set&lt;String&gt;" visibility="public"/>
+        <Method name="getNode" returnType="NodeDocument.Node" visibility="public">
+          <Argument type="String" name="key"/>
+        </Method>
+        <Method name="getImage" returnType="ImageDocument.Image" visibility="public">
+          <Argument type="String" name="key"/>
+        </Method>
+        <Method name="getFloatArray" returnType="float[]" visibility="public">
+          <Argument type="String" name="floatArrayString"/>
+        </Method>
+        <Method name="getIntArray" returnType="int[]" visibility="public">
+          <Argument type="String" name="intArrayString"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="HOG2Map" package="jot.io.data.format" visibility="public" xPosition="4684.0" yPosition="106.0">
+      <Fields>
+        <Field name="log" type="Logger" visibility="package" isStatic="true" isFinal="true"/>
+        <Field name="Geometry" type="ArrayList&lt;ArrayList&lt;Character&gt;&gt;" visibility="private" isStatic="true"/>
+        <Field name="formatScale" type="float" visibility="private" isStatic="true"/>
+        <Field name="hashMapGraph" type="HashMap&lt;Vector3D, ArrayList&lt;Vector3D&gt;&gt;" visibility="private" isStatic="true"/>
+        <Field name="HOG2MapHeight" type="int" visibility="private" isStatic="true"/>
+        <Field name="HOG2MapWidth" type="int" visibility="private" isStatic="true"/>
+        <Field name="nonDiagonalMaxDistance" type="float" visibility="private" isStatic="true"/>
+        <Field name="diagonalMaxDistance" type="float" visibility="private" isStatic="true"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="load" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String" name="fileName"/>
+        </Method>
+        <Method name="loadFormat" returnType="TransformGroup" visibility="public" isStatic="true">
+          <Argument type="String" name="filePath"/>
+          <Argument type="String" name="fileName"/>
+          <Argument type="float" name="scale"/>
+          <Argument type="AbstractBoundingVolume.BoundingVolumeType" name="boundingVolumeType"/>
+        </Method>
+        <Method name="arrayGraph2HashMapGraph" returnType="HashMap&lt;Vector3D, ArrayList&lt;Vector3D&gt;&gt;" visibility="private" isStatic="true">
+          <Argument type="Vector3D[]" name="graph"/>
+        </Method>
+        <Method name="parseFile" returnType="void" visibility="public">
+          <Argument type="String" name="fileName"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="UnzipUtility" package="jot.io.data.format" visibility="public" xPosition="8755.0" yPosition="3168.0">
+      <Fields>
+        <Field name="log" type="Logger" visibility="package" isStatic="true" isFinal="true"/>
+        <Field name="BUFFER_SIZE" type="int" visibility="package" isStatic="true" isFinal="true"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="unzipUtility" returnType="String" visibility="public" isStatic="true">
+          <Argument type="String" name="filePath"/>
+          <Argument type="String" name="fileName"/>
+        </Method>
+        <Method name="unzip" returnType="void" visibility="public">
+          <Argument type="String" name="zipFilePath"/>
+          <Argument type="String" name="destDirectory"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="KeyBoard" package="jot.io.device.handlers" visibility="public" xPosition="9084.0" yPosition="1063.0">
+      <Fields>
+        <Field name="log" type="Logger" visibility="package" isStatic="true" isFinal="true"/>
+        <Field name="keys" type="boolean[]" visibility="private" isFinal="true"/>
+        <Field name="inputEvents" type="HashMap&lt;String, ArrayList&lt;Integer&gt;&gt;" visibility="private" isFinal="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="keyPressed" returnType="void" visibility="public">
+          <Argument type="KeyEvent" name="e"/>
+        </Method>
+        <Method name="keyReleased" returnType="void" visibility="public">
+          <Argument type="KeyEvent" name="e"/>
+        </Method>
+        <Method name="registerInputEvent" returnType="void" visibility="public">
+          <Argument type="String" name="inputEvent"/>
+          <Argument type="int" name="inputDeviceEvent"/>
+        </Method>
+        <Method name="isDetecting" returnType="boolean" visibility="public">
+          <Argument type="String" name="inputEvent"/>
+        </Method>
+        <Method name="isContinuouslyDetecting" returnType="boolean" visibility="public">
+          <Argument type="String" name="inputEvent"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Mouse" package="jot.io.device.handlers" visibility="public" xPosition="9671.0" yPosition="1063.0">
+      <Fields>
+        <Field name="log" type="Logger" visibility="package" isStatic="true" isFinal="true"/>
+        <Field name="movedX" type="boolean" visibility="private"/>
+        <Field name="movedY" type="boolean" visibility="private"/>
+        <Field name="mouseOnScreen" type="boolean" visibility="private"/>
+        <Field name="mouse" type="MouseEvent" visibility="private"/>
+        <Field name="oldMouse" type="MouseEvent" visibility="private"/>
+        <Field name="newMouse" type="MouseEvent" visibility="private"/>
+        <Field name="buttons" type="boolean[]" visibility="private" isFinal="true"/>
+        <Field name="inputEvents" type="HashMap&lt;String, ArrayList&lt;Integer&gt;&gt;" visibility="private" isFinal="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="mouseClicked" returnType="void" visibility="public">
+          <Argument type="MouseEvent" name="e"/>
+        </Method>
+        <Method name="mousePressed" returnType="void" visibility="public">
+          <Argument type="MouseEvent" name="e"/>
+        </Method>
+        <Method name="mouseReleased" returnType="void" visibility="public">
+          <Argument type="MouseEvent" name="e"/>
+        </Method>
+        <Method name="mouseEntered" returnType="void" visibility="public">
+          <Argument type="MouseEvent" name="e"/>
+        </Method>
+        <Method name="mouseExited" returnType="void" visibility="public">
+          <Argument type="MouseEvent" name="e"/>
+        </Method>
+        <Method name="mouseDragged" returnType="void" visibility="public">
+          <Argument type="MouseEvent" name="e"/>
+        </Method>
+        <Method name="mouseMoved" returnType="void" visibility="public">
+          <Argument type="MouseEvent" name="e"/>
+        </Method>
+        <Method name="mouseWheelMoved" returnType="void" visibility="public">
+          <Argument type="MouseEvent" name="e"/>
+        </Method>
+        <Method name="registerInputEvent" returnType="void" visibility="public">
+          <Argument type="String" name="inputEvent"/>
+          <Argument type="int" name="inputDeviceEvent"/>
+        </Method>
+        <Method name="isDetecting" returnType="boolean" visibility="public">
+          <Argument type="String" name="inputEvent"/>
+        </Method>
+        <Method name="isContinuouslyDetecting" returnType="boolean" visibility="public">
+          <Argument type="String" name="inputEvent"/>
+        </Method>
+        <Method name="getAcceleration" returnType="Vector3D" visibility="public"/>
+        <Method name="getPosition" returnType="Vector3D" visibility="public"/>
+        <Method name="getPositionShift" returnType="Vector3D" visibility="public"/>
+        <Method name="positionShift" returnType="Vector3D" visibility="private"/>
+      </Methods>
+    </Class>
+    <Class name="Sound3D" package="jot.io.sound.handlers" visibility="public" xPosition="8195.0" yPosition="138.0">
+      <Fields>
+        <Field name="log" type="Logger" visibility="package" isStatic="true" isFinal="true"/>
+        <Field name="buffersMap" type="HashMap&lt;String, int[]&gt;" visibility="private" isFinal="true"/>
+        <Field name="sourcesMap" type="HashMap&lt;String, int[]&gt;" visibility="private" isFinal="true"/>
+        <Field name="gainsMap" type="HashMap&lt;String, Float&gt;" visibility="private" isFinal="true"/>
+        <Field name="pitchesMap" type="HashMap&lt;String, Float&gt;" visibility="private" isFinal="true"/>
+        <Field name="xLis" type="float" visibility="private"/>
+        <Field name="oriLis" type="float[]" visibility="private"/>
+        <Field name="angleLis" type="int" visibility="private"/>
+        <Field name="al" type="AL" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="load" returnType="boolean" visibility="public">
+          <Argument type="String" name="filePath"/>
+          <Argument type="String" name="fileName"/>
+          <Argument type="boolean" name="toLoop"/>
+        </Method>
+        <Method name="load" returnType="boolean" visibility="public">
+          <Argument type="String" name="filePath"/>
+          <Argument type="String" name="fileName"/>
+          <Argument type="float" name="x"/>
+          <Argument type="float" name="y"/>
+          <Argument type="float" name="z"/>
+          <Argument type="boolean" name="toLoop"/>
+        </Method>
+        <Method name="pause" returnType="void" visibility="public">
+          <Argument type="String" name="soundId"/>
+        </Method>
+        <Method name="play" returnType="void" visibility="public">
+          <Argument type="String" name="soundId"/>
+        </Method>
+        <Method name="stop" returnType="void" visibility="public">
+          <Argument type="String" name="soundId"/>
+        </Method>
+        <Method name="getGain" returnType="float" visibility="public">
+          <Argument type="String" name="soundId"/>
+        </Method>
+        <Method name="setGain" returnType="void" visibility="public">
+          <Argument type="String" name="soundId"/>
+          <Argument type="float" name="gain"/>
+        </Method>
+        <Method name="getPitch" returnType="float" visibility="public">
+          <Argument type="String" name="soundId"/>
+        </Method>
+        <Method name="setPitch" returnType="void" visibility="public">
+          <Argument type="String" name="soundId"/>
+          <Argument type="float" name="pitch"/>
+        </Method>
+        <Method name="setPos" returnType="boolean" visibility="public">
+          <Argument type="String" name="fileName"/>
+          <Argument type="float" name="x"/>
+          <Argument type="float" name="y"/>
+          <Argument type="float" name="z"/>
+        </Method>
+        <Method name="getX" returnType="float" visibility="public"/>
+        <Method name="getZ" returnType="float" visibility="public"/>
+        <Method name="getAngle" returnType="int" visibility="public"/>
+        <Method name="setListenerPos" returnType="void" visibility="public">
+          <Argument type="float" name="xNew"/>
+          <Argument type="float" name="zNew"/>
+        </Method>
+        <Method name="setListenerOri" returnType="void" visibility="public">
+          <Argument type="int" name="angle"/>
+        </Method>
+        <Method name="moveListener" returnType="void" visibility="public">
+          <Argument type="float" name="xStep"/>
+          <Argument type="float" name="zStep"/>
+        </Method>
+        <Method name="turnListener" returnType="void" visibility="public">
+          <Argument type="int" name="degrees"/>
+        </Method>
+        <Method name="dispose" returnType="void" visibility="public"/>
+        <Method name="initBuffer" returnType="int[]" visibility="private">
+          <Argument type="String" name="fileName"/>
+          <Argument type="String" name="filePath"/>
+        </Method>
+        <Method name="initListener" returnType="// position and orientate the listener void" visibility="private"/>
+        <Method name="initOpenAL" returnType="void" visibility="private"/>
+        <Method name="initSource" returnType="int[]" visibility="private">
+          <Argument type="String" name="fileName"/>
+          <Argument type="int[]" name="buf"/>
+          <Argument type="boolean" name="toLoop"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="SimpleGame" package="jot.gui" visibility="public" isAbstract="true" xPosition="9306.0" yPosition="62.0">
+      <Fields>
+        <Field name="log" type="Logger" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="gl" type="GL2" visibility="protected" isStatic="true"/>
+        <Field name="mouse" type="Mouse" visibility="protected"/>
+        <Field name="keyBoard" type="KeyBoard" visibility="protected"/>
+        <Field name="sound" type="Sound3D" visibility="protected"/>
+        <Field name="GAME_CANVAS_WIDTH" type="int" visibility="protected"/>
+        <Field name="GAME_CANVAS_HEIGHT" type="int" visibility="protected"/>
+        <Field name="clearColor" type="float[]" visibility="protected"/>
+        <Field name="fovy" type="float" visibility="protected"/>
+        <Field name="aspect" type="float" visibility="protected"/>
+        <Field name="zNear" type="float" visibility="protected"/>
+        <Field name="zFar" type="float" visibility="protected"/>
+        <Field name="glw" type="GLWindow" visibility="protected"/>
+        <Field name="animator" type="Animator" visibility="protected"/>
+        <Field name="gameName" type="String" visibility="protected"/>
+        <Field name="previous" type="long" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="gameName"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="int" name="GAME_CANVAS_WIDTH"/>
+          <Argument type="int" name="GAME_CANVAS_HEIGHT"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="String" name="gameName"/>
+          <Argument type="int" name="GAME_CANVAS_WIDTH"/>
+          <Argument type="int" name="GAME_CANVAS_HEIGHT"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="init" returnType="void" visibility="public">
+          <Argument type="GLAutoDrawable" name="drawable"/>
+        </Method>
+        <Method name="dispose" returnType="void" visibility="public">
+          <Argument type="GLAutoDrawable" name="drawable"/>
+        </Method>
+        <Method name="display" returnType="void" visibility="public">
+          <Argument type="GLAutoDrawable" name="drawable"/>
+        </Method>
+        <Method name="reshape" returnType="void" visibility="public">
+          <Argument type="GLAutoDrawable" name="drawable"/>
+          <Argument type="int" name="x"/>
+          <Argument type="int" name="y"/>
+          <Argument type="int" name="width"/>
+          <Argument type="int" name="height"/>
+        </Method>
+        <Method name="windowResized" returnType="void" visibility="public">
+          <Argument type="WindowEvent" name="e"/>
+        </Method>
+        <Method name="windowMoved" returnType="void" visibility="public">
+          <Argument type="WindowEvent" name="e"/>
+        </Method>
+        <Method name="windowDestroyNotify" returnType="void" visibility="public">
+          <Argument type="WindowEvent" name="e"/>
+        </Method>
+        <Method name="windowDestroyed" returnType="void" visibility="public">
+          <Argument type="WindowEvent" name="e"/>
+        </Method>
+        <Method name="windowGainedFocus" returnType="void" visibility="public">
+          <Argument type="WindowEvent" name="e"/>
+        </Method>
+        <Method name="windowLostFocus" returnType="void" visibility="public">
+          <Argument type="WindowEvent" name="e"/>
+        </Method>
+        <Method name="windowRepaint" returnType="void" visibility="public">
+          <Argument type="WindowUpdateEvent" name="e"/>
+        </Method>
+        <Method name="gameInit" returnType="void" visibility="public" isAbstract="true"/>
+        <Method name="gameLoadContent" returnType="void" visibility="public" isAbstract="true"/>
+        <Method name="gameProcessInput" returnType="void" visibility="public" isAbstract="true"/>
+        <Method name="gameRender" returnType="void" visibility="public" isAbstract="true">
+          <Argument type="GL2" name="gl"/>
+        </Method>
+        <Method name="gameRun" returnType="void" visibility="public"/>
+        <Method name="gameShutdown" returnType="void" visibility="public"/>
+        <Method name="gameUpdate" returnType="void" visibility="public" isAbstract="true">
+          <Argument type="float" name="dt"/>
+        </Method>
+        <Method name="enableTextureTransforms" returnType="void" visibility="public"/>
+        <Method name="disableTextureTransforms" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="GJK" package="jot.math" visibility="public" xPosition="8541.0" yPosition="3816.0">
+      <Fields>
+        <Field name="log" type="Logger" visibility="package" isStatic="true" isFinal="true"/>
+        <Field name="Direction" type="Vector3D" visibility="private" isStatic="true"/>
+        <Field name="MaxIterations" type="int" visibility="private" isStatic="true" isFinal="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="private"/>
+      </Constructors>
+      <Methods>
+        <Method name="BodiesIntersect" returnType="boolean" visibility="public" isStatic="true">
+          <Argument type="ArrayList&lt;Vector3D&gt;" name="shape1"/>
+          <Argument type="ArrayList&lt;Vector3D&gt;" name="shape2"/>
+        </Method>
+        <Method name="UpdateSimplexAndDirection" returnType="boolean" visibility="private" isStatic="true">
+          <Argument type="ArrayList&lt;Vector3D&gt;" name="simplex"/>
+        </Method>
+        <Method name="MaxPointInMinkDiffAlongDir" returnType="Vector3D" visibility="private" isStatic="true">
+          <Argument type="ArrayList&lt;Vector3D&gt;" name="shape1"/>
+          <Argument type="ArrayList&lt;Vector3D&gt;" name="shape2"/>
+          <Argument type="Vector3D" name="direction"/>
+        </Method>
+        <Method name="MaxPointAlongDirection" returnType="Vector3D" visibility="private" isStatic="true">
+          <Argument type="ArrayList&lt;Vector3D&gt;" name="shape"/>
+          <Argument type="Vector3D" name="direction"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="SkinnedMesh" package="jot.math.geometry" visibility="public" xPosition="325.0" yPosition="420.0">
+      <Fields>
+        <Field name="log" type="Logger" visibility="package" isStatic="true" isFinal="true"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="AbstractShape" package="jot.math.geometry.shape" visibility="public" isAbstract="true" xPosition="67.0" yPosition="4122.0">
+      <Fields>
+        <Field name="material" type="Material" visibility="protected"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="intersect" returnType="IntersectionResult" visibility="public" isAbstract="true">
+          <Argument type="Ray" name="ray"/>
+        </Method>
+        <Method name="getNormal" returnType="Vector3D" visibility="public" isAbstract="true">
+          <Argument type="Vector3D" name="intersectionPoint"/>
+        </Method>
+        <Method name="getMaterial" returnType="Material" visibility="public"/>
+        <Method name="setMaterial" returnType="void" visibility="public">
+          <Argument type="Material" name="material"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Plane" package="jot.math.geometry.shape" visibility="public" xPosition="1255.0" yPosition="3597.0">
+      <Fields>
+        <Field name="log" type="Logger" visibility="package" isStatic="true" isFinal="true"/>
+        <Field name="normal" type="Vector3D" visibility="private" isFinal="true"/>
+        <Field name="offset" type="double" visibility="private" isFinal="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Vector3D" name="normal"/>
+          <Argument type="double" name="offset"/>
+          <Argument type="Material" name="material"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="intersect" returnType="IntersectionResult" visibility="public">
+          <Argument type="Ray" name="ray"/>
+        </Method>
+        <Method name="getNormal" returnType="Vector3D" visibility="public">
+          <Argument type="Vector3D" name="intersectionPoint"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Triangle" package="jot.math.geometry.shape" visibility="public" xPosition="1170.0" yPosition="1171.0">
+      <Fields>
+        <Field name="log" type="Logger" visibility="package" isStatic="true" isFinal="true"/>
+        <Field name="v0" type="Vector3D" visibility="public"/>
+        <Field name="normal" type="Vector3D" visibility="private" isFinal="true"/>
+        <Field name="eps" type="double" visibility="private" isFinal="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Vector3D" name="v0"/>
+          <Argument type="Vector3D" name="v1"/>
+          <Argument type="Vector3D" name="v2"/>
+          <Argument type="Material" name="material"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="intersect" returnType="IntersectionResult" visibility="public">
+          <Argument type="Ray" name="ray"/>
+        </Method>
+        <Method name="getNormal" returnType="Vector3D" visibility="public">
+          <Argument type="Vector3D" name="intersectionPoint"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Sphere" package="jot.math.geometry.shape" visibility="public" xPosition="3172.0" yPosition="3941.0">
+      <Fields>
+        <Field name="log" type="Logger" visibility="package" isStatic="true" isFinal="true"/>
+        <Field name="center" type="Vector3D" visibility="package"/>
+        <Field name="radius" type="double" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="double" name="radius"/>
+          <Argument type="Vector3D" name="center"/>
+          <Argument type="Material" name="material"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="intersect" returnType="IntersectionResult" visibility="public">
+          <Argument type="Ray" name="ray"/>
+        </Method>
+        <Method name="getNormal" returnType="Vector3D" visibility="public">
+          <Argument type="Vector3D" name="intersectionPoint"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="MorphingMesh" package="jot.math.geometry" visibility="public" xPosition="110.0" yPosition="420.0">
+      <Fields>
+        <Field name="log" type="Logger" visibility="package" isStatic="true" isFinal="true"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="OBB" package="jot.math.geometry.bounding" visibility="public" xPosition="3597.0" yPosition="2652.0">
+      <Fields>
+        <Field name="log" type="Logger" visibility="package" isStatic="true" isFinal="true"/>
+        <Field name="listOBB" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Vector3D" name="min"/>
+          <Argument type="Vector3D" name="max"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="AbstractBoundingVolume" name="boundingVolume"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getRayIntersection" returnType="Vector3D" visibility="public">
+          <Argument type="Ray" name="ray"/>
+        </Method>
+        <Method name="intersectsRay" returnType="boolean" visibility="public">
+          <Argument type="Ray" name="ray"/>
+        </Method>
+        <Method name="isCollide" returnType="boolean" visibility="public">
+          <Argument type="AbstractBoundingVolume" name="otherBoundingVolume"/>
+        </Method>
+        <Method name="getId" returnType="String" visibility="public"/>
+        <Method name="getNode" returnType="OBB" visibility="public"/>
+        <Method name="render" returnType="void" visibility="public">
+          <Argument type="GL2" name="gl"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="BoundingSphere" package="jot.math.geometry.bounding" visibility="public" xPosition="2157.0" yPosition="2084.0">
+      <Fields>
+        <Field name="log" type="Logger" visibility="package" isStatic="true" isFinal="true"/>
+        <Field name="glu" type="GLU" visibility="private" isFinal="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Vector3D" name="min"/>
+          <Argument type="Vector3D" name="max"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="AbstractBoundingVolume" name="boundingVolume"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getRayIntersection" returnType="Vector3D" visibility="public">
+          <Argument type="Ray" name="ray"/>
+        </Method>
+        <Method name="intersectsRay" returnType="boolean" visibility="public">
+          <Argument type="Ray" name="ray"/>
+        </Method>
+        <Method name="isCollide" returnType="boolean" visibility="public">
+          <Argument type="AbstractBoundingVolume" name="otherBoundingVolume"/>
+        </Method>
+        <Method name="getNode" returnType="BoundingSphere" visibility="public"/>
+        <Method name="render" returnType="void" visibility="public">
+          <Argument type="GL2" name="gl"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="AbstractBoundingVolume" package="jot.math.geometry.bounding" visibility="public" isAbstract="true" xPosition="3573.0" yPosition="1899.0">
+      <Fields>
+        <Field name="log" type="Logger" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="boundingVolumeType" type="BoundingVolumeType" visibility="public"/>
+        <Field name="min" type="Vector3D" visibility="public"/>
+        <Field name="material" type="Material" visibility="protected"/>
+        <Field name="listBV" type="int" visibility="protected"/>
+        <Field name="Id" type="String" visibility="protected"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="getMaterial" returnType="Material" visibility="public"/>
+        <Method name="setMaterial" returnType="void" visibility="public">
+          <Argument type="Material" name="material"/>
+        </Method>
+        <Method name="setRenderable" returnType="void" visibility="public">
+          <Argument type="boolean" name="renderBoundingVolume"/>
+        </Method>
+        <Method name="barycentre" returnType="Vector3D" visibility="public"/>
+        <Method name="halfDistance" returnType="float" visibility="public"/>
+        <Method name="getId" returnType="String" visibility="public"/>
+        <Method name="setId" returnType="void" visibility="public">
+          <Argument type="String" name="Id"/>
+        </Method>
+        <Method name="dispose" returnType="void" visibility="public">
+          <Argument type="GL2" name="gl"/>
+        </Method>
+        <Method name="isRenderable" returnType="boolean" visibility="public"/>
+        <Method name="isCollide" returnType="boolean" visibility="public" isAbstract="true">
+          <Argument type="AbstractBoundingVolume" name="otherBoundingVolume"/>
+        </Method>
+        <Method name="isCollideSPHERE" returnType="boolean" visibility="protected">
+          <Argument type="AbstractBoundingVolume" name="otherBoundingVolume"/>
+          <Argument type="AbstractBoundingVolume" name="boundingSphere"/>
+        </Method>
+        <Method name="getRayIntersection" returnType="Vector3D" visibility="public" isAbstract="true">
+          <Argument type="Ray" name="ray"/>
+        </Method>
+        <Method name="intersectsRay" returnType="boolean" visibility="public" isAbstract="true">
+          <Argument type="Ray" name="ray"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="AABB" package="jot.math.geometry.bounding" visibility="public" xPosition="4530.0" yPosition="2919.0">
+      <Fields>
+        <Field name="log" type="Logger" visibility="package" isStatic="true" isFinal="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Vector3D" name="min"/>
+          <Argument type="Vector3D" name="max"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="AbstractBoundingVolume" name="boundingVolume"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getRayIntersection" returnType="Vector3D" visibility="public">
+          <Argument type="Ray" name="ray"/>
+        </Method>
+        <Method name="intersectsRay" returnType="boolean" visibility="public">
+          <Argument type="Ray" name="ray"/>
+        </Method>
+        <Method name="isCollide" returnType="boolean" visibility="public">
+          <Argument type="AbstractBoundingVolume" name="otherBoundingVolume"/>
+        </Method>
+        <Method name="getId" returnType="String" visibility="public"/>
+        <Method name="setId" returnType="void" visibility="public">
+          <Argument type="String" name="Id"/>
+        </Method>
+        <Method name="getNode" returnType="AABB" visibility="public"/>
+        <Method name="render" returnType="void" visibility="public">
+          <Argument type="GL2" name="gl"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Mesh" package="jot.math.geometry" visibility="public" isAbstract="true" xPosition="1209.0" yPosition="93.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="getMaxVertex" returnType="Vector3D" visibility="public" isAbstract="true"/>
+        <Method name="getMinVertex" returnType="Vector3D" visibility="public" isAbstract="true"/>
+        <Method name="getTexCoords2String" returnType="String" visibility="public" isAbstract="true"/>
+        <Method name="getTrianglesCount" returnType="int" visibility="public" isAbstract="true"/>
+        <Method name="setUseDrawElements" returnType="void" visibility="public" isAbstract="true">
+          <Argument type="boolean" name="useDrawElements"/>
+        </Method>
+        <Method name="setTextures" returnType="void" visibility="public" isAbstract="true">
+          <Argument type="ArrayList&lt;Texture&gt;" name="textures"/>
+        </Method>
+        <Method name="getVertices" returnType="FloatBuffer" visibility="public" isAbstract="true"/>
+        <Method name="setVertices" returnType="void" visibility="public" isAbstract="true">
+          <Argument type="float[]" name="vertices"/>
+        </Method>
+        <Method name="getNormals" returnType="FloatBuffer" visibility="public" isAbstract="true"/>
+        <Method name="setNormals" returnType="void" visibility="public" isAbstract="true">
+          <Argument type="float[]" name="normals"/>
+        </Method>
+        <Method name="getTextureCoords" returnType="FloatBuffer" visibility="public" isAbstract="true"/>
+        <Method name="setTextureCoords" returnType="void" visibility="public" isAbstract="true">
+          <Argument type="float[]" name="textureCoords"/>
+        </Method>
+        <Method name="getVertexIndices" returnType="IntBuffer" visibility="public" isAbstract="true"/>
+        <Method name="setVertexIndices" returnType="void" visibility="public" isAbstract="true">
+          <Argument type="int[]" name="vertexIndices"/>
+        </Method>
+        <Method name="getNormalsIndices" returnType="IntBuffer" visibility="public" isAbstract="true"/>
+        <Method name="setNormalsIndices" returnType="void" visibility="public" isAbstract="true">
+          <Argument type="int[]" name="normalsIndices"/>
+        </Method>
+        <Method name="getTexCoordIndices" returnType="IntBuffer" visibility="public" isAbstract="true"/>
+        <Method name="setTexCoordIndices" returnType="void" visibility="public" isAbstract="true">
+          <Argument type="int[]" name="texCoordIndices"/>
+        </Method>
+        <Method name="getTextureCoordSize" returnType="int" visibility="public" isAbstract="true"/>
+        <Method name="setTextureCoordSize" returnType="void" visibility="public" isAbstract="true">
+          <Argument type="int" name="textureCoordSize"/>
+        </Method>
+        <Method name="getNormalsSize" returnType="int" visibility="public" isAbstract="true"/>
+        <Method name="setNormalsSize" returnType="void" visibility="public" isAbstract="true">
+          <Argument type="int" name="normalsSize"/>
+        </Method>
+        <Method name="getVerticesSize" returnType="int" visibility="public" isAbstract="true"/>
+        <Method name="setVerticesSize" returnType="void" visibility="public" isAbstract="true">
+          <Argument type="int" name="verticesSize"/>
+        </Method>
+        <Method name="getIndexStride" returnType="int" visibility="public" isAbstract="true"/>
+        <Method name="setIndexStride" returnType="void" visibility="public" isAbstract="true">
+          <Argument type="int" name="indexStride"/>
+        </Method>
+        <Method name="getPrimitiveType" returnType="int" visibility="public" isAbstract="true"/>
+        <Method name="setPrimitiveType" returnType="void" visibility="public" isAbstract="true">
+          <Argument type="PrimitiveType" name="primitiveType"/>
+        </Method>
+        <Method name="getMaterials" returnType="ArrayList&lt;Material&gt;" visibility="public" isAbstract="true"/>
+        <Method name="setMaterials" returnType="void" visibility="public" isAbstract="true">
+          <Argument type="ArrayList&lt;Material&gt;" name="materials"/>
+        </Method>
+        <Method name="getMaterial" returnType="Material" visibility="public" isAbstract="true">
+          <Argument type="int" name="index"/>
+        </Method>
+        <Method name="getTriangles" returnType="ArrayList&lt;Triangle&gt;" visibility="public" isAbstract="true"/>
+        <Method name="setTriangles" returnType="void" visibility="public" isAbstract="true"/>
+        <Method name="setMaterial" returnType="void" visibility="public" isAbstract="true">
+          <Argument type="Material" name="material"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Transformations" package="jot.math.geometry" visibility="public" xPosition="8403.0" yPosition="3436.0">
+      <Fields>
+        <Field name="log" type="Logger" visibility="package" isStatic="true" isFinal="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="private"/>
+      </Constructors>
+      <Methods>
+        <Method name="getShearXMatrix" returnType="float[]" visibility="public" isStatic="true">
+          <Argument type="float" name="y"/>
+          <Argument type="float" name="z"/>
+        </Method>
+        <Method name="getShearYMatrix" returnType="float[]" visibility="public" isStatic="true">
+          <Argument type="float" name="x"/>
+          <Argument type="float" name="z"/>
+        </Method>
+        <Method name="getShearZMatrix" returnType="float[]" visibility="public" isStatic="true">
+          <Argument type="float" name="x"/>
+          <Argument type="float" name="y"/>
+        </Method>
+        <Method name="rotateX" returnType="Vector3D" visibility="public" isStatic="true">
+          <Argument type="double" name="rotation"/>
+          <Argument type="Vector3D" name="translation"/>
+          <Argument type="Vector3D" name="v"/>
+        </Method>
+        <Method name="rotateY" returnType="Vector3D" visibility="public" isStatic="true">
+          <Argument type="double" name="rotation"/>
+          <Argument type="Vector3D" name="translation"/>
+          <Argument type="Vector3D" name="v"/>
+        </Method>
+        <Method name="rotateZ" returnType="Vector3D" visibility="public" isStatic="true">
+          <Argument type="double" name="rotation"/>
+          <Argument type="Vector3D" name="translation"/>
+          <Argument type="Vector3D" name="v"/>
+        </Method>
+        <Method name="rotateXYZ" returnType="Vector3D" visibility="private" isStatic="true">
+          <Argument type="Vector3D" name="translation"/>
+          <Argument type="Vector3D" name="v"/>
+          <Argument type="RealMatrix" name="m3"/>
+        </Method>
+        <Method name="scale" returnType="Vector3D" visibility="public" isStatic="true">
+          <Argument type="Vector3D" name="v"/>
+          <Argument type="Vector3D" name="offset"/>
+        </Method>
+        <Method name="translate" returnType="Vector3D" visibility="public" isStatic="true">
+          <Argument type="Vector3D" name="v"/>
+          <Argument type="Vector3D" name="offset"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="TransformGroup" package="jot.math.geometry" visibility="public" xPosition="3870.0" yPosition="93.0">
+      <Fields>
+        <Field name="log" type="Logger" visibility="package" isStatic="true" isFinal="true"/>
+        <Field name="glu" type="GLU" visibility="protected"/>
+        <Field name="Id" type="String" visibility="protected"/>
+        <Field name="pastTranslation" type="Vector3D" visibility="protected"/>
+        <Field name="translation" type="Vector3D" visibility="protected"/>
+        <Field name="rotation" type="Vector3D" visibility="protected"/>
+        <Field name="scaling" type="Vector3D" visibility="protected"/>
+        <Field name="boundingVolumes" type="CopyOnWriteArrayList&lt;AbstractBoundingVolume&gt;" visibility="protected" isFinal="true"/>
+        <Field name="children" type="ConcurrentLinkedQueue&lt;Node&gt;" visibility="protected" isFinal="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="Id"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="String" name="Id"/>
+          <Argument type="TransformGroup" name="tg"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="clone" returnType="TransformGroup" visibility="public"/>
+        <Method name="getId" returnType="String" visibility="public"/>
+        <Method name="setId" returnType="void" visibility="public">
+          <Argument type="String" name="Id"/>
+        </Method>
+        <Method name="getNode" returnType="Node" visibility="public"/>
+        <Method name="render" returnType="void" visibility="public">
+          <Argument type="GL2" name="gl"/>
+        </Method>
+        <Method name="dispose" returnType="void" visibility="public">
+          <Argument type="GL2" name="gl"/>
+        </Method>
+        <Method name="getMeshes" returnType="ArrayList&lt;Mesh&gt;" visibility="public"/>
+        <Method name="getBoundingVolume" returnType="AbstractBoundingVolume" visibility="public">
+          <Argument type="int" name="Id"/>
+        </Method>
+        <Method name="getBoundingVolumeCopy" returnType="AbstractBoundingVolume" visibility="public">
+          <Argument type="int" name="Id"/>
+        </Method>
+        <Method name="setBoundingVolume" returnType="void" visibility="public">
+          <Argument type="int" name="Id"/>
+          <Argument type="AbstractBoundingVolume" name="boundingVolume"/>
+        </Method>
+        <Method name="getBoundingVolumes" returnType="CopyOnWriteArrayList&lt;AbstractBoundingVolume&gt;" visibility="public"/>
+        <Method name="getTranslation" returnType="Vector3D" visibility="public"/>
+        <Method name="setTranslation" returnType="void" visibility="public">
+          <Argument type="Vector3D" name="translation"/>
+        </Method>
+        <Method name="getPastTranslation" returnType="Vector3D" visibility="public"/>
+        <Method name="setPastTranslation" returnType="void" visibility="public">
+          <Argument type="Vector3D" name="translation"/>
+        </Method>
+        <Method name="getRotation" returnType="Vector3D" visibility="public"/>
+        <Method name="setRotation" returnType="void" visibility="public">
+          <Argument type="Vector3D" name="rotation"/>
+        </Method>
+        <Method name="getMin" returnType="Vector3D" visibility="protected">
+          <Argument type="Vector3D" name="v1"/>
+          <Argument type="Vector3D" name="v2"/>
+        </Method>
+        <Method name="getMax" returnType="Vector3D" visibility="protected">
+          <Argument type="Vector3D" name="v1"/>
+          <Argument type="Vector3D" name="v2"/>
+        </Method>
+        <Method name="setRotationX" returnType="void" visibility="public">
+          <Argument type="float" name="rotation"/>
+        </Method>
+        <Method name="setRotationY" returnType="void" visibility="public">
+          <Argument type="float" name="rotation"/>
+        </Method>
+        <Method name="setRotationZ" returnType="void" visibility="public">
+          <Argument type="float" name="rotation"/>
+        </Method>
+        <Method name="getScaling" returnType="Vector3D" visibility="public"/>
+        <Method name="setScaling" returnType="void" visibility="public">
+          <Argument type="Vector3D" name="scaling"/>
+        </Method>
+        <Method name="addChild" returnType="boolean" visibility="public">
+          <Argument type="Node" name="node"/>
+        </Method>
+        <Method name="removeChild" returnType="boolean" visibility="public">
+          <Argument type="Node" name="node"/>
+        </Method>
+        <Method name="isChild" returnType="boolean" visibility="public">
+          <Argument type="String" name="Id"/>
+        </Method>
+        <Method name="getChild" returnType="Node" visibility="public">
+          <Argument type="String" name="Id"/>
+        </Method>
+        <Method name="childIterator" returnType="Iterator&lt;Node&gt;" visibility="public"/>
+        <Method name="equals" returnType="boolean" visibility="public">
+          <Argument type="Object" name="o"/>
+        </Method>
+        <Method name="hashCode" returnType="int" visibility="public"/>
+        <Method name="updateTranslation" returnType="void" visibility="public">
+          <Argument type="Vector3D" name="update"/>
+        </Method>
+        <Method name="updateRotationX" returnType="void" visibility="public">
+          <Argument type="float" name="update"/>
+        </Method>
+        <Method name="updateRotationY" returnType="void" visibility="public">
+          <Argument type="float" name="update"/>
+        </Method>
+        <Method name="updateRotationZ" returnType="void" visibility="public">
+          <Argument type="float" name="update"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="PolygonMesh" package="jot.math.geometry" visibility="public" xPosition="110.0" yPosition="899.0">
+      <Fields>
+        <Field name="log" type="Logger" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="Id" type="String" visibility="protected"/>
+        <Field name="vertices" type="FloatBuffer" visibility="protected"/>
+        <Field name="normals" type="FloatBuffer" visibility="protected"/>
+        <Field name="textureCoords" type="FloatBuffer" visibility="protected"/>
+        <Field name="vertexIndices" type="IntBuffer" visibility="protected"/>
+        <Field name="normalsIndices" type="IntBuffer" visibility="protected"/>
+        <Field name="texCoordIndices" type="IntBuffer" visibility="protected"/>
+        <Field name="indexStride" type="int" visibility="protected"/>
+        <Field name="verticesSize" type="int" visibility="protected"/>
+        <Field name="normalsSize" type="int" visibility="protected"/>
+        <Field name="textureCoordSize" type="int" visibility="protected"/>
+        <Field name="materials" type="ArrayList&lt;Material&gt;" visibility="protected"/>
+        <Field name="min" type="Vector3D" visibility="protected"/>
+        <Field name="primitiveType" type="int" visibility="protected"/>
+        <Field name="triangles" type="ArrayList&lt;Triangle&gt;" visibility="protected"/>
+        <Field name="useDrawElements" type="boolean" visibility="private"/>
+        <Field name="listMesh" type="int" visibility="protected"/>
+        <Field name="genList" type="boolean" visibility="protected"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="Id"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getMaxVertex" returnType="Vector3D" visibility="public"/>
+        <Method name="getMinVertex" returnType="Vector3D" visibility="public"/>
+        <Method name="getTexCoords2String" returnType="String" visibility="public"/>
+        <Method name="getTriangles" returnType="ArrayList&lt;Triangle&gt;" visibility="public"/>
+        <Method name="setTriangles" returnType="void" visibility="public"/>
+        <Method name="getTrianglesCount" returnType="int" visibility="public"/>
+        <Method name="setUseDrawElements" returnType="void" visibility="public">
+          <Argument type="boolean" name="useDrawElements"/>
+        </Method>
+        <Method name="getVertices" returnType="FloatBuffer" visibility="public"/>
+        <Method name="setVertices" returnType="void" visibility="public">
+          <Argument type="float[]" name="vertices"/>
+        </Method>
+        <Method name="getNormals" returnType="FloatBuffer" visibility="public"/>
+        <Method name="setNormals" returnType="void" visibility="public">
+          <Argument type="float[]" name="normals"/>
+        </Method>
+        <Method name="getTextureCoords" returnType="FloatBuffer" visibility="public"/>
+        <Method name="setTextureCoords" returnType="void" visibility="public">
+          <Argument type="float[]" name="textureCoords"/>
+        </Method>
+        <Method name="getVertexIndices" returnType="IntBuffer" visibility="public"/>
+        <Method name="setVertexIndices" returnType="void" visibility="public">
+          <Argument type="int[]" name="vertexIndices"/>
+        </Method>
+        <Method name="getNormalsIndices" returnType="IntBuffer" visibility="public"/>
+        <Method name="setNormalsIndices" returnType="void" visibility="public">
+          <Argument type="int[]" name="normalsIndices"/>
+        </Method>
+        <Method name="getTexCoordIndices" returnType="IntBuffer" visibility="public"/>
+        <Method name="setTexCoordIndices" returnType="void" visibility="public">
+          <Argument type="int[]" name="texCoordIndices"/>
+        </Method>
+        <Method name="getTextureCoordSize" returnType="int" visibility="public"/>
+        <Method name="setTextureCoordSize" returnType="void" visibility="public">
+          <Argument type="int" name="textureCoordSize"/>
+        </Method>
+        <Method name="getNormalsSize" returnType="int" visibility="public"/>
+        <Method name="setNormalsSize" returnType="void" visibility="public">
+          <Argument type="int" name="normalsSize"/>
+        </Method>
+        <Method name="getVerticesSize" returnType="int" visibility="public"/>
+        <Method name="setVerticesSize" returnType="void" visibility="public">
+          <Argument type="int" name="verticesSize"/>
+        </Method>
+        <Method name="getIndexStride" returnType="int" visibility="public"/>
+        <Method name="setIndexStride" returnType="void" visibility="public">
+          <Argument type="int" name="indexStride"/>
+        </Method>
+        <Method name="getPrimitiveType" returnType="int" visibility="public"/>
+        <Method name="setPrimitiveType" returnType="void" visibility="public">
+          <Argument type="PrimitiveType" name="primitiveType"/>
+        </Method>
+        <Method name="getMaterials" returnType="ArrayList&lt;Material&gt;" visibility="public"/>
+        <Method name="setMaterials" returnType="void" visibility="public">
+          <Argument type="ArrayList&lt;Material&gt;" name="materials"/>
+        </Method>
+        <Method name="getMaterial" returnType="Material" visibility="public">
+          <Argument type="int" name="index"/>
+        </Method>
+        <Method name="setMaterial" returnType="void" visibility="public">
+          <Argument type="Material" name="material"/>
+        </Method>
+        <Method name="setTextures" returnType="void" visibility="public">
+          <Argument type="ArrayList&lt;Texture&gt;" name="textures"/>
+        </Method>
+        <Method name="getId" returnType="String" visibility="public"/>
+        <Method name="setId" returnType="void" visibility="public">
+          <Argument type="String" name="Id"/>
+        </Method>
+        <Method name="getNode" returnType="PolygonMesh" visibility="public"/>
+        <Method name="render" returnType="void" visibility="public">
+          <Argument type="GL2" name="gl"/>
+        </Method>
+        <Method name="dispose" returnType="void" visibility="public">
+          <Argument type="GL2" name="gl"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Interpolation" package="jot.math" visibility="public" xPosition="9038.0" yPosition="3484.0">
+      <Fields>
+        <Field name="log" type="Logger" visibility="package" isStatic="true" isFinal="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="private"/>
+      </Constructors>
+      <Methods>
+        <Method name="lerp" returnType="float" visibility="public" isStatic="true">
+          <Argument type="float" name="a"/>
+          <Argument type="float" name="b"/>
+          <Argument type="float" name="x"/>
+        </Method>
+        <Method name="lerp" returnType="double" visibility="public" isStatic="true">
+          <Argument type="double" name="a"/>
+          <Argument type="double" name="b"/>
+          <Argument type="double" name="x"/>
+        </Method>
+        <Method name="lerp" returnType="Vector3D" visibility="public" isStatic="true">
+          <Argument type="Vector3D" name="a"/>
+          <Argument type="Vector3D" name="b"/>
+          <Argument type="double" name="x"/>
+        </Method>
+        <Method name="cerp" returnType="float" visibility="public" isStatic="true">
+          <Argument type="float" name="a"/>
+          <Argument type="float" name="b"/>
+          <Argument type="float" name="c"/>
+          <Argument type="float" name="d"/>
+          <Argument type="float" name="x"/>
+        </Method>
+        <Method name="cerp" returnType="double" visibility="public" isStatic="true">
+          <Argument type="double" name="a"/>
+          <Argument type="double" name="b"/>
+          <Argument type="double" name="c"/>
+          <Argument type="double" name="d"/>
+          <Argument type="double" name="x"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Distance" package="jot.math" visibility="public" isAbstract="true" xPosition="9262.0" yPosition="3159.0">
+      <Fields>
+        <Field name="distanceType" type="DistanceType" visibility="private" isStatic="true"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="getDistance" returnType="double" visibility="public" isStatic="true">
+          <Argument type="Vector2D" name="v1"/>
+          <Argument type="Vector2D" name="v2"/>
+        </Method>
+        <Method name="getDistance" returnType="double" visibility="public" isStatic="true">
+          <Argument type="Vector3D" name="v1"/>
+          <Argument type="Vector3D" name="v2"/>
+        </Method>
+        <Method name="setDistanceType" returnType="void" visibility="public">
+          <Argument type="DistanceType" name="distType"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Interface name="GenericFormat" package="jot.io.data.format" visibility="public" xPosition="7162.0" yPosition="205.0">
+      <Methods>
+        <Method name="loadTexture" returnType="Texture" visibility="package" isStatic="true">
+          <Argument type="String" name="path"/>
+        </Method>
+        <Method name="loadTextureData" returnType="TextureData" visibility="package" isStatic="true">
+          <Argument type="String" name="path"/>
+        </Method>
+        <Method name="loadTextures" returnType="ArrayList&lt;Texture&gt;" visibility="package" isStatic="true">
+          <Argument type="String" name="path"/>
+        </Method>
+        <Method name="parseFile" returnType="void" visibility="package">
+          <Argument type="String" name="fileName"/>
+        </Method>
+      </Methods>
+    </Interface>
+    <Interface name="Input" package="jot.io.device" visibility="public" xPosition="9084.0" yPosition="1449.0">
+      <Methods>
+        <Method name="registerInputEvent" returnType="void" visibility="package">
+          <Argument type="String" name="inputEvent"/>
+          <Argument type="int" name="inputDeviceEvent"/>
+        </Method>
+        <Method name="isDetecting" returnType="boolean" visibility="package">
+          <Argument type="String" name="inputEvent"/>
+        </Method>
+        <Method name="isContinuouslyDetecting" returnType="boolean" visibility="package">
+          <Argument type="String" name="inputEvent"/>
+        </Method>
+      </Methods>
+    </Interface>
+    <Interface name="TrackableInput" package="jot.io.device" visibility="public" xPosition="9486.0" yPosition="1804.0">
+      <Methods>
+        <Method name="getAcceleration" returnType="Vector3D" visibility="package"/>
+        <Method name="getPosition" returnType="Vector3D" visibility="package"/>
+        <Method name="getPositionShift" returnType="Vector3D" visibility="package"/>
+      </Methods>
+    </Interface>
+    <Interface name="Sound" package="jot.io.sound" visibility="public" xPosition="8264.0" yPosition="1407.0">
+      <Methods>
+        <Method name="load" returnType="boolean" visibility="package">
+          <Argument type="String" name="filePath"/>
+          <Argument type="String" name="fileName"/>
+          <Argument type="boolean" name="toLoop"/>
+        </Method>
+        <Method name="pause" returnType="void" visibility="package">
+          <Argument type="String" name="soundId"/>
+        </Method>
+        <Method name="play" returnType="void" visibility="package">
+          <Argument type="String" name="soundId"/>
+        </Method>
+        <Method name="stop" returnType="void" visibility="package">
+          <Argument type="String" name="soundId"/>
+        </Method>
+        <Method name="getGain" returnType="float" visibility="package">
+          <Argument type="String" name="soundId"/>
+        </Method>
+        <Method name="setGain" returnType="void" visibility="package">
+          <Argument type="String" name="soundId"/>
+          <Argument type="float" name="gain"/>
+        </Method>
+        <Method name="getPitch" returnType="float" visibility="package">
+          <Argument type="String" name="soundId"/>
+        </Method>
+        <Method name="setPitch" returnType="void" visibility="package">
+          <Argument type="String" name="soundId"/>
+          <Argument type="float" name="pitch"/>
+        </Method>
+        <Method name="dispose" returnType="void" visibility="package"/>
+      </Methods>
+    </Interface>
+    <Interface name="Transformable" package="jot.math.geometry" visibility="public" xPosition="2373.0" yPosition="362.0">
+      <Methods>
+        <Method name="getBoundingVolume" returnType="AbstractBoundingVolume" visibility="package">
+          <Argument type="int" name="Id"/>
+        </Method>
+        <Method name="getBoundingVolumeCopy" returnType="AbstractBoundingVolume" visibility="package">
+          <Argument type="int" name="Id"/>
+        </Method>
+        <Method name="setBoundingVolume" returnType="void" visibility="package">
+          <Argument type="int" name="Id"/>
+          <Argument type="AbstractBoundingVolume" name="boundingVolume"/>
+        </Method>
+        <Method name="getBoundingVolumes" returnType="CopyOnWriteArrayList&lt;AbstractBoundingVolume&gt;" visibility="package"/>
+        <Method name="getMeshes" returnType="ArrayList&lt;Mesh&gt;" visibility="package"/>
+        <Method name="getTranslation" returnType="Vector3D" visibility="package"/>
+        <Method name="setTranslation" returnType="void" visibility="package">
+          <Argument type="Vector3D" name="translation"/>
+        </Method>
+        <Method name="getPastTranslation" returnType="Vector3D" visibility="package"/>
+        <Method name="setPastTranslation" returnType="void" visibility="package">
+          <Argument type="Vector3D" name="translation"/>
+        </Method>
+        <Method name="getRotation" returnType="Vector3D" visibility="package"/>
+        <Method name="setRotation" returnType="void" visibility="package">
+          <Argument type="Vector3D" name="rotation"/>
+        </Method>
+        <Method name="setRotationX" returnType="void" visibility="package">
+          <Argument type="float" name="rotation"/>
+        </Method>
+        <Method name="setRotationY" returnType="void" visibility="package">
+          <Argument type="float" name="rotation"/>
+        </Method>
+        <Method name="setRotationZ" returnType="void" visibility="package">
+          <Argument type="float" name="rotation"/>
+        </Method>
+        <Method name="getScaling" returnType="Vector3D" visibility="package"/>
+        <Method name="setScaling" returnType="void" visibility="package">
+          <Argument type="Vector3D" name="scaling"/>
+        </Method>
+        <Method name="addChild" returnType="boolean" visibility="package">
+          <Argument type="Node" name="node"/>
+        </Method>
+        <Method name="removeChild" returnType="boolean" visibility="package">
+          <Argument type="Node" name="node"/>
+        </Method>
+        <Method name="isChild" returnType="boolean" visibility="package">
+          <Argument type="String" name="Id"/>
+        </Method>
+        <Method name="getChild" returnType="Node" visibility="package">
+          <Argument type="String" name="Id"/>
+        </Method>
+        <Method name="childIterator" returnType="Iterator&lt;Node&gt;" visibility="package"/>
+        <Method name="updateTranslation" returnType="void" visibility="package">
+          <Argument type="Vector3D" name="update"/>
+        </Method>
+        <Method name="updateRotationX" returnType="void" visibility="package">
+          <Argument type="float" name="update"/>
+        </Method>
+        <Method name="updateRotationY" returnType="void" visibility="package">
+          <Argument type="float" name="update"/>
+        </Method>
+        <Method name="updateRotationZ" returnType="void" visibility="package">
+          <Argument type="float" name="update"/>
+        </Method>
+      </Methods>
+    </Interface>
+    <Interface name="Node" package="jot.math.geometry" visibility="public" xPosition="2428.0" yPosition="1082.0">
+      <Methods>
+        <Method name="getId" returnType="String" visibility="package"/>
+        <Method name="setId" returnType="void" visibility="package">
+          <Argument type="String" name="Id"/>
+        </Method>
+        <Method name="getNode" returnType="Node" visibility="package"/>
+        <Method name="render" returnType="void" visibility="package">
+          <Argument type="GL2" name="gl"/>
+        </Method>
+        <Method name="dispose" returnType="void" visibility="package">
+          <Argument type="GL2" name="gl"/>
+        </Method>
+      </Methods>
+    </Interface>
+    <Interface name="Renderable" package="jot.math.geometry" visibility="public" xPosition="4795.0" yPosition="2367.0">
+      <Methods>
+        <Method name="isRenderable" returnType="boolean" visibility="package"/>
+        <Method name="setRenderable" returnType="void" visibility="package">
+          <Argument type="boolean" name="renderable"/>
+        </Method>
+      </Methods>
+    </Interface>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <IsRelation name="is" source="jot.io.device.TrackableInput" target="jot.io.device.Input"/>
+    <UseRelation source="jot.io.data.format.WavefrontOBJ" target="jot.math.geometry.TransformGroup" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="jot.io.data.format.WavefrontOBJ" target="jot.io.data.format.WavefrontOBJ" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="jot.math.geometry.bounding.OBB" target="jot.math.geometry.bounding.OBB" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="jot.math.geometry.Mesh" target="jot.math.geometry.shape.Triangle" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="jot.io.data.format.HOG2Map" target="jot.math.geometry.TransformGroup" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="jot.math.geometry.bounding.BoundingSphere" target="jot.math.geometry.bounding.AbstractBoundingVolume"/>
+    <UseRelation source="jot.math.geometry.bounding.BoundingSphere" target="jot.physics.Ray" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="jot.math.geometry.Transformable" target="jot.math.geometry.Mesh" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="mouse" source="jot.gui.SimpleGame" target="jot.io.device.handlers.Mouse" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="keyBoard" source="jot.gui.SimpleGame" target="jot.io.device.handlers.KeyBoard" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="jot.math.geometry.TransformGroup" target="jot.math.geometry.bounding.AbstractBoundingVolume" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="jot.math.geometry.shape.Sphere" target="jot.math.geometry.shape.AbstractShape"/>
+    <IsRelation name="is" source="jot.math.geometry.shape.Plane" target="jot.math.geometry.shape.AbstractShape"/>
+    <HasRelation name="object" source="jot.physics.IntersectionResult" target="jot.math.geometry.shape.AbstractShape" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="jot.math.geometry.Mesh" target="jot.physics.Material" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="jot.math.geometry.bounding.AABB" target="jot.math.geometry.bounding.AbstractBoundingVolume" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="jot.math.geometry.shape.AbstractShape" target="jot.physics.Ray" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="jot.io.data.format.WavefrontOBJ" target="jot.io.data.format.GenericFormat"/>
+    <UseRelation source="jot.physics.AbstractIntersectionResult" target="jot.physics.AbstractIntersectionResult" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="jot.math.geometry.bounding.OBB" target="jot.math.geometry.bounding.AbstractBoundingVolume" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="jot.util.CoreGameObject" target="jot.util.CoreGameObject" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="jot.physics.IntersectionResult" target="jot.physics.AbstractIntersectionResult" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="jot.math.geometry.Mesh" target="jot.math.geometry.Node"/>
+    <IsRelation name="is" source="jot.physics.IntersectionResult" target="jot.physics.AbstractIntersectionResult"/>
+    <UseRelation source="jot.math.geometry.bounding.OBB" target="jot.physics.Ray" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="jot.io.device.handlers.Mouse" target="jot.io.device.handlers.Mouse" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="jot.math.geometry.Transformable" target="jot.math.geometry.Node" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="jot.math.geometry.PolygonMesh" target="jot.math.geometry.Mesh"/>
+    <IsRelation name="is" source="jot.math.geometry.shape.Triangle" target="jot.math.geometry.shape.AbstractShape"/>
+    <UseRelation source="jot.util.GameObject" target="jot.util.GameObject" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="jot.physics.Ray" target="jot.physics.AbstractRay"/>
+    <UseRelation source="jot.math.geometry.PolygonMesh" target="jot.physics.Material" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="jot.math.geometry.bounding.AbstractBoundingVolume" target="jot.physics.Ray" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="jot.math.geometry.TransformGroup" target="jot.math.geometry.Transformable"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="jot.io.data.format.HOG2Map" target="jot.io.data.format.GenericFormat"/>
+    <UseRelation source="jot.math.geometry.TransformGroup" target="jot.math.geometry.Node" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="jot.physics.Material" target="jot.physics.AbstractMaterial"/>
+    <HasRelation name="material" source="jot.math.geometry.bounding.AbstractBoundingVolume" target="jot.physics.Material" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="MISS" source="jot.physics.IntersectionResult" target="jot.physics.IntersectionResult" type="Aggregation" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <HasRelation name="ray" source="jot.physics.IntersectionResult" target="jot.physics.AbstractRay" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="jot.math.geometry.Transformable" target="jot.math.geometry.bounding.AbstractBoundingVolume" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="materials" source="jot.math.geometry.PolygonMesh" target="jot.physics.Material" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;Material&gt;"/>
+    <IsRelation name="is" source="jot.util.CoreGameObject" target="jot.math.geometry.TransformGroup"/>
+    <IsRelation name="is" source="jot.math.geometry.SkinnedMesh" target="jot.math.geometry.PolygonMesh"/>
+    <UseRelation source="jot.math.geometry.shape.AbstractShape" target="jot.physics.Material" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="jot.math.geometry.TransformGroup" target="jot.math.geometry.Mesh" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="jot.io.sound.handlers.Sound3D" target="jot.io.sound.Sound"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="jot.io.data.format.ColladaScene" target="jot.io.data.format.GenericFormat"/>
+    <HasRelation name="sound" source="jot.gui.SimpleGame" target="jot.io.sound.handlers.Sound3D" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="jot.io.data.format.ColladaScene" target="jot.math.geometry.TransformGroup" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="jot.math.geometry.PolygonMesh" target="jot.math.geometry.shape.Triangle" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="jot.math.geometry.bounding.AABB" target="jot.math.geometry.bounding.AbstractBoundingVolume"/>
+    <UseRelation source="jot.math.geometry.bounding.AbstractBoundingVolume" target="jot.physics.Material" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="jot.math.geometry.bounding.AbstractBoundingVolume" target="jot.math.geometry.Node"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="jot.io.device.handlers.KeyBoard" target="jot.io.device.Input"/>
+    <UseRelation source="jot.math.geometry.bounding.AbstractBoundingVolume" target="jot.math.geometry.bounding.AbstractBoundingVolume" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="jot.math.geometry.bounding.AABB" target="jot.physics.Ray" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="jot.math.geometry.shape.Triangle" target="jot.physics.Ray" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="jot.physics.AbstractIntersectionResult" target="jot.math.geometry.shape.AbstractShape" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="children" source="jot.math.geometry.TransformGroup" target="jot.math.geometry.Node" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ConcurrentLinkedQueue&lt;Node&gt;"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="jot.math.geometry.bounding.AbstractBoundingVolume" target="jot.math.geometry.Renderable"/>
+    <UseRelation source="jot.io.data.format.ColladaScene" target="jot.physics.Material" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="jot.math.geometry.bounding.AABB" target="jot.math.geometry.bounding.AABB" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="jot.util.GameObject" target="jot.util.CoreGameObject"/>
+    <UseRelation source="jot.io.data.format.ColladaScene" target="jot.io.data.format.ColladaScene" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="jot.physics.IntersectionResult" target="jot.math.geometry.shape.AbstractShape" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="jot.math.Distance" target="jot.math.Distance" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="jot.math.geometry.bounding.OBB" target="jot.math.geometry.bounding.AbstractBoundingVolume"/>
+    <UseRelation source="jot.math.geometry.bounding.BoundingSphere" target="jot.math.geometry.bounding.AbstractBoundingVolume" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="jot.physics.AbstractMaterial" target="jot.math.geometry.Renderable"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="jot.io.device.handlers.Mouse" target="jot.io.device.TrackableInput"/>
+    <UseRelation source="jot.math.geometry.shape.Plane" target="jot.physics.Ray" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="jot.math.geometry.shape.Sphere" target="jot.physics.Ray" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="jot.math.geometry.TransformGroup" target="jot.math.geometry.Node"/>
+    <IsRelation name="is" source="jot.math.geometry.MorphingMesh" target="jot.math.geometry.PolygonMesh"/>
+    <UseRelation source="jot.math.geometry.bounding.BoundingSphere" target="jot.math.geometry.bounding.BoundingSphere" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation name="" source="jot.math.geometry.Node" target="jot.math.geometry.Node" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="boundingVolumes" source="jot.math.geometry.TransformGroup" target="jot.math.geometry.bounding.AbstractBoundingVolume" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="CopyOnWriteArrayList&lt;AbstractBoundingVolume&gt;"/>
+    <HasRelation name="triangles" source="jot.math.geometry.PolygonMesh" target="jot.math.geometry.shape.Triangle" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;Triangle&gt;"/>
+    <UseRelation source="jot.math.geometry.TransformGroup" target="jot.math.geometry.TransformGroup" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="jot.math.geometry.PolygonMesh" target="jot.math.geometry.PolygonMesh" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="jot.io.data.format.ColladaScene" target="jot.math.geometry.Node" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="material" source="jot.math.geometry.shape.AbstractShape" target="jot.physics.Material" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

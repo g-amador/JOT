@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+  
+  
+    <Author>
+        Klaus Treichler (c) 2008
+    </Author>
+    <Name>Unterfladnitz</Name>
+    <WWW>http://www.treichler.at</WWW>
+  
+    <Comment>Modell- und Zivilflugplatz (LOGW) Unterfladnitz bei Weiz in der Oststeiermark. http://www.logw.at</Comment>
+
+    <LightDir>
+        -20,-5,17
+    </LightDir>
+
+    <StartPosition>
+        -5,0,0
+    </StartPosition>
+
+    <HeightOfGround>
+        0.0
+    </HeightOfGround>
+
+</project>
