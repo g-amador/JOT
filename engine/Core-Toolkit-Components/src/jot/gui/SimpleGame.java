@@ -83,37 +83,13 @@ public abstract class SimpleGame implements GLEventListener, WindowListener {
     }
 
     //Input handlers
-    /**
-     * Mouse handler.
-     */
     protected Mouse mouse = new Mouse();
-
-    /**
-     * KeyBoard handler.
-     */
     protected KeyBoard keyBoard = new KeyBoard();
-
-    /**
-     * Audio handler for .wav files
-     */
     protected Sound3D sound;
 
     //Other globals
-    /**
-     * Canvas width.
-     */
     protected int GAME_CANVAS_WIDTH = 800;
-
-    /**
-     * Canvas height
-     */
     protected int GAME_CANVAS_HEIGHT = 600;
-
-    /**
-     * Background color
-     */
-    protected float[] clearColor = {1.0f, 1.0f, 1.0f, 1.0f};       //White.
-
     //protected GLUT glut;
     protected float fovy = 60;
     protected float aspect = this.GAME_CANVAS_WIDTH / this.GAME_CANVAS_HEIGHT;

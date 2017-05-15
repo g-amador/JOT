@@ -107,7 +107,7 @@ public class GameMain extends SimpleGame {
     boolean isMoving, isRotating;
 
     //an hash map to store all distinct loaded models, i.e., individual models only need to be loaded once and may be reused by cloning them
-    private final ConcurrentHashMap<String, TransformGroup> models = new ConcurrentHashMap<>();
+    private ConcurrentHashMap<String, TransformGroup> models;
 
     //toggle on/off render loaded models or render user defined geometries
     private boolean loadedModels = false;
@@ -117,9 +117,7 @@ public class GameMain extends SimpleGame {
 
     //GL stuff
     private GLU glu;
-    private final float[] clearColorWhite = {1.0f, 1.0f, 1.0f, 1.0f};       //White.
-    //private final float[] clearColorPurple = {0.3f, 0.3f, 0.7f, 0.0f};      //Purple.
-    //private final float[] clearColorPitchblack = {0.3f, 0.3f, 0.3f, 0.3f};  //Pitch black.    
+    private float[] clearColor;
 
     /**
      * {@inheritDoc}
@@ -167,40 +165,40 @@ public class GameMain extends SimpleGame {
         gl.glLightfv(GL_LIGHT0, GL_POSITION, new float[]{0, 15, 0, 0}, 0);
         gl.glLightfv(GL_LIGHT0, GL_AMBIENT, new float[]{1, 1, 1, 0}, 0);
 
-        clearColor = clearColorWhite;
-        //clearColor = clearColorPurple;
-        //clearColor = clearColorPitchblack;        
+        this.clearColor = new float[]{1.0f, 1.0f, 1.0f, 1.0f};   //White.
+        //clearColor = new float[]{0.3f, 0.3f, 0.7f, 0.0f};   //Purple.
+        //clearColor = new float[]{0.3f, 0.3f, 0.3f, 0.3f};   //Pitch black.   
 
         //Register input keys
-        keyBoard.registerInputEvent("1", '1');
-        keyBoard.registerInputEvent("2", '2');
-        keyBoard.registerInputEvent("R", 'R');
-        keyBoard.registerInputEvent("R", 'r');
-        keyBoard.registerInputEvent("T", 'T');
-        keyBoard.registerInputEvent("T", 't');
-        keyBoard.registerInputEvent("W", 'W');
-        keyBoard.registerInputEvent("W", 'w');
-        keyBoard.registerInputEvent("A", 'A');
-        keyBoard.registerInputEvent("A", 'a');
-        keyBoard.registerInputEvent("S", 'S');
-        keyBoard.registerInputEvent("S", 's');
-        keyBoard.registerInputEvent("D", 'D');
-        keyBoard.registerInputEvent("D", 'd');
-        keyBoard.registerInputEvent("V", 'V');
-        keyBoard.registerInputEvent("V", 'v');
-        keyBoard.registerInputEvent("B", 'B');
-        keyBoard.registerInputEvent("B", 'b');
-        keyBoard.registerInputEvent("N", 'N');
-        keyBoard.registerInputEvent("N", 'n');
-        keyBoard.registerInputEvent(",", ',');
-        keyBoard.registerInputEvent(".", '.');
-        keyBoard.registerInputEvent(";", ';');
-        keyBoard.registerInputEvent(":", ':');
-        keyBoard.registerInputEvent("Quit", VK_ESCAPE);
+        this.keyBoard.registerInputEvent("1", '1');
+        this.keyBoard.registerInputEvent("2", '2');
+        this.keyBoard.registerInputEvent("R", 'R');
+        this.keyBoard.registerInputEvent("R", 'r');
+        this.keyBoard.registerInputEvent("T", 'T');
+        this.keyBoard.registerInputEvent("T", 't');
+        this.keyBoard.registerInputEvent("W", 'W');
+        this.keyBoard.registerInputEvent("W", 'w');
+        this.keyBoard.registerInputEvent("A", 'A');
+        this.keyBoard.registerInputEvent("A", 'a');
+        this.keyBoard.registerInputEvent("S", 'S');
+        this.keyBoard.registerInputEvent("S", 's');
+        this.keyBoard.registerInputEvent("D", 'D');
+        this.keyBoard.registerInputEvent("D", 'd');
+        this.keyBoard.registerInputEvent("V", 'V');
+        this.keyBoard.registerInputEvent("V", 'v');
+        this.keyBoard.registerInputEvent("B", 'B');
+        this.keyBoard.registerInputEvent("B", 'b');
+        this.keyBoard.registerInputEvent("N", 'N');
+        this.keyBoard.registerInputEvent("N", 'n');
+        this.keyBoard.registerInputEvent(",", ',');
+        this.keyBoard.registerInputEvent(".", '.');
+        this.keyBoard.registerInputEvent(";", ';');
+        this.keyBoard.registerInputEvent(":", ':');
+        this.keyBoard.registerInputEvent("Quit", VK_ESCAPE);
 
         //Register mouse commands
-        mouse.registerInputEvent("Left Button", BUTTON1);
-        mouse.registerInputEvent("Right Button", BUTTON3);
+        this.mouse.registerInputEvent("Left Button", BUTTON1);
+        this.mouse.registerInputEvent("Right Button", BUTTON3);
 
         //TODO: (optional) more options here
         text.setTextLine("");
@@ -229,60 +227,61 @@ public class GameMain extends SimpleGame {
     @Override
     public void gameLoadContent() {
         //load models      
-        models.put("cow1", loadFormat("assets/models/dae/cow/", "cow.dae", 1, AABB));
-        //models.get("cow1").setRotationY(-180);
-        //models.get("cow1").setRotationZ(90);
-        //models.get("cow1").setRotationX(90);
-        models.get("cow1").setRotationZ(90.0f);
-        models.get("cow1").setRotationX(-90.0f);
+        this.models = new ConcurrentHashMap<>();
+        this.models.put("cow1", loadFormat("assets/models/dae/cow/", "cow.dae", 1, AABB));
+        //this.models.get("cow1").setRotationY(-180);
+        //this.models.get("cow1").setRotationZ(90);
+        //this.models.get("cow1").setRotationX(90);
+        this.models.get("cow1").setRotationZ(90.0f);
+        this.models.get("cow1").setRotationX(-90.0f);
 
-        models.put("cow2", loadFormat("assets/models/dae/cow/", "cow.dae", 1, OBB));
-        //models.get("cow2").setRotationY(-180);
-        //models.get("cow2").setRotationZ(90);
-        //models.get("cow2").setRotationX(90);
-        models.get("cow2").setRotationZ(90.0f);
-        models.get("cow2").setRotationX(-90.0f);
+        this.models.put("cow2", loadFormat("assets/models/dae/cow/", "cow.dae", 1, OBB));
+        //this.models.get("cow2").setRotationY(-180);
+        //this.models.get("cow2").setRotationZ(90);
+        //this.models.get("cow2").setRotationX(90);
+        this.models.get("cow2").setRotationZ(90.0f);
+        this.models.get("cow2").setRotationX(-90.0f);
 
-        models.put("cow3", loadFormat("assets/models/dae/cow/", "cow.dae", 1, SPHERE));
-        //models.get("cow3").setRotationY(-180);
-        //models.get("cow3").setRotationZ(90);
-        //models.get("cow3").setRotationX(90);
-        models.get("cow3").setRotationZ(90.0f);
-        models.get("cow3").setRotationX(-90.0f);
+        this.models.put("cow3", loadFormat("assets/models/dae/cow/", "cow.dae", 1, SPHERE));
+        //this.models.get("cow3").setRotationY(-180);
+        //this.models.get("cow3").setRotationZ(90);
+        //this.models.get("cow3").setRotationX(90);
+        this.models.get("cow3").setRotationZ(90.0f);
+        this.models.get("cow3").setRotationX(-90.0f);
 
-        models.put("duke", loadFormat("assets/models/dae/", "Duke_posed.dae", 1, OBB));
-        models.get("duke").setRotationY(180);
+        this.models.put("duke", loadFormat("assets/models/dae/", "Duke_posed.dae", 1, OBB));
+        this.models.get("duke").setRotationY(180);
 
         try {
-            TransformGroup player1Rotate = models.get("duke").clone();
-            player1 = new GameObject("player1", models.get("duke"));
-            player1.getBoundingVolume(0).setRenderable(true);
-            player1.addChild(player1Rotate);
-            player1.setAttribute("health", 100);
+            TransformGroup player1Rotate = this.models.get("duke").clone();
+            this.player1 = new GameObject("player1", this.models.get("duke"));
+            this.player1.getBoundingVolume(0).setRenderable(true);
+            this.player1.addChild(player1Rotate);
+            this.player1.setAttribute("health", 100);
             log.info("player1 loaded.");
 
-            TransformGroup player2Rotate = models.get("cow3").clone();
-            player2Rotate.updateTranslation(new Vector3D(10, 0, -2));   //Option 2
-            player2Rotate.getBoundingVolume(0).setRenderable(true);     //Option 2
-            TransformGroup player3Rotate = models.get("cow1").clone();  //Option 2
-            player3Rotate.updateTranslation(new Vector3D(10, 0, 2));    //Option 2
-            player3Rotate.getBoundingVolume(0).setRenderable(true);     //Option 2
-            //player2 = new GameObject("cow3", models.get("cow3"));       //Option 1
-            player2 = new GameObject("cow3");                           //Option 2
-            //player2.getBoundingVolume(0).setRenderable(true);           //Option 1
-            player2.addChild(player2Rotate);
-            player2.addChild(player3Rotate);                            //Option 2
-            player2.setAttribute("health", 100);
-            //player2.updatePosition(new Vector3D(10, 0, -2));            //Option 1
-            //player2.updateRotationY(45);                                //Option 1
+            TransformGroup player2Rotate = this.models.get("cow3").clone();
+            player2Rotate.updateTranslation(new Vector3D(10, 0, -2));       //Option 2
+            player2Rotate.getBoundingVolume(0).setRenderable(true);         //Option 2
+            TransformGroup player3Rotate = this.models.get("cow1").clone(); //Option 2
+            player3Rotate.updateTranslation(new Vector3D(10, 0, 2));        //Option 2
+            player3Rotate.getBoundingVolume(0).setRenderable(true);         //Option 2
+            //this.player2 = new GameObject("cow3", this.models.get("cow3")); //Option 1
+            this.player2 = new GameObject("cow3");                          //Option 2
+            //this.player2.getBoundingVolume(0).setRenderable(true);          //Option 1
+            this.player2.addChild(player2Rotate);
+            this.player2.addChild(player3Rotate);                           //Option 2
+            this.player2.setAttribute("health", 100);
+            //this.player2.updatePosition(new Vector3D(10, 0, -2));           //Option 1
+            //this.player2.updateRotationY(45);                               //Option 1
             log.info("player2 loaded.");
         } catch (CloneNotSupportedException ex) {
             log.severe(ex.getMessage());
         }
 
         //load audio
-        sound.load("assets/sounds/Effects/", "cow.wav", false);
-        sound.load("assets/sounds/Music/", backgroundSound, true);
+        this.sound.load("assets/sounds/Effects/", "cow.wav", false);
+        this.sound.load("assets/sounds/Music/", this.backgroundSound, true);
 
         //show options text on terminal
         text.showText();
@@ -294,70 +293,70 @@ public class GameMain extends SimpleGame {
     @Override
     public void gameProcessInput() {
         //TODO: (optional) code input behaviour
-        if (keyBoard.isDetecting("1")) {
+        if (this.keyBoard.isDetecting("1")) {
             coreOptions.put("showTextures", !coreOptions.get("showTextures"));
         }
-        if (keyBoard.isDetecting("2")) {
+        if (this.keyBoard.isDetecting("2")) {
             coreOptions.put("showWireframe", !coreOptions.get("showWireframe"));
         }
 
-        if (keyBoard.isDetecting(",")) {
-            sound.setGain(backgroundSound, sound.getGain(backgroundSound) - 0.1f);
+        if (this.keyBoard.isDetecting(",")) {
+            this.sound.setGain(this.backgroundSound, this.sound.getGain(this.backgroundSound) - 0.1f);
         }
-        if (keyBoard.isDetecting(".")) {
-            sound.setGain(backgroundSound, sound.getGain(backgroundSound) + 0.1f);
+        if (this.keyBoard.isDetecting(".")) {
+            this.sound.setGain(this.backgroundSound, this.sound.getGain(this.backgroundSound) + 0.1f);
         }
-        if (keyBoard.isDetecting(";")) {
-            sound.setPitch(backgroundSound, sound.getPitch(backgroundSound) - 0.1f);
+        if (this.keyBoard.isDetecting(";")) {
+            this.sound.setPitch(this.backgroundSound, this.sound.getPitch(this.backgroundSound) - 0.1f);
         }
-        if (keyBoard.isDetecting(":")) {
-            sound.setPitch(backgroundSound, sound.getPitch(backgroundSound) + 0.1f);
+        if (this.keyBoard.isDetecting(":")) {
+            this.sound.setPitch(this.backgroundSound, this.sound.getPitch(this.backgroundSound) + 0.1f);
         }
-        if (keyBoard.isDetecting("V")) {
-            sound.play(backgroundSound);
+        if (this.keyBoard.isDetecting("V")) {
+            this.sound.play(this.backgroundSound);
             ////show options text on terminal
             //text.showText();
         }
-        if (keyBoard.isDetecting("B")) {
-            sound.pause(backgroundSound);
+        if (this.keyBoard.isDetecting("B")) {
+            this.sound.pause(this.backgroundSound);
             ////show options text on terminal
             //text.showText();
         }
-        if (keyBoard.isDetecting("N")) {
-            sound.stop(backgroundSound);
+        if (this.keyBoard.isDetecting("N")) {
+            this.sound.stop(this.backgroundSound);
             ////show options text on terminal
             //text.showText();
         }
 
-        if (keyBoard.isDetecting("Quit")) {
+        if (this.keyBoard.isDetecting("Quit")) {
             this.gameShutdown();
         }
 
-        if (keyBoard.isDetecting("R")) {
-            reloadPlayer2();
+        if (this.keyBoard.isDetecting("R")) {
+            this.reloadPlayer2();
             ////show options text on terminal
             //text.showText();
         }
-        if (keyBoard.isDetecting("T")) {
-            loadedModels = !loadedModels;
+        if (this.keyBoard.isDetecting("T")) {
+            this.loadedModels = !this.loadedModels;
         }
 
-        if (mouse.isDetecting("Left Button")) {
+        if (this.mouse.isDetecting("Left Button")) {
             log.info("Mouse Left Button Pressed.");
             ////show options text on terminal
             //text.showText();
         }
-        if (mouse.isContinuouslyDetecting("Right Button")) {
+        if (this.mouse.isContinuouslyDetecting("Right Button")) {
             log.info("Mouse Right Button Continuously Pressed.");
             ////show options text on terminal
             //text.showText();
         }
 
         //WSAD keys processing, i.e., movement processing
-        boolean wDown = keyBoard.isContinuouslyDetecting("W");
-        boolean sDown = keyBoard.isContinuouslyDetecting("S");
-        boolean aDown = keyBoard.isContinuouslyDetecting("A");
-        boolean dDown = keyBoard.isContinuouslyDetecting("D");
+        boolean wDown = this.keyBoard.isContinuouslyDetecting("W");
+        boolean sDown = this.keyBoard.isContinuouslyDetecting("S");
+        boolean aDown = this.keyBoard.isContinuouslyDetecting("A");
+        boolean dDown = this.keyBoard.isContinuouslyDetecting("D");
         //log.info(format("%b %b %b %b", wDown, sDown, dDown, aDown));
 
         if (wDown && sDown) {
@@ -370,32 +369,32 @@ public class GameMain extends SimpleGame {
         }
 
         //Moving & rotating
-        direction = 0;
-        isMoving = false;
-        isRotating = false;
+        this.direction = 0;
+        this.isMoving = false;
+        this.isRotating = false;
 
         if (wDown || sDown || aDown || dDown) {
-            isMoving = true;
+            this.isMoving = true;
             if (wDown) {
                 if (aDown) {
-                    direction = 45;
+                    this.direction = 45;
                 } else if (dDown) {
-                    direction = -45;
+                    this.direction = -45;
                 } else {
-                    direction = 0;
+                    this.direction = 0;
                 }
             } else if (sDown) {
                 if (aDown) {
-                    direction = 135;
+                    this.direction = 135;
                 } else if (dDown) {
-                    direction = -135;
+                    this.direction = -135;
                 } else {
-                    direction = 180;
+                    this.direction = 180;
                 }
             } else if (aDown) {
-                direction = 90;
+                this.direction = 90;
             } else if (dDown) {
-                direction = -90;
+                this.direction = -90;
             }
         }
     }
@@ -408,9 +407,8 @@ public class GameMain extends SimpleGame {
     @Override
     public void gameRender(GL2 gl2) {
         //TODO: (optional) code render update      
-
         //clear the background of our window
-        gl.glClearColor(clearColor[0], clearColor[1], clearColor[2], clearColor[3]);
+        gl.glClearColor(this.clearColor[0], this.clearColor[1], this.clearColor[2], this.clearColor[3]);
 
         //clean the buffers
         gl.glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
@@ -419,17 +417,17 @@ public class GameMain extends SimpleGame {
         gl.glMatrixMode(GL_PROJECTION); //reset projection matrix stack.
         gl.glLoadIdentity(); //establish clipping volume (left, right, bottom, top, near, far)
 
-        if (glu == null) {
-            glu = new GLU();
+        if (this.glu == null) {
+            this.glu = new GLU();
         }
-        glu.gluPerspective(fovy, aspect, zNear, zFar);
+        this.glu.gluPerspective(this.fovy, this.aspect, this.zNear, this.zFar);
 
         gl.glMatrixMode(GL_MODELVIEW); //reset model-view matrix stack
         gl.glLoadIdentity();
         //end of setup window for rendering
 
         //setup look at camera        
-        glu.gluLookAt(-8.0, 4.5, -8.0, 0, 0, 0, 0, 1, 0);
+        this.glu.gluLookAt(-8.0, 4.5, -8.0, 0, 0, 0, 0, 1, 0);
 
         gl.glDisable(GL_LIGHTING);
 
@@ -445,22 +443,22 @@ public class GameMain extends SimpleGame {
         gl.glVertex3f(100.0f, 0.0f, -100.0f);
         gl.glEnd();
 
-        if (!loadedModels) {
+        if (!this.loadedModels) {
             gl.glDisable(GL_LIGHTING);
             //render basic geometry
-            drawcube(5, 5, 2);
+            this.drawcube(5, 5, 2);
         } else {
             gl.glEnable(GL_LIGHTING);
 
             //render model with materials
-            player1.render(gl);
+            this.player1.render(gl);
 
             //render cow textured model
             //Enable texture flip, since all loaded textures are upside down
-            enableTextureTransforms();
-            player2.render(gl);
+            this.enableTextureTransforms();
+            this.player2.render(gl);
             //Disable texture flip, since all loaded textures are upside down
-            disableTextureTransforms();
+            this.disableTextureTransforms();
         }
     }
 
@@ -470,8 +468,8 @@ public class GameMain extends SimpleGame {
     @Override
     public void gameShutdown() {
         super.gameShutdown();
-        player1.dispose(gl);
-        player2.dispose(gl);
+        this.player1.dispose(gl);
+        this.player2.dispose(gl);
     }
 
     /**
@@ -482,30 +480,30 @@ public class GameMain extends SimpleGame {
     @Override
     public void gameUpdate(float dt) {
         //if using loaded models, otherwise no input processing is required
-        if (loadedModels) {
+        if (this.loadedModels) {
             //Mouse based rotation
-            Vector3D newMouseCursorPosition = mouse.getPositionShift();
+            Vector3D newMouseCursorPosition = this.mouse.getPositionShift();
 
-            Vector3D rotation = player1.getRotation();
+            Vector3D rotation = this.player1.getRotation();
             if (newMouseCursorPosition.getX() != 0) {
-                isRotating = true;
+                this.isRotating = true;
                 rotation = new Vector3D(rotation.getX(), rotation.getY() + newMouseCursorPosition.getX() + .3, rotation.getZ());
-                player1.updateRotationY((float) rotation.getY());
-                sound.setListenerOri((int) rotation.getY());
+                this.player1.updateRotationY((float) rotation.getY());
+                this.sound.setListenerOri((int) rotation.getY());
             }
 
             //TODO: (optional) code physics update
-            if (isMoving) {
-                Vector3D newPosition = translatePolar(ZERO, velocity, (float) rotation.getY(), direction, 1);
-                AbstractBoundingVolume boundingVolume = player1.getBoundingVolumeCopy(0);
+            if (this.isMoving) {
+                Vector3D newPosition = this.translatePolar(ZERO, this.velocity, (float) rotation.getY(), this.direction, 1);
+                AbstractBoundingVolume boundingVolume = this.player1.getBoundingVolumeCopy(0);
                 boundingVolume.min = boundingVolume.min.add(newPosition);
                 boundingVolume.max = boundingVolume.max.add(newPosition);
-                GameObject temp = new GameObject(player1.getId());
+                GameObject temp = new GameObject(this.player1.getId());
                 temp.setBoundingVolume(0, boundingVolume);
 
-                if (!player2.getBoundingVolume(0).isCollide(temp.getBoundingVolume(0))) {
-                    player1.updatePosition(newPosition);
-                    sound.setPos("cow.wav",
+                if (!this.player2.getBoundingVolume(0).isCollide(temp.getBoundingVolume(0))) {
+                    this.player1.updatePosition(newPosition);
+                    this.sound.setPos("cow.wav",
                             (float) newPosition.getX(),
                             (float) newPosition.getY(),
                             (float) newPosition.getZ());
@@ -538,6 +536,7 @@ public class GameMain extends SimpleGame {
 //            log.info("Esc key - to quit.\n");
 //        }
 //    }
+//      
     //Auxiliar method to render a cube.
     private void drawcube(int x_offset, int z_offset, int color) {
         /*
@@ -622,25 +621,25 @@ public class GameMain extends SimpleGame {
     private void reloadPlayer2() {
         try {
             TransformGroup player2Rotate;
-            switch (player2.getId()) {
+            switch (this.player2.getId()) {
                 case "cow1":
-                    player2Rotate = models.get("cow2").clone();
-                    player2 = new GameObject("cow2", models.get("cow2"));
+                    player2Rotate = this.models.get("cow2").clone();
+                    this.player2 = new GameObject("cow2", this.models.get("cow2"));
                     break;
                 case "cow2":
-                    player2Rotate = models.get("cow3").clone();
-                    player2 = new GameObject("cow3", models.get("cow3"));
+                    player2Rotate = this.models.get("cow3").clone();
+                    this.player2 = new GameObject("cow3", this.models.get("cow3"));
                     break;
                 default:
-                    player2Rotate = models.get("cow1").clone();
-                    player2 = new GameObject("cow1", models.get("cow1"));
+                    player2Rotate = this.models.get("cow1").clone();
+                    this.player2 = new GameObject("cow1", this.models.get("cow1"));
             }
-            player2.getBoundingVolume(0).setRenderable(true);
-            player2.addChild(player2Rotate);
-            player2.setAttribute("health", 100);
-            player2.updatePosition(new Vector3D(10, 0, -2));
-            player2.updateRotationY(45);
-            sound.play("cow.wav");
+            this.player2.getBoundingVolume(0).setRenderable(true);
+            this.player2.addChild(player2Rotate);
+            this.player2.setAttribute("health", 100);
+            this.player2.updatePosition(new Vector3D(10, 0, -2));
+            this.player2.updateRotationY(45);
+            this.sound.play("cow.wav");
         } catch (CloneNotSupportedException ex) {
             log.severe(ex.getMessage());
         }

@@ -72,5 +72,8 @@
     -->
     <target name="-post-jar"> 
     	<copy file="dist/${ant.project.name}.jar" todir="../../lib" overwrite="true"/>
-    </target>
+		<copy todir="../JOT-Engine/src" overwrite="true">
+    	    <fileset dir="src"/>
+		</copy>
+	</target>
 </project>
