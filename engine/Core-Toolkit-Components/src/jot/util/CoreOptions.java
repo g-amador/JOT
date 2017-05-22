@@ -82,6 +82,11 @@ public class CoreOptions {
          * Toggle On/Off HOG2Maps usage.
          */
         coreOptions.put("HOG2Maps", false);
+        
+         /**
+         * Toggle On/Off HOG2Maps usage.
+         */
+        coreOptions.put("HOG2MapsDebug", false);
 
         /**
          * Toggle On/Off swamp cells as obstacles.

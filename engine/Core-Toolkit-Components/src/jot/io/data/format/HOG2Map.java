@@ -255,14 +255,18 @@ public class HOG2Map implements GenericFormat {
 
                 //if the file exists in the .zip file load hash map grap
                 if (ois1 != null) {
-                    log.setLevel(INFO);
-                    log.info("Reading Graph from .zip file.");
-                    log.setLevel(old_level);
+                    if (coreOptions.get("HOG2MapsDebug")) {
+                        log.setLevel(INFO);
+                        log.info("Reading Graph from .zip file.");
+                        log.setLevel(old_level);
+                    }
                     Graph = (HashMap) ois1.readObject();
                 } else { //otherwise write to file 
-                    log.setLevel(INFO);
-                    log.info("Writting Graph to .zip file.");
-                    log.setLevel(old_level);
+                    if (coreOptions.get("HOG2MapsDebug")) {
+                        log.setLevel(INFO);
+                        log.info("Writting Graph to .zip file.");
+                        log.setLevel(old_level);
+                    }
                     Graph = arrayGraph2HashMapGraph(geometryMesh.getArrayGraph());
 
                     File fTemp = new File(zipFilePath.replace(".zip", "Temp.zip"));
@@ -348,14 +352,18 @@ public class HOG2Map implements GenericFormat {
 
                 //if the file exists in the .zip file load hash map grap
                 if (ois2 != null) {
-                    log.setLevel(INFO);
-                    log.info("Reading MST Graph from .zip file.");
-                    log.setLevel(old_level);
+                    if (coreOptions.get("HOG2MapsDebug")) {
+                        log.setLevel(INFO);
+                        log.info("Reading MST Graph from .zip file.");
+                        log.setLevel(old_level);
+                    }
                     GraphMST = (HashMap) ois2.readObject();
                 } else { //otherwise write to file 
-                    log.setLevel(INFO);
-                    log.info("Writting MST Graph to .zip file.");
-                    log.setLevel(old_level);
+                    if (coreOptions.get("HOG2MapsDebug")) {
+                        log.setLevel(INFO);
+                        log.info("Writting MST Graph to .zip file.");
+                        log.setLevel(old_level);
+                    }
                     GraphMST = arrayGraph2HashMapGraph(Graph2MST(Graph));
 
                     File fTemp = new File(zipFilePath.replace(".zip", "Temp.zip"));
@@ -506,9 +514,11 @@ public class HOG2Map implements GenericFormat {
                                     : ".GraphScaled")));
 
             if (f1.exists()) {
-                log.setLevel(INFO);
-                log.info("Reading Graph from file.");
-                log.setLevel(old_level);
+                if (coreOptions.get("HOG2MapsDebug")) {
+                    log.setLevel(INFO);
+                    log.info("Reading Graph from file.");
+                    log.setLevel(old_level);
+                }
 
                 FileInputStream fis = null;
                 ObjectInputStream ois = null;
@@ -556,9 +566,11 @@ public class HOG2Map implements GenericFormat {
                     }
                 }
             } else { //otherwise write to file 
-                log.setLevel(INFO);
-                log.info("Writting Graph to file.");
-                log.setLevel(old_level);
+                if (coreOptions.get("HOG2MapsDebug")) {
+                    log.setLevel(INFO);
+                    log.info("Writting Graph to file.");
+                    log.setLevel(old_level);
+                }
                 Graph = arrayGraph2HashMapGraph(geometryMesh.getArrayGraph());
 
                 FileOutputStream fos = null;
@@ -630,9 +642,11 @@ public class HOG2Map implements GenericFormat {
                                     : ".GraphMSTScaled")));
 
             if (f2.exists()) {
-                log.setLevel(INFO);
-                log.info("Reading MST Graph from file.");
-                log.setLevel(old_level);
+                if (coreOptions.get("HOG2MapsDebug")) {
+                    log.setLevel(INFO);
+                    log.info("Reading MST Graph from file.");
+                    log.setLevel(old_level);
+                }
 
                 FileInputStream fis = null;
                 ObjectInputStream ois = null;
@@ -680,9 +694,11 @@ public class HOG2Map implements GenericFormat {
                     }
                 }
             } else { //otherwise write to file 
-                log.setLevel(INFO);
-                log.info("Writting MST Graph to file.");
-                log.setLevel(old_level);
+                if (coreOptions.get("HOG2MapsDebug")) {
+                    log.setLevel(INFO);
+                    log.info("Writting MST Graph to file.");
+                    log.setLevel(old_level);
+                }
                 GraphMST = arrayGraph2HashMapGraph(Graph2MST(Graph));
 
                 FileOutputStream fos = null;
