@@ -36,16 +36,16 @@ import org.apache.commons.math3.geometry.euclidean.threed.Vector3D;
 public abstract class Mesh implements Node {
 
     /**
-     * Get the largest x, y, z values of all vertexes from this
+     * Get the largest x, y, z values of all vertexes from this mesh.
      *
-     * @return the maximum x, y, z values of all vertexes from this
+     * @return the maximum x, y, z values of all vertexes from this mesh.
      */
     public abstract Vector3D getMaxVertex();
 
     /**
-     * Get the lowest x, y, z values of all vertexes from this
+     * Get the lowest x, y, z values of all vertexes from this mesh.
      *
-     * @return the minimum x, y, z values of all vertexes from this
+     * @return the minimum x, y, z values of all vertexes from this mesh.
      */
     public abstract Vector3D getMinVertex();
 

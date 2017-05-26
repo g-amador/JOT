@@ -62,6 +62,11 @@ public class CoreOptions {
         coreOptions.put("showWireframe", false);
 
         /**
+         * Render graph door nodes.
+         */
+        coreOptions.put("showGraphDoorNodes", false);
+
+        /**
          * Toggle On/Off OpenGL display list for mesh rendering instead of
          * drawArrays or drawElements.
          */
@@ -82,8 +87,8 @@ public class CoreOptions {
          * Toggle On/Off HOG2Maps usage.
          */
         coreOptions.put("HOG2Maps", false);
-        
-         /**
+
+        /**
          * Toggle On/Off HOG2Maps usage.
          */
         coreOptions.put("HOG2MapsDebug", false);

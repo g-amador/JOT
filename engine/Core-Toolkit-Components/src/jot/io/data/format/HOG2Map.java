@@ -45,7 +45,7 @@ import java.util.ArrayList;
 import static java.util.Collections.reverse;
 import java.util.Enumeration;
 import java.util.HashMap;
-import java.util.LinkedList;
+import java.util.HashSet;
 import java.util.logging.Level;
 import static java.util.logging.Level.INFO;
 import static java.util.logging.Level.OFF;
@@ -81,7 +81,7 @@ public class HOG2Map implements GenericFormat {
 
     private static HashMap<Vector3D, ArrayList<Vector3D>> Graph;
     private static HashMap<Vector3D, ArrayList<Vector3D>> GraphMST;
-    private static LinkedList<Vector3D> GraphDoorNodes;
+    private static ArrayList<HashSet<Vector3D>> GraphDoorNodesSets;
 
     /**
      * The Height of the HOG2 map grid.
@@ -747,6 +747,8 @@ public class HOG2Map implements GenericFormat {
                 }
             }
         }
+        //Generate the region door nodes hash set.
+        GraphDoorNodesSets = geometryMesh.generateRegionDoorNodesSets();
 
         model.addChild(geometryMesh);
 
@@ -839,6 +841,7 @@ public class HOG2Map implements GenericFormat {
     public static class HOG2MapMesh extends PolygonMesh {
 
         private Vector3D[] graph;
+        private HashSet<Vector3D> GraphDoorNodes;
         private HashMap<Vector3D, Vector2D> GraphNodesGridCoords;
         private HashMap<Vector2D, Vector3D> GridCoordsGraphNodes;
 
@@ -906,6 +909,32 @@ public class HOG2Map implements GenericFormat {
         }
 
         /**
+         * Get the coordinates of a Vector3D given its char and color that
+         * corresponds to a specific type of terrain identified by a given
+         * character.
+         *
+         * @param c a given character
+         * @return a Vector3D of coordinates, with the color corresponding to a
+         * specific type of terrain identified by a given character.
+         */
+        private Vector3D getVector3D(float i, float j, char c) {
+            switch (c) {
+                case 'D'://D - door
+                case 'd':
+                case '.'://. - passable terrain
+                case 'G'://G - passable terrain
+                case 'g':
+                    return new Vector3D(i, 0.0f, j);
+                case 'S'://S - swamp (passable from regular terrain)
+                case 's':
+                    return coreOptions.get("HOG2MapsWithScells")
+                            ? new Vector3D(i, -0.5f, j) : null;
+                default:
+                    return null; //Deal with erroroneous character or a novel unsuported character.
+            }
+        }
+
+        /**
          * This method returns the available paths Graph.
          *
          * @return Graph, whose keys correspond to each individual node, and for
@@ -937,12 +966,21 @@ public class HOG2Map implements GenericFormat {
         }
 
         /**
-         * This method returns the available paths Graph door nodes.
+         * This method returns the available Graph door nodes.
          *
-         * @return an linked list with Graph nodes that are region door nodes.
+         * @return an HashSet with all Graph nodes that are region door nodes.
          */
-        public LinkedList<Vector3D> getGraphDoorNodes() {
-            return GraphDoorNodes;
+        private HashSet<Vector3D> getGraphDoorNodes() {
+            return this.GraphDoorNodes;
+        }
+
+        /**
+         * This method returns the available Graph region door nodes.
+         *
+         * @return an ArrayList with the HashSets of Graph region door nodes.
+         */
+        public ArrayList<HashSet<Vector3D>> getGraphDoorNodesSets() {
+            return GraphDoorNodesSets;
         }
 
         /**
@@ -1004,39 +1042,13 @@ public class HOG2Map implements GenericFormat {
         }
 
         /**
-         * Get the coordinates of a Vector3D given its char and color that
-         * corresponds to a specific type of terrain identified by a given
-         * character.
-         *
-         * @param c a given character
-         * @return a Vector3D of coordinates, with the color corresponding to a
-         * specific type of terrain identified by a given character.
-         */
-        private Vector3D getVector3D(float i, float j, char c) {
-            switch (c) {
-                case 'D'://D - door
-                case 'd':
-                case '.'://. - passable terrain
-                case 'G'://G - passable terrain
-                case 'g':
-                    return new Vector3D(i, 0.0f, j);
-                case 'S'://S - swamp (passable from regular terrain)
-                case 's':
-                    return coreOptions.get("HOG2MapsWithScells")
-                            ? new Vector3D(i, -0.5f, j) : null;
-                default:
-                    return null; //Deal with erroroneous character or a novel unsuported character.
-            }
-        }
-
-        /**
          * Generated the Graph for the Map Geometry.
          */
         private void generateGraph() {
             log.info("generateGraph");
 
             ArrayList<Vector3D> GraphList = new ArrayList<>();
-            GraphDoorNodes = new LinkedList<>();
+            this.GraphDoorNodes = new HashSet<>();
             this.GraphNodesGridCoords = new HashMap<>();
             this.GridCoordsGraphNodes = new HashMap<>();
 
@@ -1052,7 +1064,7 @@ public class HOG2Map implements GenericFormat {
                             this.max = new Vector3D(center.toArray());
                         }
                         if (this.isDoor(Geometry.get(j).get(i))) {
-                            GraphDoorNodes.add(center);
+                            this.GraphDoorNodes.add(center);
                         }
                         if (i != Geometry.get(j).size() - 1) {
                             Vector3D east = this.getVector3D(i + 1.5f, j - .5f, Geometry.get(j).get(i + 1));
@@ -1112,6 +1124,7 @@ public class HOG2Map implements GenericFormat {
                     }
                 }
             }
+            //Set the minimum vertex, i.e., the lowest x, y, z values of all vertexes from this mesh.
             for (int j = Geometry.size() - 1; j >= 0; j--) {
                 for (int i = Geometry.get(j).size() - 1; i >= 0; i--) {
                     Vector3D center = this.getVector3D(i + 0.5f, j - 0.5f, Geometry.get(j).get(i));
@@ -1125,6 +1138,47 @@ public class HOG2Map implements GenericFormat {
             }
 
             this.graph = GraphList.toArray(new Vector3D[GraphList.size()]);
+        }
+
+        private ArrayList<HashSet<Vector3D>> generateRegionDoorNodesSets() {
+            //HashSet<Vector3D> regionDoorNodes = new HashSet<>();
+            ArrayList<HashSet<Vector3D>> GraphDoorNodesSets = new ArrayList<>();
+            this.getGraphDoorNodes().stream()
+                    .forEach(doorNode -> {
+                        boolean regionDoorNodesSet = false;
+                        for (HashSet<Vector3D> GraphDoorNodesSet : GraphDoorNodesSets) {
+                            if (GraphDoorNodesSet.contains(doorNode)) {
+                                regionDoorNodesSet = true;
+                            }
+                        }
+                        if (!regionDoorNodesSet) {
+                            GraphDoorNodesSets.add(this.getRegionDoorNodesSet(doorNode));
+                        }
+                    });
+
+            return GraphDoorNodesSets;
+        }
+
+        private HashSet<Vector3D> getRegionDoorNodesSet(Vector3D node) {
+            HashSet<Vector3D> regionDoorNodesSet = new HashSet<>();
+            this.regionDoorNodes(node, regionDoorNodesSet);
+
+            return regionDoorNodesSet;
+        }
+
+        private void regionDoorNodes(Vector3D node, HashSet<Vector3D> regionDoorNodesSet) {
+            regionDoorNodesSet.add(node);
+
+            Graph.get(node).stream()
+                    .filter(neighbor -> !regionDoorNodesSet.contains(neighbor))
+                    .forEach(neighbor -> {
+                        Vector2D graphNodeGridCoords = this.GraphNodesGridCoords.get(neighbor);
+                        if (this.isDoor(Geometry.get((int) graphNodeGridCoords.getY())
+                                .get((int) graphNodeGridCoords.getX()))) {
+                            regionDoorNodesSet.add(neighbor);
+                            this.regionDoorNodes(neighbor, regionDoorNodesSet);
+                        }
+                    });
         }
 
         /**
@@ -1180,7 +1234,6 @@ public class HOG2Map implements GenericFormat {
                     gl.glPolygonMode(GL_FRONT_AND_BACK,
                             coreOptions.get("showWireframe")
                             ? GL_LINE : GL_FILL);
-
                     if (this.genList) {
                         Vector3D color;
                         gl.glDeleteLists(this.listMesh, 1);
@@ -1196,6 +1249,23 @@ public class HOG2Map implements GenericFormat {
                                         color = this.getColor(Geometry.get(j).get(i));
                                         gl.glColor3d(color.getX(), color.getY(), color.getZ());
 
+                                        //Render doors with some height
+                                        if (coreOptions.get("showGraphDoorNodes")) {
+                                            if (color.equals(new Vector3D(1, 0, 1))) {
+                                                //TRIANGLE 1
+                                                gl.glVertex3f(i, 1.0f, j);
+                                                gl.glVertex3f(i, 1.0f, j - 1);
+                                                gl.glVertex3f(i + 1, 1.0f, j - 1);
+
+                                                //TRIANGLE 2
+                                                gl.glVertex3f(i, 1.0f, j);
+                                                gl.glVertex3f(i + 1, 1.0f, j - 1);
+                                                gl.glVertex3f(i + 1, 1.0f, j);
+
+                                                gl.glColor3f(1.0f, 1.0f, 1.0f);
+                                            }
+                                        }
+
                                         //TRIANGLE 1
                                         gl.glVertex3d(i, 0.0d, j);
                                         gl.glVertex3d(i, 0.0d, j - 1);
@@ -1205,6 +1275,7 @@ public class HOG2Map implements GenericFormat {
                                         gl.glVertex3d(i, 0.0d, j);
                                         gl.glVertex3d(i + 1, 0.0d, j - 1);
                                         gl.glVertex3d(i + 1, 0.0d, j);
+
                                     }
                                 }
                                 log.info("");
