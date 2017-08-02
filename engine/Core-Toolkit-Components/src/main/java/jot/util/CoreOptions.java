@@ -67,6 +67,11 @@ public class CoreOptions {
         coreOptions.put("showGraphDoorNodes", false);
 
         /**
+         * Render graph door nodes with a superior height.
+         */
+        coreOptions.put("showGraphDoorNodesElevated", false);
+
+        /**
          * Toggle On/Off OpenGL display list for mesh rendering instead of
          * drawArrays or drawElements.
          */

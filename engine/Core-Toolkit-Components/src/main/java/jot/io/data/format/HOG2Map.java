@@ -83,6 +83,11 @@ public class HOG2Map implements GenericFormat {
     private static HashMap<Vector3D, ArrayList<Vector3D>> GraphMST;
     private static ArrayList<HashSet<Vector3D>> GraphDoorNodesSets;
 
+    private Vector3D leftmostTopmostNode;
+    private Vector3D leftmostBottommostNode;
+    private Vector3D rightmostTopmostNode;
+    private Vector3D rightmostBottommostNode;
+
     /**
      * The Height of the HOG2 map grid.
      */
@@ -845,6 +850,11 @@ public class HOG2Map implements GenericFormat {
         private HashMap<Vector3D, Vector2D> GraphNodesGridCoords;
         private HashMap<Vector2D, Vector3D> GridCoordsGraphNodes;
 
+        private Vector3D leftmostTopmostNode;
+        private Vector3D leftmostBottommostNode;
+        private Vector3D rightmostTopmostNode;
+        private Vector3D rightmostBottommostNode;
+
         /**
          * Constructor
          */
@@ -885,7 +895,8 @@ public class HOG2Map implements GenericFormat {
             switch (c) {
                 case 'D'://D - door
                 case 'd':
-                    return new Vector3D(1, 0, 1);
+                    return coreOptions.get("showGraphDoorNodes")
+                            ? new Vector3D(1, 0, 1) : new Vector3D(1, 1, 1);
                 case '.'://. - passable terrain                
                 case 'G'://G - passable terrain
                 case 'g':
@@ -1042,6 +1053,42 @@ public class HOG2Map implements GenericFormat {
         }
 
         /**
+         * Get the leftmost bottommost graph node.
+         *
+         * @return the leftmost bottommost graph node.
+         */
+        public Vector3D getLeftmostBottommostNode() {
+            return this.leftmostBottommostNode;
+        }
+
+        /**
+         * Get the leftmost topmost graph node.
+         *
+         * @return the leftmost topmost graph node.
+         */
+        public Vector3D getLeftmostTopmostNode() {
+            return this.leftmostTopmostNode;
+        }
+
+        /**
+         * Get the rightmost bottommost graph node.
+         *
+         * @return the rightmost bottommost graph node.
+         */
+        public Vector3D getRightmostBottommostNode() {
+            return this.rightmostBottommostNode;
+        }
+
+        /**
+         * Get the rightmost topmost graph node.
+         *
+         * @return the rightmost topmost graph node.
+         */
+        public Vector3D getRightmostTopmostNode() {
+            return this.rightmostTopmostNode;
+        }
+
+        /**
          * Generated the Graph for the Map Geometry.
          */
         private void generateGraph() {
@@ -1132,6 +1179,38 @@ public class HOG2Map implements GenericFormat {
                         center = center.scalarMultiply(formatScale);
                         if (this.min == null && this.isPassableTerrain(Geometry.get(j).get(i))) {
                             this.min = new Vector3D(center.toArray());
+                        }
+                    }
+                }
+            }
+            
+            //Get the four nodes closest to each of the four corners of the square that inside contains the map.
+            this.leftmostBottommostNode = new Vector3D(
+                    Double.POSITIVE_INFINITY, 0, Double.POSITIVE_INFINITY);
+            this.leftmostTopmostNode = new Vector3D(
+                    Double.POSITIVE_INFINITY, 0, 0);            
+            this.rightmostBottommostNode = new Vector3D(0, 0, Double.POSITIVE_INFINITY);
+            this.rightmostTopmostNode = new Vector3D(
+                    0, 0, 0);
+            for (int j = 0; j < Geometry.size(); j++) {
+                for (int i = 0; i < Geometry.get(j).size(); i++) {
+                    Vector3D current = this.getVector3D(i + 0.5f, j - 0.5f, Geometry.get(j).get(i));
+                    if (this.isPassableTerrain(Geometry.get(j).get(i))) {
+                        if (this.leftmostBottommostNode.getX() >= current.getX()
+                                && this.leftmostBottommostNode.getZ() >= current.getZ()) {
+                            this.leftmostBottommostNode = new Vector3D(current.toArray());
+                        }
+                        if (this.leftmostTopmostNode.getX() >= current.getX()
+                                && this.leftmostTopmostNode.getZ() <= current.getZ()) {
+                            this.leftmostTopmostNode = new Vector3D(current.toArray());
+                        }
+                        if (this.rightmostBottommostNode.getX() <= current.getX()
+                                && this.rightmostBottommostNode.getZ() >= current.getZ()) {
+                            this.rightmostBottommostNode = new Vector3D(current.toArray());
+                        }
+                        if (this.rightmostTopmostNode.getX() <= current.getX()
+                                && this.rightmostTopmostNode.getZ() <= current.getZ()) {
+                            this.rightmostTopmostNode = new Vector3D(current.toArray());
                         }
                     }
                 }
@@ -1250,7 +1329,8 @@ public class HOG2Map implements GenericFormat {
                                         gl.glColor3d(color.getX(), color.getY(), color.getZ());
 
                                         //Render doors with some height
-                                        if (coreOptions.get("showGraphDoorNodes")) {
+                                        if (coreOptions.get("showGraphDoorNodes")
+                                                && coreOptions.get("showGraphDoorNodesElevated")) {
                                             if (color.equals(new Vector3D(1, 0, 1))) {
                                                 //TRIANGLE 1
                                                 gl.glVertex3f(i, 1.0f, j);
