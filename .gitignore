@@ -1,2 +1,14 @@
 /engine/Core-Toolkit-Components/target/
 /templates/JOT-Template-Core-Toolkit-Components-Project/nbproject/private/
+/engine/Extension-Toolkit-Components/AI/target/
+/engine/Framework-Toolkit-Components/target/
+/demos/AI/build/
+/demos/AI/dist/
+/demos/Game-World/build/
+/demos/Game-World/dist/
+/engine/Extension-Toolkit-Components/Communication/target/
+/engine/Extension-Toolkit-Components/Geometry/target/
+/engine/Extension-Toolkit-Components/Physics/target/
+/engine/target/
+/demos/Physics-Collisions-Shadows/build/
+/demos/Physics-Collisions-Shadows/dist/

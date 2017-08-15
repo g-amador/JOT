@@ -172,6 +172,8 @@ public class GameMain extends SimpleGame {
         //Register input keys
         this.keyBoard.registerInputEvent("1", '1');
         this.keyBoard.registerInputEvent("2", '2');
+        this.keyBoard.registerInputEvent("3", '3');
+        this.keyBoard.registerInputEvent("4", '4');
         this.keyBoard.registerInputEvent("R", 'R');
         this.keyBoard.registerInputEvent("R", 'r');
         this.keyBoard.registerInputEvent("T", 'T');
@@ -209,8 +211,10 @@ public class GameMain extends SimpleGame {
             text.setTextLine("Mouse right button continuous press - does nothing.");
         }
         if (coreOptions.get("useKeyBoard")) {
-            text.setTextLine("1 key - toggle on/off textures.");
-            text.setTextLine("2 key - toggle on/off wireframe.");
+            text.setTextLine("1 key - toggle on/off show FPS.");
+            text.setTextLine("2 key - toggle on/off show help.");
+            text.setTextLine("3 key - toggle on/off textures.");
+            text.setTextLine("4 key - toggle on/off wireframe.");
             text.setTextLine("T/t key - toggle on/off render loaded models or render user defined geometries.");
             text.setTextLine("R/r key - reload player2 model with different bounding volume.");
             text.setTextLine(",/. keys - to increase/decrease the gain/volume of the background music.");
@@ -294,9 +298,15 @@ public class GameMain extends SimpleGame {
     public void gameProcessInput() {
         //TODO: (optional) code input behaviour
         if (this.keyBoard.isDetecting("1")) {
-            coreOptions.put("showTextures", !coreOptions.get("showTextures"));
+            coreOptions.put("showFPS", !coreOptions.get("showFPS"));
         }
         if (this.keyBoard.isDetecting("2")) {
+            coreOptions.put("showText", !coreOptions.get("showText"));
+        }
+        if (this.keyBoard.isDetecting("3")) {
+            coreOptions.put("showTextures", !coreOptions.get("showTextures"));
+        }
+        if (this.keyBoard.isDetecting("4")) {
             coreOptions.put("showWireframe", !coreOptions.get("showWireframe"));
         }
 
@@ -514,29 +524,7 @@ public class GameMain extends SimpleGame {
         //TODO: (optional) code AI update
         //TODO: (optional) code network update        
     }
-
-//    //TODO: (optional) more options here
-//    private void optionsInfo() {
-//        log.info("");
-//        log.info("Options:");
-//        if (coreOptions.get("useMouse")) {
-//            log.info("Mouse move - rotate Duke model.");
-//            log.info("Mouse left button click - does nothing.");
-//            log.info("Mouse right button continuous press - does nothing.");
-//        }
-//        if (coreOptions.get("useKeyBoard")) {
-//            log.info("1 key - toggle on/off textures.");
-//            log.info("2 key - toggle on/off wireframe.");
-//            log.info("T/t key - toggle on/off render loaded models or render user defined geometries.");
-//            log.info("R/r key - reload player2 model with different bounding volume.");
-//            log.info(",/. keys - to increase/decrease the gain/volume of the background music.");
-//            log.info(";/: keys - to increase/decrease the pitch of the background music.");
-//            log.info("V/v,B/b,N/n keys - play, pause, stop background music.");
-//            log.info("W/w,S/s,A/a,D/d keys - move Duke model.");
-//            log.info("Esc key - to quit.\n");
-//        }
-//    }
-//      
+    
     //Auxiliar method to render a cube.
     private void drawcube(int x_offset, int z_offset, int color) {
         /*

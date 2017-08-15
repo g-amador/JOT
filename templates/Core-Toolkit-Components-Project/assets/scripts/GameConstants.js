@@ -19,4 +19,6 @@ new GameConstant("showWireframe", false);
 new GameConstant("useDisplayLists", false);
 
 //GUI options
+new GameConstant("showFPS", true);
+new GameConstant("showText", true);
 new GameConstant("useFullScreen", false);
