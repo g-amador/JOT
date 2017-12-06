@@ -12,3 +12,8 @@
 /engine/target/
 /demos/Physics-Collisions-Shadows/build/
 /demos/Physics-Collisions-Shadows/dist/
+/demos/Game-World/nbproject/private/
+/demos/Physics-Collisions-Shadows/nbproject/private/
+/templates/Core-Toolkit-Components-Project/nbproject/private/
+/demos/AI/nbproject/private/
+/templates/Core-Toolkit-Components-Project/build/

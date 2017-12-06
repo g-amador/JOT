@@ -47,7 +47,7 @@ public class GameMain extends Game {
     private static final Logger log = getLogger("GameMain");
 
     //Number of Frames or Updates Per Second, i.e., FPS or UPS.
-    private static final int UPDATE_RATE = 60;
+    private static final int UPDATE_RATE = 40;
 
     //private static final int CANVAS_WIDTH = 1_280;
     //private static final int CANVAS_HEIGHT = 900;
