@@ -24,37 +24,36 @@ Article: https://goo.gl/sGBVQT
 
 ###### Step 1: install netbeans for windows
 
--For additional instructions https://goo.gl/N1oy5k
+For additional instructions https://goo.gl/N1oy5k
 
 ###### Step 2: install tortoisegit on windows
 
--For additional instructions https://goo.gl/Ks2sTn
+For additional instructions https://goo.gl/Ks2sTn
 
 ###### Step 3: Clone JOT repository in tortoisegit
 
--In windows explorer inside the intended cloning destination folder (**recommended C:\ **), 
+In windows explorer inside the intended cloning destination folder (**recommended C:\ **), 
 mouse right click and in the explorer context menu and select **Git Clone**. 
 
--In the field **URL** paste https://github.com/g-amador/JOT.git and click the **Ok** button 
+In the field **URL** paste https://github.com/g-amador/JOT.git and click the **Ok** button 
 
--For additional instructions https://goo.gl/gbqikt
-
+For additional instructions https://goo.gl/gbqikt
 
 ###### Step 4: Add JogAmp env. variable to windows (only required if step 5 does not work!!!!!)
 
--Add an environment variable to the location of the jogamp operative system libraries, e.g., in the **System Variable** 
+Add an environment variable to the location of the jogamp operative system libraries, e.g., in the **System Variable** 
 named **Path** add **C:\JOT\lib\jogamp-all-platforms\lib** (assuming C:\ was where JOT was clonned).
 
--For additional instructions on how to add an environment variable to windows (7-10) 
+For additional instructions on how to add an environment variable to windows (7-10) 
 https://www.opentechguides.com/how-to/article/windows-10/113/windows-10-set-path.html
 
 ###### Step 5: Run demos or templates
 
--Open either the template in the templates folder or either demo on the **demos** folder in netbeans.
+Open either the template in the templates folder or either demo on the **demos** folder in netbeans.
 
--Build and set as main project.
+Build and set as main project.
 
--Run demo.
+Run demo.
 
 -Options for either template/demo are in the netbeans corresponding demo/template **assets/scripts/GameConstants.js**, 
 this file can be changed between runs without require recompiling of the project.
@@ -69,13 +68,13 @@ this file can be changed between runs without require recompiling of the project
 
 ###### Step 5: Run demos or templates
 
--Open either the template in the templates folder or either demo on the 'demos' folder in netbeans.
+Open either the template in the templates folder or either demo on the 'demos' folder in netbeans.
 
--Build and set as main project.
+Build and set as main project.
 
--Run demo.
+Run demo.
 
--Options for either template/demo are in the netbeans corresponding demo/template 'assets/scripts/GameConstants.js', 
+Options for either template/demo are in the netbeans corresponding demo/template 'assets/scripts/GameConstants.js', 
 this file can be changed between runs without require recompiling of the project.
 
 [Back to Table of contents](#toc)
