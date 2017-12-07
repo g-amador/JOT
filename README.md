@@ -84,13 +84,13 @@ this file can be changed between runs without require recompiling of the project
 
 JOT provides as is 4 working netbeans example project demos, each supporting movement, model loading, direct rendering, FSP and help text, Keyboard and mouse I/O:
  
--Core template: a minimal example made solely with the Core layer, also includes 3D sound. 
+-**Core template**: a minimal example made solely with the Core layer, also includes 3D sound. 
 
--Game World Demo: World/terrain generation demo build resorting to the framework, toolkits and core layers, also includes camera views.
+-**Game World Demo**: World/terrain generation demo build resorting to the framework, toolkits and core layers, also includes camera views.
 
--Physics Demo: Collision detection and light effects demo build resorting to the framework, toolkits and core layers.
+-**Physics Demo**: Collision detection and light effects demo build resorting to the framework, toolkits and core layers.
 
--AI Demo: Steering behaviors and path finding demo build resorting to the framework, toolkits and core layers.
+-**AI Demo**: Steering behaviors and path finding demo build resorting to the framework, toolkits and core layers.
 
 **(other templates/demos exist but are currently broken thus will be available sometime in the future)**
 
