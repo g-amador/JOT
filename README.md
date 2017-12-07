@@ -94,10 +94,7 @@ JOT provides as is 4 working netbeans example project demos, each supporting mov
 
 | Core Template | JOT Game World Demo | JOT Physics Demo |JOT AI Demo |
 |:---:|:---:|:---:|:---:|
-| [![Core Template](https://raw.githubusercontent.com/g-amador/JOT/assets/images/core/core.png)](https://raw.githubusercontent.com/g-amador/JOT/assets/images/core/core.png) | 
-| [![Game World Demo](https://raw.githubusercontent.com/g-amador/JOT/assets/images/framework/FPScamera1.png)](ttps://raw.githubusercontent.com/g-amador/JOT/assets/images/framework/FPScamera1.png) |
-| [![Physics Demo](https://raw.githubusercontent.com/g-amador/JOT/assets/images/framework/shadows.png)](ttps://raw.githubusercontent.com/g-amador/JOT/assets/images/framework/shadows.png) |
-| [![AI Demo](https://raw.githubusercontent.com/g-amador/JOT/assets/images/toolkits/AI/shadows.png)](ttps://raw.githubusercontent.com/g-amador/JOT/assets/images/toolkits/AI/AI1.png) |
+| [![Core Template](https://raw.githubusercontent.com/g-amador/JOT/master/assets/images/core/core.png)](https://raw.githubusercontent.com/g-amador/JOT/master/assets/images/core/core.png) | [![Game World Demo](https://raw.githubusercontent.com/g-amador/JOT/master/assets/images/framework/FPScamera1.png)](ttps://raw.githubusercontent.com/g-amador/JOT/master/assets/images/framework/FPScamera1.png) | [![Physics Demo](https://raw.githubusercontent.com/g-amador/JOT/master/assets/images/framework/shadows.png)](ttps://raw.githubusercontent.com/g-amador/JOT/master/assets/images/framework/shadows.png) | [![AI Demo](https://raw.githubusercontent.com/g-amador/JOT/master/assets/images/toolkits/AI/shadows.png)](ttps://raw.githubusercontent.com/g-amador/JOT/master/assets/images/toolkits/AI/AI1.png) |
 
 [Back to Table of contents](#toc)
 
@@ -106,7 +103,7 @@ JOT provides as is 4 working netbeans example project demos, each supporting mov
 
 JOT is a game engine divided into layers, from bottom to top: Infrastructure, Core, Toolkits, and Framework (see Fig. 1).
 
-| [![Fig. 1](https://raw.githubusercontent.com/g-amador/JOT/assets/images/JOT-ARCH.png)](https://raw.githubusercontent.com/g-amador/JOT/assets/images/JOT-ARCH.png) | 
+| [![Fig. 1](https://raw.githubusercontent.com/g-amador/JOT/master/assets/images/JOT-ARCH.png)](https://raw.githubusercontent.com/g-amador/JOT/master/assets/images/JOT-ARCH.png) | 
 
 
 Any layer component that resorts to an external library obeys to interface/abstract classes as expected by above layers.
