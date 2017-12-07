@@ -5,49 +5,19 @@ JOT (i.e., minimal thing) modular multi-purpose game engine built in Java.
 JOT is intended to serve as a modular multi-purpose game engine for both academia, hobbists, and or industry. 
 
 JOT was presented as a Videojogos (VJ 2016), Covilhã, 24 and 25 nov. conference article.
+
 Presentation: https://goo.gl/i9eJFy
+
 Article: https://goo.gl/sGBVQT
 
 ## <a name="toc">Table of contents 
 
-* [JOT Architecture](#jot_architecture)
 * [JOT Windows 7-10 Setup](#windows_setup)
 * [JOT Linux Setup](#linux_setup)
 * [JOT Demos/Templates](#jot_demos)
+* [JOT Architecture](#jot_architecture)
 * [Project Organization](#p_organization)
 * [Contact](#contact)
-
-
-## <a name="jot_architecture">JOT Architecture
-
-JOT is a game engine divided into layers, from bottom to top: Infrastructure, Core, Toolkits, and Framework (see Fig. 1).
-
-| [![Fig. 1](https://raw.githubusercontent.com/g-amador/JOT/assets/images/JOT-ARCH.png)](https://raw.githubusercontent.com/g-amador/JOT/assets/images/JOT-ARCH.png.png) | 
-
-
-Any layer component that resorts to an external library obeys to interface/abstract classes as expected by above layers.
-Each layer constituents can only use functionalities of the same layer or lower layers constituents.
-In order to replace a component in the engine, one might solely adapt the respective toolkit or additionally modify its lower layers.
-
-
-### Infrastructure Layer
-These are the libraries\frameworks in which JOT layers and components were built on.
-
-### Core Layer
-The minimal set of tools that can allow the classification of a piece of software as a game engine.
-
-### Toolkits Layer
-
-This layer includes toolkits, which are extensions to the core.
-There are toolkits for a number of purposes, namely artificial intelligence (AI),  geometry generators, physics simulation, etc.
-Each toolkit includes an \emph{Utils} component which specifies its options (boolean values). 
-
-### Framework Layer
-
-This is the  upper layer of JOT.
-This layer aims at the following: first, to provide management of the application/game state and scene; second, to separate the game logic from its graphical application.
-
-[Back to Table of contents](#toc)
 
 
 ## <a name="windows_setup">JOT Windows 7-10 Setup
@@ -128,6 +98,38 @@ JOT provides as is 4 working netbeans example project demos, each supporting mov
 | [![Game World Demo](https://raw.githubusercontent.com/g-amador/JOT/assets/images/framework/FPScamera1.png)](ttps://raw.githubusercontent.com/g-amador/JOT/assets/images/framework/FPScamera1.png) |
 | [![Physics Demo](https://raw.githubusercontent.com/g-amador/JOT/assets/images/framework/shadows.png)](ttps://raw.githubusercontent.com/g-amador/JOT/assets/images/framework/shadows.png) |
 | [![AI Demo](https://raw.githubusercontent.com/g-amador/JOT/assets/images/toolkits/AI/shadows.png)](ttps://raw.githubusercontent.com/g-amador/JOT/assets/images/toolkits/AI/AI1.png) |
+
+[Back to Table of contents](#toc)
+
+
+## <a name="jot_architecture">JOT Architecture
+
+JOT is a game engine divided into layers, from bottom to top: Infrastructure, Core, Toolkits, and Framework (see Fig. 1).
+
+| [![Fig. 1](https://raw.githubusercontent.com/g-amador/JOT/assets/images/JOT-ARCH.png)](https://raw.githubusercontent.com/g-amador/JOT/assets/images/JOT-ARCH.png) | 
+
+
+Any layer component that resorts to an external library obeys to interface/abstract classes as expected by above layers.
+Each layer constituents can only use functionalities of the same layer or lower layers constituents.
+In order to replace a component in the engine, one might solely adapt the respective toolkit or additionally modify its lower layers.
+
+
+### Infrastructure Layer
+These are the libraries\frameworks in which JOT layers and components were built on.
+
+### Core Layer
+The minimal set of tools that can allow the classification of a piece of software as a game engine.
+
+### Toolkits Layer
+
+This layer includes toolkits, which are extensions to the core.
+There are toolkits for a number of purposes, namely artificial intelligence (AI),  geometry generators, physics simulation, etc.
+Each toolkit includes an \emph{Utils} component which specifies its options (boolean values). 
+
+### Framework Layer
+
+This is the  upper layer of JOT.
+This layer aims at the following: first, to provide management of the application/game state and scene; second, to separate the game logic from its graphical application.
 
 [Back to Table of contents](#toc)
 
