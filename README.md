@@ -103,8 +103,10 @@ JOT provides as is 4 working netbeans example project demos, each supporting mov
 
 ## <a name="jot_architecture">JOT Architecture
 
-JOT is a game engine divided into layers, from bottom to top: Infrastructure, Core, Toolkits, and Framework (see Fig. 1).
+JOT is a game engine divided into layers, from bottom to top: Infrastructure, Core, Toolkits, and Framework.
 
+| JOT Architecture |
+|:---:|
 | [![Fig. 1](https://raw.githubusercontent.com/g-amador/JOT/master/assets/images/JOT-ARCH.png)](https://raw.githubusercontent.com/g-amador/JOT/master/assets/images/JOT-ARCH.png) | 
 
 
