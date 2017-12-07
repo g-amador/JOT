@@ -1,0 +1,930 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <link href="../../style.css" rel="stylesheet" type="text/css"/>
+        <link href="http://jogamp.org/SocialCoding/logo_symbol_finals/website_final_blue_favicon_symbol_16x16pel.ico" rel="shortcut icon"/>
+        <title>JOGL Demos</title>
+    </head>
+    <body>
+        <div id="container">
+            <div id="header">
+                <div id="slogan"><img src="../../images/jogamp_symbols/website_final_sideslogan_jogl_404x20pel.png" alt="Java&#0153; Binding for the OpenGL&#0174; API"/></div>
+                <div id="logo"><a href="http://jogamp.org/"><img src="../../images/jogamp_symbols/website_final_blue_jogl_346x70pel.png" alt="JOGL Symbol"/></a></div>
+            </div>
+            <div id="menu">
+                <ul>
+                    <li><a href="http://jogamp.org/">Home</a></li>
+                    <li><a href="../../jogl/www">JOGL</a></li>
+                    <li><a href="../../deployment/jogamp-current/jogl-test-applets.html">Tests</a></li>
+                    <li><a href="../../deployment/jogamp-next/javadoc/jogl/javadoc/">JavaDoc</a></li>
+                    <li><a href="../../joal/www">JOAL</a></li>
+                    <li><a href="../../jocl/www">JOCL</a></li>
+                    <li><a href="../../wiki/">Wiki</a></li>
+                    <li><a href="../../blog/">Blogs</a></li>
+                    <li><a href="http://forum.jogamp.org/" target="_blank">Forum</a></li>
+                </ul>
+            </div>
+            <div id="main">
+                <div id="sidebar">
+                    <h3>Community</h3>
+                    <ul>
+                        <li><a href="../../forum.html">Forum/Mailing Lists</a></li>
+                        <li><a href="../../stream/">Streams</a></li>
+                        <li><a href="../../blog/">Blogs</a></li>
+                    </ul>
+                    <h3>Useful Links</h3>
+                    <ul>
+                        <li><a href="../../wiki/index.php/Jogl_Tutorial">JOGL Tutorial</a></li>
+                        <li><a href="../doc/readme.html">Demo Documentation</a></li>
+                        <li><a href="http://ak.kiet.le.googlepages.com/theredbookinjava.html">OpenGL Red Book examples using JOGL</a></li>
+                        <li><a href="http://pepijn.fab4.be/software/nehe-java-ports/">NeHe examples ported to JOGL</a></li>
+                        <!--
+                        <li>
+                            <a href="http://weblogs.java.net/blog/campbell/archive/2006/10/easy_2d3d_mixin.html">Chris
+                                Campbell's blog on 2D/3D Mixing</a>
+                        </li>
+                        <li>
+                            <a href="http://weblogs.java.net/blog/campbell/archive/2007/01/java_2d_and_jog.html">Chris
+                                Campbell's blog on Java 2D and JOGL</a>
+                        </li>
+                        -->
+                        <li><a href="http://fivedots.coe.psu.ac.th/~ad/jg/">Killer Game Programming in Java (with chapters on JOGL)</a></li>
+                    </ul>
+                    <h3>Featured</h3>
+                    <ul>
+                        <li>
+                            <a href="http://volumeviewer.kenai.com/">
+                                <img src="http://volumeviewer.kenai.com/thumbnail.png" width="160" height="120" align="left" alt=""/>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://chronotext.org/">
+                                <img src="http://download.java.net/media/jogl/www/chronotext.jpg" width="160" height="120" align="left" alt="chronotext"/>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://bytonic.de/html/jake2.html">
+                                <img src="http://download.java.net/media/jogl/www/jake2.jpg" width="160" height="120" align="left" alt="jake2"/>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div id="text">
+                
+                <h3>Overview</h3>
+                <p>The JOGL-Demos project contains Java programming language
+                    demonstrations utilizing OpenGL through the JOGL API. Demonstrations exhibit
+                    advanced functionality such as vertex and fragment programs, shadow maps and
+                    hardware-accelerated offscreen rendering via pbuffers. Some of the demos were ported from
+                    C or C++, in which case a link to the original sources is provided.<br/>
+                </p>
+
+                <p>The demos below require <a href="http://java.sun.com/products/javawebstart/">Java Web Start</a>,
+                    which
+                    is included in <a href="http://www.oracle.com/technetwork/java/javase/overview/">J2SE >= 1.5</a>;
+                    click the images to launch the demos. Where there are no hardware or
+                    operating
+                    system requirements listed, the demos run on any vendor's graphics card
+                    and on any of Solaris/x86, Linux/x86, Windows/x86, and Macintosh OS X 10.5.
+                </p>
+
+                Applets using JOGL can be deployed without signing your own code and without
+                manual installation of any software on the end user's machine:
+                <ul>
+                    <li><a href="../../deployment/jogamp-current/jogl-test-applets.html">JOGL Applet Tests</a>
+                        (<a href="../../deployment/jogamp-next/jogl-test-applets.html"><i>next version</i></a>)</li>
+                    <li><a href="http://jogamp.org/jogl/doc/deployment/JOGL-DEPLOYMENT.html#NApplets">NApplet</a> w/ AWT: <a href="../../deployment/jogamp-current/jogl-demos/applet-gears-napplet.html">Gears</a>, <a href="../../deployment/jogamp-current/jogl-demos/applet-gearsjoal-napplet.html">Gears w/ JOAL</a></li>
+                    <li><a href="http://jogamp.org/jogl/doc/deployment/JOGL-DEPLOYMENT.html#NApplets">NApplet</a> w/ <a href="../../jogl/doc/NEWT-Overview.html">NEWT's</a> 
+                        <a href="../../deployment/jogamp-next/javadoc/jogl/javadoc/com/jogamp/newt/awt/applet/JOGLNewtApplet1Run.html">Applet Runner</a>:
+                    <ul>
+                        <li><a href="../../deployment/jogamp-current/jogl-demos/jogl-newt-applet-runner-gears.html">Gears</a></li>
+                        <li><a href="../../deployment/jogamp-current/jogl-demos/jogl-newt-applet-runner-angelesgl2es1.html">Angeles</a></li>
+                        <li><a href="../../deployment/jogamp-current/jogl-demos/jogl-newt-applet-runner-fbcubes.html">FBO Cubes</a></li>
+                        <li><a href="../../deployment/jogamp-current/jogl-demos/jogl-newt-applet-runner-cube.html">Cube</a></li>
+                    </ul></li>
+                    <li>JNLP Applet: <a href="../../deployment/jogamp-current/jogl-demos/applet-gears.html">Gears</a>, <a href="../../deployment/jogamp-current/jogl-demos/applet-gearsjoal.html">Gears w/ JOAL</a></li>
+                    <li><a href="../../deployment/jogamp-current/jogl-demos/test.html">Plain test page</a>
+                        (<a href="../../deployment/jogamp-next/jogl-demos/test.html"><i>next version</i></a>)</li>
+                </ul>
+
+                <p>
+                Quick Version Info: Current [ <a href="../../deployment/jogamp-current/jogl-applet-version-napplet.html">NApplet</a>, 
+                                              <a href="../../deployment/jogamp-current/jogl-application-version.jnlp">Application</a> ], 
+                                    Next [ <a href="../../deployment/jogamp-next/jogl-applet-version-napplet.html">NApplet</a>, 
+                                           <a href="../../deployment/jogamp-next/jogl-application-version.jnlp">Application</a> ].
+                </p>
+
+                <p>The source code for these demonstrations is available
+                    via <a href="http://jogamp.org/wiki/index.php/Jogl_FAQ#Get_the_Source_Code">GIT</a>.<br/>
+                </p>
+
+                <table border="0" cellpadding="5" cellspacing="1" width="100%">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <table border="0" cellpadding="5"
+                                       cellspacing="1" width="100%">
+                                    <tbody>
+                                        <tr>
+                                            <td valign="top">
+                                                <div align="left"><strong>Gears</strong></div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td valign="top" bgcolor="#ffffff">
+                                                <table border="0" cellpadding="5" cellspacing="1"
+                                                       width="100%">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td width="25%"><br/>
+                                                            </td>
+                                                            <td width="45%"><strong>Description</strong>
+                                                            </td>
+                                                            <td width="5%"><br/>
+                                                            </td>
+                                                            <td width="25%"><strong>Requirements</strong>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td width="25%">
+                                                                <a href="http://jogamp.org/deployment/jogamp-current/jogl-demos/Gears.jnlp">
+                                                                    <img src="gears_sm.jpg" width="160" height="163" alt="Launch Gears demo"/>
+                                                                </a>
+                                                            </td>
+                                                            <td width="45%">Classic OpenGL demo. Original source code
+                                                                by Brian Paul; converted to Java by Ron Cemer and Sven Goethel.
+                                                            </td>
+                                                            <td width="5%"><br/>
+                                                            </td>
+                                                            <td width="25%">None</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table border="0" cellpadding="5" cellspacing="1" width="100%">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <table border="0" cellpadding="5"
+                                       cellspacing="1" width="100%">
+                                    <tbody>
+                                        <tr>
+                                            <td valign="top">
+                                                <div align="left"><strong>Hardware Shadow
+                                                        Mapping</strong></div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td valign="top" bgcolor="#ffffff">
+                                                <table border="0" cellpadding="5" cellspacing="1"
+                                                       width="100%">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td width="25%"><br/>
+                                                            </td>
+                                                            <td width="45%"><strong>Description</strong>
+                                                            </td>
+                                                            <td width="5%"><br/>
+                                                            </td>
+                                                            <td width="25%"><strong>Requirements</strong>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td width="25%">
+                                                                <a href="http://jogamp.org/deployment/jogamp-current/jogl-demos/HWShadowmapsSimple.jnlp">
+                                                                    <img src="shadowmaps_sm.jpg" width="160" height="160" alt="Launch Hardware Shadow Mapping demo"/>
+                                                                </a>
+                                                            </td>
+                                                            <td width="45%"> Shadowing demo using projective
+                                                                texture technique of hardware shadow maps.
+                                                                <a href="http://download.nvidia.com/developer/SDK/Individual_Samples/DEMOS/OpenGL/hw_shadowmaps_simple.zip">
+                                                                    Original source code</a> by NVidia.
+                                                            </td>
+                                                            <td width="5%"><br/>
+                                                            </td>
+                                                            <td width="25%"> Pbuffer support, ARB_shadow, ARB_depth_texture</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table border="0" cellpadding="5" cellspacing="1" width="100%">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <table border="0" cellpadding="5"
+                                       cellspacing="1" width="100%">
+                                    <tbody>
+                                        <tr>
+                                            <td valign="top">
+                                                <div align="left"><strong>High Dynamic Range Rendering</strong>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td valign="top" bgcolor="#ffffff">
+                                                <table border="0" cellpadding="5" cellspacing="1"
+                                                       width="100%">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td width="25%"><br/>
+                                                            </td>
+                                                            <td width="45%"><strong>Description</strong>
+                                                            </td>
+                                                            <td width="5%"><br/>
+                                                            </td>
+                                                            <td width="25%"><strong>Requirements</strong>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td width="25%">
+                                                                <a href="http://jogamp.org/deployment/jogamp-current/jogl-demos/HDR.jnlp">
+                                                                    <img src="hdr_sm.jpg" width="160" height="120" alt="Launch High Dynamic Range Rendering demo"/>
+                                                                </a>
+                                                            </td>
+                                                            <td width="45%"> High Dynamic Range rendering demo utilizing 16-bit-per-channel
+                                                                floating-point pbuffers through NVidia, ATI or Apple extensions. Uses NVidia HILO or
+                                                                Apple or ATI floating point cubemaps. Intermediate results are rendered to
+                                                                floating-point pbuffers and tonemapped to 24-bit RGB before display. <a
+                                                                    href="http://download.developer.nvidia.com/developer/SDK/Individual_Samples/DEMOS/OpenGL/hdr.zip">Original
+                                                                    source code</a> supplied in NVidia's <a
+                                                                    href="http://developer.nvidia.com/object/sdk_home.html">SDK</a>. This demo
+                                                                is known to work on Windows with suitable NVidia or ATI hardware, and on X11
+                                                                platforms with suitable NVidia hardware (no floating-point pbuffer support is
+                                                                available on X11 from ATI as of this writing). The demo should run properly on Mac
+                                                                OS X soon pending some driver-level bug fixes.
+                                                            </td>
+                                                            <td width="5%"><br/>
+                                                            </td>
+                                                            <td width="25%"> One of GL_NV_float_buffer, GL_ATI_texture_float, or
+                                                                GL_APPLE_float_pixels; ARB_multitexture; ARB_vertex_program; ARB_fragment_program
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table border="0" cellpadding="5" cellspacing="1" width="100%">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <table border="0" cellpadding="5"
+                                       cellspacing="1" width="100%">
+                                    <tbody>
+                                        <tr>
+                                            <td valign="top">
+                                                <div align="left"><strong>Infinite Shadow Volumes</strong></div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td valign="top" bgcolor="#ffffff">
+                                                <table border="0" cellpadding="5" cellspacing="1"
+                                                       width="100%">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td width="25%"><br/>
+                                                            </td>
+                                                            <td width="45%"><strong>Description</strong>
+                                                            </td>
+                                                            <td width="5%"><br/>
+                                                            </td>
+                                                            <td width="25%"><strong>Requirements</strong>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td width="25%">
+                                                                <a href="http://jogamp.org/deployment/jogamp-current/jogl-demos/InfiniteShadowVolumes.jnlp">
+                                                                    <img src="shadowvolumes_sm.jpg" width="160" height="161" alt="Launch Infinite Shadow Volumes demo"/>
+                                                                </a>
+                                                            </td>
+                                                            <td width="45%"> Shadowing demo using geometric
+                                                                technique of infinite shadow volumes. <a
+                                                                    href="http://developer.nvidia.com/object/inf_shadow_volumes.html">Original
+                                                                    source code</a> by NVidia.
+                                                            </td>
+                                                            <td width="5%"><br/>
+                                                            </td>
+                                                            <td width="25%"> None</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table border="0" cellpadding="5" cellspacing="1" width="100%">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <table border="0" cellpadding="5"
+                                       cellspacing="1" width="100%">
+                                    <tbody>
+                                        <tr>
+                                            <td valign="top">
+                                                <div align="left"><strong>JRefract</strong></div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td valign="top" bgcolor="#ffffff">
+                                                <table border="0" cellpadding="5" cellspacing="1"
+                                                       width="100%">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td width="25%"><br/>
+                                                            </td>
+                                                            <td width="45%"><strong>Description</strong>
+                                                            </td>
+                                                            <td width="5%"><br/>
+                                                            </td>
+                                                            <td width="25%"><strong>Requirements</strong>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td width="25%">
+                                                                <a href="http://jogamp.org/deployment/jogamp-current/jogl-demos/JRefractNoOGL.jnlp">
+                                                                    <img src="jrefract_sm.jpg" width="160" height="120" alt="Launch JRefract demo"/>
+                                                                </a>
+                                                            </td>
+                                                            <td width="45%"> Variant of NVidia's vtxprog_refract demo showcasing JOGL's
+                                                                hardware-accelerated Swing component. <a
+                                                                    href="vtxprog_warp.7z">Original
+                                                                    source code</a> supplied in NVidia's <a
+                                                                    href="http://developer.nvidia.com/object/sdk_home.html">SDK</a>.
+                                                                <p>
+                                                                    If running on <a href="https://mustang.dev.java.net/">Java SE 6 (Mustang)</a>,
+                                                                    try the <a href="http://jogamp.org/deployment/jogamp-current/jogl-demos/JRefract.jnlp">fully
+                                                                        OpenGL-accelerated version</a> of this demo using the new <a
+                                                                        href="http://192.18.37.44/forums/index.php?topic=10813.0">Java2D/JOGL
+                                                                        interoperability</a> support!</p>
+                                                            </td>
+                                                            <td width="5%"><br/>
+                                                            </td>
+                                                            <td width="25%"> pbuffer support, ARB_vertex_program</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table border="0" cellpadding="5" cellspacing="1" width="100%">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <table border="0" cellpadding="5"
+                                       cellspacing="1" width="100%">
+                                    <tbody>
+                                        <tr>
+                                            <td valign="top">
+                                                <div align="left"><strong>Particle Engine</strong></div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td valign="top" bgcolor="#ffffff">
+                                                <table border="0" cellpadding="5" cellspacing="1"
+                                                       width="100%">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td width="25%"><br/>
+                                                            </td>
+                                                            <td width="45%"><strong>Description</strong>
+                                                            </td>
+                                                            <td width="5%"><br/>
+                                                            </td>
+                                                            <td width="25%"><strong>Requirements</strong>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td width="25%"><a
+                                                                    href="http://jogamp.org/deployment/jogamp-current/jogl-demos/ParticleEngine.jnlp">
+                                                                    <img
+                                                                        src="particles_sm.jpg" width="160" height="129"
+                                                                        alt="Launch Particle Engine demo"/>
+                                                                </a></td>
+                                                            <td width="45%">Particle engine demo controlling a set of animated particles with a
+                                                                Swing UI. Contributed by Ben Chappell.
+                                                            </td>
+                                                            <td width="5%"><br/>
+                                                            </td>
+                                                            <td width="25%">None</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table border="0" cellpadding="5" cellspacing="1" width="100%">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <table border="0" cellpadding="5"
+                                       cellspacing="1" width="100%">
+                                    <tbody>
+                                        <tr>
+                                            <td valign="top">
+                                                <div align="left"><strong>TextRenderer Test</strong></div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td valign="top" bgcolor="#ffffff">
+                                                <table border="0" cellpadding="5" cellspacing="1"
+                                                       width="100%">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td width="25%"><br/>
+                                                            </td>
+                                                            <td width="45%"><strong>Description</strong>
+                                                            </td>
+                                                            <td width="5%"><br/>
+                                                            </td>
+                                                            <td width="25%"><strong>Requirements</strong>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td width="25%"><a
+                                                                    href="http://jogamp.org/deployment/jogamp-current/jogl-demos/TestTextRenderer.jnlp">
+                                                                    <img
+                                                                        src="testtext_sm.jpg" width="160" height="152"
+                                                                        alt="Launch TestTextRenderer demo"/>
+                                                                </a></td>
+                                                            <td width="45%">A simple test of JOGL's new TextRenderer utility class, with text
+                                                                overlaid on the Gears demo.
+                                                            </td>
+                                                            <td width="5%"><br/>
+                                                            </td>
+                                                            <td width="25%">None</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table border="0" cellpadding="5" cellspacing="1" width="100%">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <table border="0" cellpadding="5"
+                                       cellspacing="1" width="100%">
+                                    <tbody>
+                                        <tr>
+                                            <td valign="top">
+                                                <div align="left"><strong>Flying Text</strong></div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td valign="top" bgcolor="#ffffff">
+                                                <table border="0" cellpadding="5" cellspacing="1"
+                                                       width="100%">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td width="25%"><br/>
+                                                            </td>
+                                                            <td width="45%"><strong>Description</strong>
+                                                            </td>
+                                                            <td width="5%"><br/>
+                                                            </td>
+                                                            <td width="25%"><strong>Requirements</strong>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td width="25%"><a
+                                                                    href="http://jogamp.org/deployment/jogamp-current/jogl-demos/FlyingText.jnlp">
+                                                                    <img
+                                                                        src="flyingtext_sm.jpg" width="160" height="160"
+                                                                        alt="Launch FlyingText demo"/>
+                                                                </a></td>
+                                                            <td width="45%">A more advanced demo of the TextRenderer, showing animated and colored
+                                                                text with drop shadows.
+                                                            </td>
+                                                            <td width="5%"><br/>
+                                                            </td>
+                                                            <td width="25%">None</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table border="0" cellpadding="5" cellspacing="1" width="100%">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <table border="0" cellpadding="5"
+                                       cellspacing="1" width="100%">
+                                    <tbody>
+                                        <tr>
+                                            <td valign="top">
+                                                <div align="left"><strong>Custom Text</strong></div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td valign="top" bgcolor="#ffffff">
+                                                <table border="0" cellpadding="5" cellspacing="1"
+                                                       width="100%">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td width="25%"><br/>
+                                                            </td>
+                                                            <td width="45%"><strong>Description</strong>
+                                                            </td>
+                                                            <td width="5%"><br/>
+                                                            </td>
+                                                            <td width="25%"><strong>Requirements</strong>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td width="25%"><a
+                                                                    href="http://jogamp.org/deployment/jogamp-current/jogl-demos/CustomText.jnlp">
+                                                                    <img
+                                                                        src="customtext_sm.jpg" width="160" height="160"
+                                                                        alt="Launch CustomText demo"/>
+                                                                </a></td>
+                                                            <td width="45%">A more advanced demo of the TextRenderer, showing the use of a custom
+                                                                RenderDelegate to achieve fancy Java 2D-based font effects.
+                                                            </td>
+                                                            <td width="5%"><br/>
+                                                            </td>
+                                                            <td width="25%">None</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table border="0" cellpadding="5" cellspacing="1" width="100%">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <table border="0" cellpadding="5"
+                                       cellspacing="1" width="100%">
+                                    <tbody>
+                                        <tr>
+                                            <td valign="top">
+                                                <div align="left"><strong>Text Flow</strong></div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td valign="top" bgcolor="#ffffff">
+                                                <table border="0" cellpadding="5" cellspacing="1"
+                                                       width="100%">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td width="25%"><br/>
+                                                            </td>
+                                                            <td width="45%"><strong>Description</strong>
+                                                            </td>
+                                                            <td width="5%"><br/>
+                                                            </td>
+                                                            <td width="25%"><strong>Requirements</strong>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td width="25%"><a
+                                                                    href="http://jogamp.org/deployment/jogamp-current/jogl-demos/TextFlow.jnlp">
+                                                                    <img
+                                                                        src="textflow_sm.jpg" width="160" height="147" alt="Launch TextFlow demo"/>
+                                                                </a></td>
+                                                            <td width="45%">Shows how to use the TextRenderer to draw dynamically flowing text in
+                                                                OpenGL.
+                                                            </td>
+                                                            <td width="5%"><br/>
+                                                            </td>
+                                                            <td width="25%">None</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table border="0" cellpadding="5" cellspacing="1" width="100%">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <table border="0" cellpadding="5"
+                                       cellspacing="1" width="100%">
+                                    <tbody>
+                                        <tr>
+                                            <td valign="top">
+                                                <div align="left"><strong>Text Cube</strong></div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td valign="top" bgcolor="#ffffff">
+                                                <table border="0" cellpadding="5" cellspacing="1"
+                                                       width="100%">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td width="25%"><br/>
+                                                            </td>
+                                                            <td width="45%"><strong>Description</strong>
+                                                            </td>
+                                                            <td width="5%"><br/>
+                                                            </td>
+                                                            <td width="25%"><strong>Requirements</strong>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td width="25%"><a
+                                                                    href="http://jogamp.org/deployment/jogamp-current/jogl-demos/TextCube.jnlp">
+                                                                    <img
+                                                                        src="textcube_sm.jpg" width="160" height="176" alt="Launch TextCube demo"/>
+                                                                </a></td>
+                                                            <td width="45%">Shows how to use the TextRenderer to draw 2D text in 3D.
+                                                            </td>
+                                                            <td width="5%"><br/>
+                                                            </td>
+                                                            <td width="25%">None</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table border="0" cellpadding="5" cellspacing="1" width="100%">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <table border="0" cellpadding="5"
+                                       cellspacing="1" width="100%">
+                                    <tbody>
+                                        <tr>
+                                            <td valign="top">
+                                                <div align="left"><strong>Vertex Program
+                                                        Warp</strong></div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td valign="top" bgcolor="#ffffff">
+                                                <table border="0" cellpadding="5" cellspacing="1"
+                                                       width="100%">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td width="25%"><br/>
+                                                            </td>
+                                                            <td width="45%"><strong>Description</strong>
+                                                            </td>
+                                                            <td width="5%"><br/>
+                                                            </td>
+                                                            <td width="25%"><strong>Requirements</strong>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td width="25%"><a
+                                                                    href="http://jogamp.org/deployment/jogamp-current/jogl-demos/VertexProgWarp.jnlp">
+                                                                    <img src="warp_sm.jpg" width="160" height="142"
+                                                                         alt="Launch Vertex Prog Warp demo"/>
+                                                                </a></td>
+                                                            <td width="45%">Geometrical deformations performed on the
+                                                                graphics card using vertex programs. <a
+                                                                    href="vtxprog_warp.7z">Original
+                                                                    source code</a> supplied in NVidia's <a
+                                                                    href="http://developer.nvidia.com/object/sdk_home.html">SDK</a>.
+                                                            </td>
+                                                            <td width="5%"><br/>
+                                                            </td>
+                                                            <td width="25%">ARB_vertex_program</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table border="0" cellpadding="5" cellspacing="1" width="100%">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <table border="0" cellpadding="5"
+                                       cellspacing="1" width="100%">
+                                    <tbody>
+                                        <tr>
+                                            <td valign="top">
+                                                <div align="left"><strong>Vertex Program
+                                                        Refract</strong></div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td valign="top" bgcolor="#ffffff">
+                                                <table border="0" cellpadding="5" cellspacing="1"
+                                                       width="100%">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td width="25%"><br/>
+                                                            </td>
+                                                            <td width="45%"><strong>Description</strong>
+                                                            </td>
+                                                            <td width="5%"><br/>
+                                                            </td>
+                                                            <td width="25%"><strong>Requirements</strong>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td width="25%"><a
+                                                                    href="http://jogamp.org/deployment/jogamp-current/jogl-demos/VertexProgRefract.jnlp">
+                                                                    <img src="refract_sm.jpg" width="160" height="161"
+                                                                         alt="Launch Vertex Prog Refract demo"/>
+                                                                </a></td>
+                                                            <td width="45%">Real-time reflection and refraction with
+                                                                chromatic aberration using vertex and fragment programs. <a
+                                                                    href="http://download.nvidia.com/developer/SDK/Individual_Samples/DEMOS/OpenGL/dispersion.zip">Original
+                                                                    source code</a> by NVidia.
+                                                            </td>
+                                                            <td width="5%"><br/>
+                                                            </td>
+                                                            <td width="25%">ARB_vertex_program and either ARB_fragment_program or
+                                                                NV_register_combiners
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table border="0" cellpadding="5" cellspacing="1" width="100%">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <table border="0" cellpadding="5"
+                                       cellspacing="1" width="100%">
+                                    <tbody>
+                                        <tr>
+                                            <td valign="top">
+                                                <div align="left"><strong>Water (Procedural Texture
+                                                        Physics)</strong></div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td valign="top" bgcolor="#ffffff">
+                                                <table border="0" cellpadding="5" cellspacing="1"
+                                                       width="100%">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td width="25%"><br/>
+                                                            </td>
+                                                            <td width="45%"><strong>Description</strong>
+                                                            </td>
+                                                            <td width="5%"><br/>
+                                                            </td>
+                                                            <td width="25%"><strong>Requirements</strong>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td width="25%"><a
+                                                                    href="http://jogamp.org/deployment/jogamp-current/jogl-demos/ProceduralTexturePhysics.jnlp">
+                                                                    <img src="water_sm.jpg" width="160" height="160"
+                                                                         alt="Launch Procedural Texture Physics demo"/>
+                                                                </a></td>
+                                                            <td width="45%">Runs a physics-based water simulation entirely
+                                                                on the graphics card using vertex programs, fragment programs and pbuffers.
+                                                                <a
+                                                                    href="Water.7z">Original source code</a> supplied in NVidia's <a
+                                                                    href="http://developer.nvidia.com/object/sdk_home.html">SDK</a>.<br/>
+                                                            </td>
+                                                            <td width="5%"><br/>
+                                                            </td>
+                                                            <td width="25%">Pbuffer support, ARB_vertex_program, ARB_fragment_program</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table border="0" cellpadding="5" cellspacing="1" width="100%">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <table border="0" cellpadding="5"
+                                       cellspacing="1" width="100%">
+                                    <tbody>
+                                        <tr>
+                                            <td valign="top">
+                                                <div align="left"><strong>Vertex Buffer Object</strong></div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td valign="top" bgcolor="#ffffff">
+                                                <table border="0" cellpadding="5" cellspacing="1"
+                                                       width="100%">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td width="25%"><br/>
+                                                            </td>
+                                                            <td width="45%"><strong>Description</strong>
+                                                            </td>
+                                                            <td width="5%"><br/>
+                                                            </td>
+                                                            <td width="25%"><strong>Requirements</strong>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td width="25%">
+                                                                <a href="http://jogamp.org/deployment/jogamp-current/jogl-demos/VertexBufferObject.jnlp">
+                                                                    <img src="VertexArrayRange_sm.jpg" width="160" height="164" alt="Launch Vertex Buffer Object demo"/>
+                                                                </a>
+                                                            </td>
+                                                            <td width="45%">Demonstrates high-throughput dynamic geometry
+                                                                using ARB_vertex_buffer_object extension. <a
+                                                                    href="learning_VAR_src.7z">Original source code</a> supplied in NVidia's <a
+                                                                    href="http://developer.nvidia.com/object/sdk_home.html">SDK</a>; ported both
+                                                                to Java/JOGL and ARB_vertex_buffer_object extension.
+                                                            </td>
+                                                            <td width="5%"><br/>
+                                                            </td>
+                                                            <td width="25%">ARB_vertex_buffer_object</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+              </div>
+            </div>
+            <div id="footer">
+                <div id="footer_left">
+                    <span>JogAmp.org</span>
+                    by <a href="http://jogamp.org">http://jogamp.org</a>
+                    is licensed under a <br/>
+                    <a href="http://creativecommons.org/licenses/by/3.0/us/">Creative Commons Attribution 3.0 License</a>.
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
