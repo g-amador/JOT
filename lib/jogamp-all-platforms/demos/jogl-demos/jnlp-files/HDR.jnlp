@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp codebase="DEMO_CODEBASE_TAG"
+      href="HDR.jnlp">
+  <information>
+    <title>JOGL High Dynamic Range Rendering Demo</title>
+    <vendor>JogAmp Community</vendor>
+    <homepage href="http://jogamp.org/jogl-demos/"/>
+    <description>High Dynamic Range Rendering Demo</description>
+    <description kind="short">NVidia's High Dynamic Range (HDR) rendering demo ported to Java and JOGL.</description>
+    <offline-allowed/>
+  </information>
+  <update check="background" policy="always"/>
+
+    <resources>
+      <j2se href="http://java.sun.com/products/autodl/j2se" version="1.4+"/>
+      <jar href="jar/jogl-demos.jar" main="true"/>
+      <jar href="jar/jogl-demos-util.jar" />
+      <jar href="jar/jogl-demos-data.jar" />
+      <extension name="jogl-all-awt-cg" href="JOGL_CODEBASE_TAG/jogl-all-awt-cg.jnlp" />
+    </resources>
+
+  <application-desc main-class="demos.hdr.HDR">
+    <argument>demos/data/images/stpeters_cross.hdr</argument>
+    <argument>512</argument>
+    <argument>384</argument>
+    <argument>2</argument>
+    <argument>7</argument>
+    <argument>3</argument>
+    <argument>demos/data/models/teapot.obj</argument>
+  </application-desc>
+</jnlp>

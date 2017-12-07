@@ -1,0 +1,22 @@
+
+<jnlp codebase="DEMO_CODEBASE_TAG" href="clinfo.jnlp">
+    <information>
+        <title>OpenCL diagnostics.</title>
+        <vendor>JogAmp Community.</vendor>
+        <homepage href="http://jocl.jogamp.org"/>
+        <description>OpenCL diagnostics.</description>
+        <description kind="short">OpenCL diagnostics.</description>
+        <offline-allowed/>
+    </information>
+    <update check="background" policy="always"/>
+
+    <resources>
+        <j2se href="http://java.sun.com/products/autodl/j2se" version="1.6+"/>
+        <property name="sun.java2d.noddraw" value="true"/>
+        <jar href="jar/jocl-demos.jar" main="true"/>
+        <extension name="jocl" href="JOCL_CODEBASE_TAG/jocl.jnlp" />
+        
+    </resources>
+
+    <application-desc main-class="com.jogamp.opencl.demos.info.CLInfo"/>
+</jnlp>

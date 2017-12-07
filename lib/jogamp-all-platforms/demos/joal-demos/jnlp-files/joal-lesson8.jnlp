@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp codebase="https://jogamp.org/deployment/jogamp-current/joal-demos/"
+      href="jnlp-files/joal-lesson8.jnlp">
+  <information>
+    <title>JOAL DevMaster Lesson 8</title>
+    <vendor>JogAmp Community</vendor>
+    <homepage href="http://joal.jogamp.org/"/>
+    <description>JOAL DevMaster Lesson 8</description>
+    <description kind="short">OpenAL DevMaster Lesson 8 ported to Java and JOAL.</description>
+    <offline-allowed/>
+  </information>
+    <resources>
+      <j2se version="1.6+"/>
+      <jar href="jar/joal-demos.jar" main="true" />
+      <jar href="jar/j-ogg-oggd.jar" />
+      <jar href="jar/j-ogg-vorbisd.jar" />
+      <extension name="joal" href="http://download.java.net/media/joal/webstart/joal.jnlp" />
+    </resources>
+  <application-desc main-class="demos.devmaster.lesson8.OggStreamer">
+    <argument>-gui</argument>
+  </application-desc>
+</jnlp>
