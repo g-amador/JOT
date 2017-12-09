@@ -39,10 +39,17 @@ In the field **URL** paste https://github.com/g-amador/JOT.git and click the **O
 
 For additional instructions https://goo.gl/gbqikt
 
-###### Step 4: Add JogAmp env. variable to windows (only required if step 5 does not work!!!!!)
+###### Step 4: Add JogAmp env. variables to windows (only required if step 5 does not work!!!!!)
 
 Add an environment variable to the location of the jogamp operative system libraries, e.g., in the **System Variable** 
-named **Path** add **C:\JOT\lib\jogamp-all-platforms\lib** (assuming C:\ was where JOT was clonned).
+named **Path** add (assuming C:\ was where JOT was clonned):
+
+**C:\JOT\lib\jogamp-all-platforms\lib**
+ 
+**C:\JOT\lib\jogamp-all-platforms\lib\windows-i586** (for 32 bits windows)
+
+**C:\JOT\lib\jogamp-all-platforms\lib\windows-amd64** (for 64 bits windows)
+
 
 For additional instructions on how to add an environment variable to windows (7-10) 
 https://www.opentechguides.com/how-to/article/windows-10/113/windows-10-set-path.html
@@ -82,7 +89,7 @@ this file can be changed between runs without require recompiling of the project
 
 ## <a name="jot_demos">JOT Demos/Templates
 
-JOT provides as is 4 working netbeans example project demos, each supporting movement, model loading, direct rendering, FSP and help text, Keyboard and mouse I/O:
+JOT provides as is 4 working netbeans sample project demos, each supporting movement, model loading, direct rendering, FSP and help text, Keyboard and mouse I/O:
  
 -**Core template**: a minimal example made solely with the Core layer, also includes 3D sound. 
 
@@ -94,9 +101,15 @@ JOT provides as is 4 working netbeans example project demos, each supporting mov
 
 **(other templates/demos exist but are currently broken thus will be available sometime in the future)**
 
-| Core Template | JOT Game World Demo | JOT Physics Demo |JOT AI Demo |
-|:---:|:---:|:---:|:---:|
-| [![Core Template](https://raw.githubusercontent.com/g-amador/JOT/master/assets/images/core/core.png)](https://raw.githubusercontent.com/g-amador/JOT/master/assets/images/core/core.png) | [![Game World Demo](https://raw.githubusercontent.com/g-amador/JOT/master/assets/images/framework/FPScamera1.png)](ttps://raw.githubusercontent.com/g-amador/JOT/master/assets/images/framework/FPScamera1.png) | [![Physics Demo](https://raw.githubusercontent.com/g-amador/JOT/master/assets/images/framework/shadows.png)](ttps://raw.githubusercontent.com/g-amador/JOT/master/assets/images/framework/shadows.png) | [![AI Demo](https://raw.githubusercontent.com/g-amador/JOT/master/assets/images/toolkits/AI/AI1.png)](ttps://raw.githubusercontent.com/g-amador/JOT/master/assets/images/toolkits/AI/AI1.png) |
+| | JOT Templates | |
+| Core Template |
+|:---:|
+| [![Core Template](https://raw.githubusercontent.com/g-amador/JOT/master/assets/images/core/core.png)](https://raw.githubusercontent.com/g-amador/JOT/master/assets/images/core/core.png) |
+
+| | JOT Demos | |
+| JOT Game World Demo | JOT Physics Demo |JOT AI Demo |
+|:---:|:---:|:---:|
+| [![Game World Demo](https://raw.githubusercontent.com/g-amador/JOT/master/assets/images/framework/FPScamera1.png)](ttps://raw.githubusercontent.com/g-amador/JOT/master/assets/images/framework/FPScamera1.png) | [![Physics Demo](https://raw.githubusercontent.com/g-amador/JOT/master/assets/images/framework/shadows.png)](ttps://raw.githubusercontent.com/g-amador/JOT/master/assets/images/framework/shadows.png) | [![AI Demo](https://raw.githubusercontent.com/g-amador/JOT/master/assets/images/toolkits/AI/AI1.png)](ttps://raw.githubusercontent.com/g-amador/JOT/master/assets/images/toolkits/AI/AI1.png) |
 
 [Back to Table of contents](#toc)
 
