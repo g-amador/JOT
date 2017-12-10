@@ -1,6 +1,6 @@
 # <a name="toc">Table of contents 
 
-* [JOT A Modular Multi-purpose Game Engine](#jot)
+* [JOT a Modular Multi-purpose Game Engine](#jot)
 	* [Windows 7-10 Setup](#windows_setup)
 	* [Linux Setup](#linux_setup)
 	* [Demos and Templates](#jot_demos)
@@ -9,7 +9,7 @@
 	* [Contact](#contact)
 
 
-# <a name="jot">JOT A Modular Multi-purpose Game Engine
+# <a name="jot">JOT a Modular Multi-purpose Game Engine
 
 
 JOT (i.e., minimal thing) modular multi-purpose game engine built in Java. 
