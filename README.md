@@ -1,4 +1,15 @@
-# JOT: A Modular Multi-purpose Game Engine
+## <a name="toc">Table of contents 
+
+* [JOT: A Modular Multi-purpose Game Engine](#jot)
+	* [JOT Windows 7-10 Setup](#windows_setup)
+	* [JOT Linux Setup](#linux_setup)
+	* [JOT Demos and Templates](#jot_demos)
+	* [JOT Architecture](#jot_architecture)
+	* [Project Organization](#p_organization)
+	* [Contact](#contact)
+
+
+# <a name="jot">JOT: A Modular Multi-purpose Game Engine
 
 
 JOT (i.e., minimal thing) modular multi-purpose game engine built in Java. 
@@ -9,15 +20,6 @@ JOT was presented as a Videojogos (VJ 2016), Covilhã, 24 and 25 nov. conference
 Presentation: https://goo.gl/i9eJFy
 
 Article: https://goo.gl/sGBVQT
-
-## <a name="toc">Table of contents 
-
-* [JOT Windows 7-10 Setup](#windows_setup)
-* [JOT Linux Setup](#linux_setup)
-* [JOT Demos and Templates](#jot_demos)
-* [JOT Architecture](#jot_architecture)
-* [Project Organization](#p_organization)
-* [Contact](#contact)
 
 
 ## <a name="windows_setup">JOT Windows 7-10 Setup
