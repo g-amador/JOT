@@ -108,11 +108,11 @@ JOT provides as is 4 working netbeans sample project demos, each supporting move
 
 | Core Template |
 |:---:|
-| [![Core Template](https://raw.githubusercontent.com/g-amador/JOT/master/assets/images/core/core.png)](https://raw.githubusercontent.com/g-amador/JOT/master/assets/images/core/core.png) |
+| [![Core Template](https://goo.gl/KeF5mZ)](https://goo.gl/KeF5mZ) |
 
 | JOT Game World Demo | JOT Physics Demo |JOT AI Demo |
 |:---:|:---:|:---:|
-| [![Game World Demo](https://raw.githubusercontent.com/g-amador/JOT/master/assets/images/framework/FPScamera1.png)](ttps://raw.githubusercontent.com/g-amador/JOT/master/assets/images/framework/FPScamera1.png) | [![Physics Demo](https://raw.githubusercontent.com/g-amador/JOT/master/assets/images/framework/shadows.png)](ttps://raw.githubusercontent.com/g-amador/JOT/master/assets/images/framework/shadows.png) | [![AI Demo](https://raw.githubusercontent.com/g-amador/JOT/master/assets/images/toolkits/AI/AI1.png)](ttps://raw.githubusercontent.com/g-amador/JOT/master/assets/images/toolkits/AI/AI1.png) |
+| [![Game World Demo](https://goo.gl/x2Uc32)](https://goo.gl/x2Uc32) | [![Physics Demo](https://goo.gl/cTGeqJ)](https://goo.gl/cTGeqJ) | [![AI Demo](https://goo.gl/LuwD9Q)](https://goo.gl/LuwD9Q) |
 
 [Back to Table of contents](#toc)
 
@@ -121,7 +121,7 @@ JOT provides as is 4 working netbeans sample project demos, each supporting move
 
 JOT is a game engine divided into layers, from bottom to top: Infrastructure, Core, Toolkits, and Framework.
 
-| [![Fig. 1](https://raw.githubusercontent.com/g-amador/JOT/master/assets/images/JOT-ARCH.png)](https://raw.githubusercontent.com/g-amador/JOT/master/assets/images/JOT-ARCH.png) | 
+[![Fig. 1](https://goo.gl/DXnEdo)]
 
 
 Any layer component that resorts to an external library obeys to interface/abstract classes as expected by above layers.
