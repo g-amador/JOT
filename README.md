@@ -21,6 +21,8 @@ Presentation: https://goo.gl/i9eJFy
 
 Article: https://goo.gl/sGBVQT
 
+[Back to Table of contents](#toc)
+
 
 ## <a name="windows_setup">JOT Windows 7-10 Setup
 
