@@ -44,11 +44,11 @@ For additional instructions https://goo.gl/gbqikt
 Add an environment variable to the location of the jogamp operative system libraries, e.g., in the **System Variable** 
 named **Path** add (assuming C:\ was where JOT was clonned):
 
-**C:\JOT\lib\jogamp-all-platforms\lib**
+**C:\JOT\lib\jogamp-all-platforms\lib** 
  
-**C:\JOT\lib\jogamp-all-platforms\lib\windows-i586** (for 32 bits windows)
+**C:\JOT\lib\jogamp-all-platforms\lib\windows-i586** (for 32 bits windows) 
 
-**C:\JOT\lib\jogamp-all-platforms\lib\windows-amd64** (for 64 bits windows)
+**C:\JOT\lib\jogamp-all-platforms\lib\windows-amd64** (for 64 bits windows) 
 
 
 For additional instructions on how to add an environment variable to windows (7-10) 
