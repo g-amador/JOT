@@ -10,18 +10,17 @@ Presentation: https://goo.gl/i9eJFy
 
 Article: https://goo.gl/sGBVQT
 
+## <a name="toc">Table of contents 
 
-## [Table of contents](https://github.com/g-amador/JOT#markdown-header-table-of-contents)
-
-* [JOT Windows 7-10 Setup](https://github.com/g-amador/JOT#markdown-header-jot-windows-7-10-setup)
-* [JOT Linux Setup](https://github.com/g-amador/JOT#markdown-header-jot-linux-setup)
-* [JOT Demos and Templates](https://github.com/g-amador/JOT#markdown-header-jot-demos-and-templates)
-* [JOT Architecture](https://github.com/g-amador/JOT#markdown-header-jot-architecture)
-* [Project Organization](https://github.com/g-amador/JOT#markdown-header-project-organization)
-* [Contact](https://github.com/g-amador/JOT#markdown-header-contact)
+* [JOT Windows 7-10 Setup](#windows_setup)
+* [JOT Linux Setup](#linux_setup)
+* [JOT Demos/Templates](#jot_demos)
+* [JOT Architecture](#jot_architecture)
+* [Project Organization](#p_organization)
+* [Contact](#contact)
 
 
-## JOT Windows 7-10 Setup
+## <a name="windows_setup">JOT Windows 7-10 Setup
 
 ###### Step 1: install netbeans for windows
 
@@ -52,7 +51,8 @@ named **Path** add (assuming C:\ was where JOT was clonned):
 **C:\JOT\lib\jogamp-all-platforms\lib\windows-amd64** (for 64 bits windows)
 
 
-For additional instructions on how to add an environment variable to windows (7-10) https://goo.gl/44UrGa
+For additional instructions on how to add an environment variable to windows (7-10) 
+https://www.opentechguides.com/how-to/article/windows-10/113/windows-10-set-path.html
 
 ###### Step 5: Run demos or templates
 
@@ -65,10 +65,10 @@ Run demo.
 -Options for either template/demo are in the netbeans corresponding demo/template **assets/scripts/GameConstants.js**, 
 this file can be changed between runs without require recompiling of the project.
 
-[Back to Table of contents](https://github.com/g-amador/JOT#markdown-header-table-of-contents)
+[Back to Table of contents](#toc)
 
 
-## JOT Linux Setup
+## <a name="linux_setup">JOT Linux Setup
 
 (UNDER CONSTRUCTION.)
 
@@ -84,10 +84,10 @@ Run demo.
 Options for either template/demo are in the netbeans corresponding demo/template 'assets/scripts/GameConstants.js', 
 this file can be changed between runs without require recompiling of the project.
 
-[Back to Table of contents](https://github.com/g-amador/JOT#markdown-header-table-of-contents)
+[Back to Table of contents](#toc)
 
 
-## JOT Demos and Templates
+## <a name="jot_demos">JOT Demos/Templates
 
 JOT provides as is 4 working netbeans sample project demos, each supporting movement, model loading, direct rendering, FSP and help text, Keyboard and mouse I/O:
  
@@ -109,10 +109,10 @@ JOT provides as is 4 working netbeans sample project demos, each supporting move
 |:---:|:---:|:---:|
 | [![Game World Demo](https://raw.githubusercontent.com/g-amador/JOT/master/assets/images/framework/FPScamera1.png)](ttps://raw.githubusercontent.com/g-amador/JOT/master/assets/images/framework/FPScamera1.png) | [![Physics Demo](https://raw.githubusercontent.com/g-amador/JOT/master/assets/images/framework/shadows.png)](ttps://raw.githubusercontent.com/g-amador/JOT/master/assets/images/framework/shadows.png) | [![AI Demo](https://raw.githubusercontent.com/g-amador/JOT/master/assets/images/toolkits/AI/AI1.png)](ttps://raw.githubusercontent.com/g-amador/JOT/master/assets/images/toolkits/AI/AI1.png) |
 
-[Back to Table of contents](https://github.com/g-amador/JOT#markdown-header-table-of-contents)
+[Back to Table of contents](#toc)
 
 
-## JOT Architecture
+## <a name="jot_architecture">JOT Architecture
 
 JOT is a game engine divided into layers, from bottom to top: Infrastructure, Core, Toolkits, and Framework.
 
@@ -140,10 +140,10 @@ There are toolkits for a number of purposes, namely artificial intelligence (AI)
 This is the  upper layer of JOT.
 This layer aims at the following: first, to provide management of the application/game state and scene; second, to separate the game logic from its graphical application.
 
-[Back to Table of contents](https://github.com/g-amador/JOT#markdown-header-table-of-contents)
+[Back to Table of contents](#toc)
 
 
-## Project Organization
+## <a name="p_organization">Project Organization
 
 
     .
@@ -168,10 +168,10 @@ This layer aims at the following: first, to provide management of the applicatio
     ├── LICENSE
     └── README.md                          
 
-[Back to Table of contents](https://github.com/g-amador/JOT#markdown-header-table-of-contents)
+[Back to Table of contents](#toc)
 
 
-## Contact
+## <a name="contact">Contact
 
 You are free to use and modify JOT as you see fit: to create your own templates/demos/games, to extend it, and to port it to another programming language. 
 You cannot take the credit for making JOT! 
@@ -181,4 +181,4 @@ If you have any questions, feel free to e-mail me at [gmail](mailto://g.n.p.amad
 
 Good luck!
 
-[Back to Table of contents](https://github.com/g-amador/JOT#markdown-header-table-of-contents)
+[Back to Table of contents](#toc)
