@@ -44,11 +44,11 @@ For additional instructions https://goo.gl/gbqikt
 Add an environment variable to the location of the jogamp operative system libraries, e.g., in the **System Variable** 
 named **Path** add (assuming C:\ was where JOT was clonned):
 
-**C:\JOT\lib\jogamp-all-platforms\lib** 
+**C:\JOT\lib\jogamp-all-platforms\lib**
  
-**C:\JOT\lib\jogamp-all-platforms\lib\windows-i586** (for 32 bits windows) 
+**C:\JOT\lib\jogamp-all-platforms\lib\windows-i586** (for 32 bits windows)
 
-**C:\JOT\lib\jogamp-all-platforms\lib\windows-amd64** (for 64 bits windows) 
+**C:\JOT\lib\jogamp-all-platforms\lib\windows-amd64** (for 64 bits windows)
 
 
 For additional instructions on how to add an environment variable to windows (7-10) 
@@ -101,12 +101,12 @@ JOT provides as is 4 working netbeans sample project demos, each supporting move
 
 **(other templates/demos exist but are currently broken thus will be available sometime in the future)**
 
-| | JOT Templates | |
+|:---:|
 | Core Template |
 |:---:|
 | [![Core Template](https://raw.githubusercontent.com/g-amador/JOT/master/assets/images/core/core.png)](https://raw.githubusercontent.com/g-amador/JOT/master/assets/images/core/core.png) |
 
-| | JOT Demos | |
+|:---:|:---:|:---:|
 | JOT Game World Demo | JOT Physics Demo |JOT AI Demo |
 |:---:|:---:|:---:|
 | [![Game World Demo](https://raw.githubusercontent.com/g-amador/JOT/master/assets/images/framework/FPScamera1.png)](ttps://raw.githubusercontent.com/g-amador/JOT/master/assets/images/framework/FPScamera1.png) | [![Physics Demo](https://raw.githubusercontent.com/g-amador/JOT/master/assets/images/framework/shadows.png)](ttps://raw.githubusercontent.com/g-amador/JOT/master/assets/images/framework/shadows.png) | [![AI Demo](https://raw.githubusercontent.com/g-amador/JOT/master/assets/images/toolkits/AI/AI1.png)](ttps://raw.githubusercontent.com/g-amador/JOT/master/assets/images/toolkits/AI/AI1.png) |
