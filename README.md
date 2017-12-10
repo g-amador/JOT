@@ -121,12 +121,11 @@ JOT provides as is 4 working netbeans sample project demos, each supporting move
 
 JOT is a game engine divided into layers, from bottom to top: Infrastructure, Core, Toolkits, and Framework.
 
-[![Fig. 1](https://goo.gl/DXnEdo)]
-
-
 Any layer component that resorts to an external library obeys to interface/abstract classes as expected by above layers.
 Each layer constituents can only use functionalities of the same layer or lower layers constituents.
 In order to replace a component in the engine, one might solely adapt the respective toolkit or additionally modify its lower layers.
+
+[![Fig. 1](https://goo.gl/DXnEdo)](https://goo.gl/DXnEdo)
 
 
 ###### Infrastructure Layer
