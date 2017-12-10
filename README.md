@@ -14,7 +14,7 @@ Article: https://goo.gl/sGBVQT
 
 * [JOT Windows 7-10 Setup](#windows_setup)
 * [JOT Linux Setup](#linux_setup)
-* [JOT Demos/Templates](#jot_demos)
+* [JOT Demos and Templates](#jot_demos)
 * [JOT Architecture](#jot_architecture)
 * [Project Organization](#p_organization)
 * [Contact](#contact)
@@ -87,7 +87,7 @@ this file can be changed between runs without require recompiling of the project
 [Back to Table of contents](#toc)
 
 
-## <a name="jot_demos">JOT Demos/Templates
+## <a name="jot_demos">JOT Demos and Templates
 
 JOT provides as is 4 working netbeans sample project demos, each supporting movement, model loading, direct rendering, FSP and help text, Keyboard and mouse I/O:
  
