@@ -1,4 +1,4 @@
-## <a name="toc">Table of contents 
+# <a name="toc">Table of contents 
 
 * [JOT: A Modular Multi-purpose Game Engine](#jot)
 	* [JOT Windows 7-10 Setup](#windows_setup)
