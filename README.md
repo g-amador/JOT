@@ -101,12 +101,10 @@ JOT provides as is 4 working netbeans sample project demos, each supporting move
 
 **(other templates/demos exist but are currently broken thus will be available sometime in the future)**
 
-|:---:|
 | Core Template |
 |:---:|
 | [![Core Template](https://raw.githubusercontent.com/g-amador/JOT/master/assets/images/core/core.png)](https://raw.githubusercontent.com/g-amador/JOT/master/assets/images/core/core.png) |
 
-|:---:|:---:|:---:|
 | JOT Game World Demo | JOT Physics Demo |JOT AI Demo |
 |:---:|:---:|:---:|
 | [![Game World Demo](https://raw.githubusercontent.com/g-amador/JOT/master/assets/images/framework/FPScamera1.png)](ttps://raw.githubusercontent.com/g-amador/JOT/master/assets/images/framework/FPScamera1.png) | [![Physics Demo](https://raw.githubusercontent.com/g-amador/JOT/master/assets/images/framework/shadows.png)](ttps://raw.githubusercontent.com/g-amador/JOT/master/assets/images/framework/shadows.png) | [![AI Demo](https://raw.githubusercontent.com/g-amador/JOT/master/assets/images/toolkits/AI/AI1.png)](ttps://raw.githubusercontent.com/g-amador/JOT/master/assets/images/toolkits/AI/AI1.png) |
