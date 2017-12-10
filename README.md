@@ -1,6 +1,7 @@
 # <a name="toc">Table of contents 
 
 * [JOT a Modular Multi-purpose Game Engine](#jot)
+
 	* [Windows 7-10 Setup](#windows_setup)
 	* [Linux Setup](#linux_setup)
 	* [Demos and Templates](#jot_demos)
