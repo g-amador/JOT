@@ -1,15 +1,15 @@
 # <a name="toc">Table of contents 
 
-* [JOT: A Modular Multi-purpose Game Engine](#jot)
-	* [JOT Windows 7-10 Setup](#windows_setup)
-	* [JOT Linux Setup](#linux_setup)
-	* [JOT Demos and Templates](#jot_demos)
-	* [JOT Architecture](#jot_architecture)
+* [JOT A Modular Multi-purpose Game Engine](#jot)
+	* [Windows 7-10 Setup](#windows_setup)
+	* [Linux Setup](#linux_setup)
+	* [Demos and Templates](#jot_demos)
+	* [Architecture](#jot_architecture)
 	* [Project Organization](#p_organization)
 	* [Contact](#contact)
 
 
-# <a name="jot">JOT: A Modular Multi-purpose Game Engine
+# <a name="jot">JOT A Modular Multi-purpose Game Engine
 
 
 JOT (i.e., minimal thing) modular multi-purpose game engine built in Java. 
@@ -24,7 +24,7 @@ Article: https://goo.gl/sGBVQT
 [Back to Table of contents](#toc)
 
 
-## <a name="windows_setup">JOT Windows 7-10 Setup
+## <a name="windows_setup">Windows 7-10 Setup
 
 ###### Step 1: install netbeans for windows
 
@@ -72,7 +72,7 @@ this file can be changed between runs without require recompiling of the project
 [Back to Table of contents](#toc)
 
 
-## <a name="linux_setup">JOT Linux Setup
+## <a name="linux_setup">Linux Setup
 
 (UNDER CONSTRUCTION.)
 
@@ -91,7 +91,7 @@ this file can be changed between runs without require recompiling of the project
 [Back to Table of contents](#toc)
 
 
-## <a name="jot_demos">JOT Demos and Templates
+## <a name="jot_demos">Demos and Templates
 
 JOT provides as is 4 working netbeans sample project demos, each supporting movement, model loading, direct rendering, FSP and help text, Keyboard and mouse I/O:
  
@@ -116,7 +116,7 @@ JOT provides as is 4 working netbeans sample project demos, each supporting move
 [Back to Table of contents](#toc)
 
 
-## <a name="jot_architecture">JOT Architecture
+## <a name="jot_architecture">Architecture
 
 JOT is a game engine divided into layers, from bottom to top: Infrastructure, Core, Toolkits, and Framework.
 
