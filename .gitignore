@@ -17,12 +17,3 @@
 /templates/Core-Toolkit-Components-Project/nbproject/private/
 /demos/AI/nbproject/private/
 /templates/Core-Toolkit-Components-Project/build/
-
-*~
-.metadata
-*.class
-*.jar
-*.war 
-*.ear 
-*.zip
-target/
