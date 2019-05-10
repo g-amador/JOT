@@ -40,11 +40,11 @@ import static java.util.logging.Level.OFF;
 import java.util.logging.Logger;
 import static java.util.logging.Logger.getLogger;
 import jot.ai.Agent;
-import jot.ai.pathFinders.AStar;
 import jot.ai.pathFinders.AbstractPathFinder;
-import jot.ai.pathFinders.BestFirstSearch;
-import jot.ai.pathFinders.Dijkstra;
 import jot.ai.pathFinders.FringeSearch;
+import jot.ai.pathFinders.influenceMapBased.AStar;
+import jot.ai.pathFinders.influenceMapBased.BestFirstSearch;
+import jot.ai.pathFinders.influenceMapBased.Dijkstra;
 import static jot.manager.ai.AbstractPathFindersManager.PathFinder.A_STAR;
 import static jot.manager.ai.AbstractPathFindersManager.PathFinder.BEST_FIRST_SEARCH;
 import static jot.manager.ai.AbstractPathFindersManager.PathFinder.DIJKSTRA;
@@ -694,9 +694,9 @@ public class PathFindersManager extends AbstractPathFindersManager {
         if (extensionAIOptions.get("usePathFinders")) {
             //System.out.println(Graph_hs.contains(position));
             //System.out.println(position);
-            if (!this.Graph.containsKey(position)) {
+            if (!this.lowLevelGraph.containsKey(position)) {
                 double minDistance = POSITIVE_INFINITY;
-                for (Vector3D nodePosition : this.Graph.keySet()) {
+                for (Vector3D nodePosition : this.lowLevelGraph.keySet()) {
                     double distance = getDistance(nodePosition,
                             this.primaryAgent.getPosition());
                     if (minDistance > distance) {
@@ -705,6 +705,17 @@ public class PathFindersManager extends AbstractPathFindersManager {
                     }
                 }
             }
+            //if (!this.Graph.containsKey(position)) {
+            //    double minDistance = POSITIVE_INFINITY;
+            //    for (Vector3D nodePosition : this.Graph.keySet()) {
+            //        double distance = getDistance(nodePosition,
+            //                this.primaryAgent.getPosition());
+            //        if (minDistance > distance) {
+            //            minDistance = distance;
+            //            position = new Vector3D(nodePosition.toArray());
+            //        }
+            //    }
+            //}
             return position;
             //System.out.println(Graph_hs.contains(position));
             //System.out.println(position);

@@ -41,8 +41,8 @@ new GameConstant("usePathFindersDebug", true);
 new GameConstant("usePathFindersReconstructPathDebug", false);
 new GameConstant("usePathFindersTimeout", false);
 new GameConstant("usePathFindersResetVisited", false);
-new GameConstant("usePathFindersLowLevelGraph", false);
-new GameConstant("usePathFindersAdaptivityTest", true);
+new GameConstant("usePathFindersLowLevelGraph", true);
+new GameConstant("usePathFindersAdaptivityTest", false);
 new GameConstant("usePathFindersRemoveNeighborsAdaptivityTest", false);
 
 //Scene options
