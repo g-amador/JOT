@@ -1,0 +1,37 @@
+#!/bin/sh
+
+#30-37 set foreground color 40-47 set background color
+#Black       30
+#Red         31
+#Green       32
+#Brown       33
+#Blue        34
+#Purple      35
+#Cyan        36
+#Light Gray  37
+
+clear
+
+echo '\033[32mOptions:'
+echo '\033[32m1 - cp JOT-Core-*/dist/*.jar lib/'
+echo '\033[32m2 - rm lib/JOT-*.jar'
+read var
+
+echo "$var"
+
+if [[$var -eq 1]];
+then
+  cd ..
+  cp JOT-Core-*/dist/*.jar lib/
+  ls lib/
+elif [[$var -eq 2]];
+then
+  cd ..
+  rm lib/JOT-*.jar
+  ls lib/
+else 
+  echo '\033[32mLearn to read!!!!!!!!!!!'
+  echo '\033[02m'
+fi
+
+set -x
